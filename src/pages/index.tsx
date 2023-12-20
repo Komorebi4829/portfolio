@@ -1,39 +1,23 @@
-import clsx from 'clsx'
-import Link from '@docusaurus/Link'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import React, { useEffect } from 'react'
 import Layout from '@theme/Layout'
-import HomepageFeatures from '@site/src/components/HomepageFeatures'
-import Heading from '@theme/Heading'
+// import HomepageHero from './_components/HomepageHero'
+// import HomepageBlog from './_components/HomepageBlog'
+// import HomepageFeatures from './_components/HomepageFeatures'
+// import HomepageProject from './_components/HomepageProject'
+import HomepageHero from '../components/HomepageHero'
 
-import styles from './index.module.css'
+function Home() {
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext()
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className='container'>
-        <Heading as='h1' className='hero__title'>
-          {siteConfig.title}
-        </Heading>
-        <p className='hero__subtitle'>{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link className='button button--secondary button--lg' to='/docs/intro'>
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  )
-}
-
-export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext()
-  return (
-    <Layout title={`Hello from ${siteConfig.title}`} description='Description will go into a meta tag in <head />'>
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+    <Layout description='Description will go into a meta tag in <head />'>
+      <HomepageHero></HomepageHero>
+      <main className='container-wrapper'>
+        {/* <HomepageBlog /> */}
+        {/* <HomepageProject /> */}
+        {/* <HomepageFeatures /> */}
       </main>
     </Layout>
   )
 }
+
+export default Home
