@@ -98,7 +98,8 @@ const config: Config = {
         {
           label: '博客',
           position: 'right',
-          to: 'https://google.com/ncr',
+          // to: 'https://google.com/ncr',
+          to: '/blog',
         },
         // {
         //   type: 'docSidebar',

@@ -58,7 +58,7 @@ function Particle() {
           value: { min: 0, max: 1 },
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: 1 },
         },
       },
     }),

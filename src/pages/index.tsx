@@ -4,19 +4,19 @@ import Layout from '@theme/Layout'
 // import HomepageBlog from './_components/HomepageBlog'
 // import HomepageFeatures from './_components/HomepageFeatures'
 // import HomepageProject from './_components/HomepageProject'
-import HomepageHero from '../components/HomepageHero'
+import HomepageHero from '@site/src/components/HomepageHero'
+import MyLayout from '@site/src/theme/MyLayout'
 
 function Home() {
-
   return (
-    <Layout description='Description will go into a meta tag in <head />'>
-      <HomepageHero></HomepageHero>
+    <MyLayout description='Description will go into a meta tag in <head />' maxWidth={1280}>
       <main className='container-wrapper'>
+        <HomepageHero></HomepageHero>
         {/* <HomepageBlog /> */}
         {/* <HomepageProject /> */}
         {/* <HomepageFeatures /> */}
       </main>
-    </Layout>
+    </MyLayout>
   )
 }
 
