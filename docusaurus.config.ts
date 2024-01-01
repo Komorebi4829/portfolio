@@ -68,7 +68,7 @@ const config: Config = {
       },
       {
         name: 'keywords',
-        content: '编程爱好者, Web开发者, 搞过Python, 写过爬虫, 现在主攻ts全栈',
+        content: '编程爱好者, Web开发者, 搞过Python, 写过爬虫, 现在主攻TS全栈',
       },
     ],
     headTags: [
@@ -96,11 +96,23 @@ const config: Config = {
       hideOnScroll: true,
       items: [
         {
+          label: '关于',
+          position: 'right',
+          to: '/about',
+        },
+        {
+          label: '项目',
+          position: 'right',
+          // to: 'https://google.com/ncr',
+          to: '/Showcase',
+        },
+        {
           label: '博客',
           position: 'right',
           // to: 'https://google.com/ncr',
           to: '/blog',
         },
+
         // {
         //   type: 'docSidebar',
         //   sidebarId: 'tutorialSidebar',
@@ -123,46 +135,42 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
+          title: 'About',
           items: [
             {
               label: 'Blog',
               to: '/blog',
             },
             {
+              label: 'Showcase',
+              to: '/showcase',
+            },
+          ],
+        },
+        {
+          title: 'Socials',
+          items: [
+            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/',
+            },
+          ],
+        },
+        {
+          title: 'Contact',
+          items: [
+            {
+              label: 'Email',
+              href: 'mailto:', // TODO
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `<p>Copyright © ${new Date().getFullYear()} - PRESENT Kent Built with Docusaurus.</p>`,
     },
     prism: {
       theme: prismThemes.github,
