@@ -2,6 +2,41 @@ import clsx from 'clsx'
 import React, { useEffect } from 'react'
 import MyLayout from '@site/src/theme/MyLayout'
 import styles from './about.module.css'
+import {
+  DiJavascript1,
+  DiReact,
+  DiNodejs,
+  DiMongodb,
+  DiPython,
+  DiGit,
+  DiDjango,
+} from "react-icons/di";
+import {
+  SiRedis,
+  SiNextdotjs,
+  SiPostgresql,
+  SiTypescript,
+  SiTailwindcss,
+  SiNestjs,
+  SiJest,
+  SiFigma,
+  SiDrone,
+  SiJenkins,
+  SiTrello,
+  SiNginx,
+  SiDocker,
+  SiDocusaurus,
+  SiVisualstudiocode,
+  SiPostman,
+  SiSlack,
+  SiVercel,
+  SiMacos,
+  SiFlask,
+  SiAntdesign,
+  SiVuedotjs,
+} from "react-icons/si";
+import GitHubCalendar from "react-github-calendar";
+
 
 export default function About() {
   return (
@@ -89,8 +124,124 @@ export default function About() {
           <h1 className='text-center text-4xl'>
             Professional <span className='text-purple'>Skillset</span>
           </h1>
+          <div className='flex flex-wrap text-white text-center'>
+            <div className={styles['tech-icons']}>
+              <DiJavascript1 />
+            </div>
+            <div className={styles['tech-icons']}>
+              <DiReact />
+            </div>
+            <div className={styles['tech-icons']}>
+              <DiNodejs />
+            </div>
+            <div className={styles['tech-icons']}>
+              <DiPython />
+            </div>
+            <div className={styles['tech-icons']}>
+              <DiMongodb />
+            </div>
+            <div className={styles['tech-icons']}>
+              <DiGit />
+            </div>
+            <div className={styles['tech-icons']}>
+              <DiDjango />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiRedis />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiNextdotjs />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiPostgresql />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiTypescript />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiTailwindcss />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiNestjs />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiJest />
+            </div>
+
+            <div className={styles['tech-icons']}>
+              <SiDocusaurus />
+            </div>
+
+            <div className={styles['tech-icons']}>
+              <SiMacos />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiFlask />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiAntdesign />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiVuedotjs />
+            </div>
+          </div>
+          <h1 className='text-center text-4xl'>
+            <span className='text-purple'>Tools</span> I use
+          </h1>
+          <div className='flex flex-wrap text-white text-center'>
+            <div className={styles['tech-icons']}>
+              <SiVisualstudiocode />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiFigma />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiDrone />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiJenkins />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiTrello />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiNginx />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiDocker />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiPostman />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiSlack />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiVercel />
+            </div>
+          </div>
+          <h1 className='text-center text-4xl'>
+            Days I <span className='text-purple'>Code</span>
+          </h1>
+          <div>
+            <GitHubCalendar
+              username="Komorebi4829"
+              blockSize={15}
+              blockMargin={5}
+              theme={{
+                light: [
+                  'hsl(0, 0%, 92%)',
+                  'hsla(272, 85%, 74%, 0.44)',
+                  'hsla(272, 85%, 74%, 0.6)',
+                  'hsla(272, 85%, 74%, 0.76)',
+                  'hsla(272, 85%, 74%, 0.92)',
+                ]
+              }}
+              fontSize={16}
+            />
+          </div>
         </div>
       </section>
-    </MyLayout>
+    </MyLayout >
   )
 }
