@@ -5,6 +5,7 @@
   content: '— ';
 }
 .tech-icons {
+  @apply w-2/12;
   font-size: 4.5em;
   margin: 15px;
   padding: 10px;

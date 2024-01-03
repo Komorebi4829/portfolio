@@ -2,15 +2,7 @@ import clsx from 'clsx'
 import React, { useEffect } from 'react'
 import MyLayout from '@site/src/theme/MyLayout'
 import styles from './about.module.css'
-import {
-  DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiMongodb,
-  DiPython,
-  DiGit,
-  DiDjango,
-} from "react-icons/di";
+import { DiJavascript1, DiReact, DiNodejs, DiMongodb, DiPython, DiGit } from 'react-icons/di'
 import {
   SiRedis,
   SiNextdotjs,
@@ -23,30 +15,29 @@ import {
   SiDrone,
   SiJenkins,
   SiTrello,
-  SiNginx,
   SiDocker,
   SiDocusaurus,
   SiVisualstudiocode,
-  SiPostman,
   SiSlack,
   SiVercel,
   SiMacos,
   SiFlask,
   SiAntdesign,
   SiVuedotjs,
-} from "react-icons/si";
-import GitHubCalendar from "react-github-calendar";
-
+  SiUbuntu,
+  SiDjango,
+} from 'react-icons/si'
+import GitHubCalendar from 'react-github-calendar'
 
 export default function About() {
   return (
     <MyLayout maxWidth={1280}>
-      <section className='relative pt-[150px] pb-[30px] w-full mx-auto xl:max-w-[1140px]'>
+      <section className='relative pt-[150px] pb-[30px] w-full mx-auto xl:max-w-[1140px] text-[#fff]'>
         <div className='flex justify-center items-center'>
           <div className='w-7/12'>
             <h1 className='text-4xl pb-2xl'>About Me</h1>
             <div className='flex-1 text-xl'>
-              <p>
+              <p className='text-justify leading-8'>
                 Hello, I am <span className='text-purple'>Kent River</span>
                 <br />
                 写过3年 Python Web 后端, 也会写 Python 爬虫, 因为机缘一直写前端到现在;
@@ -112,7 +103,16 @@ export default function About() {
                 "生命不息, 折腾不止!"
               </p>
               <footer className={clsx('text-center', styles['blockquote-footer'])}>Kent</footer>
+              {/* 
+                Apart from coding, some other activities that I love to do!
+                  Play video games
+                  Play badminton
+                  Reading books
 
+                  "生命不息, 折腾不止!"
+                  Keep going, keep exploring
+                  --Kent
+               */}
             </div>
           </div>
           <div className='w-5/12'>
@@ -121,10 +121,10 @@ export default function About() {
         </div>
 
         <div className='mt-16'>
-          <h1 className='text-center text-4xl'>
-            Professional <span className='text-purple'>Skillset</span>
+          <h1 className='text-center text-4xl my-4'>
+            Professional <strong className='text-purple'>Skillset</strong>
           </h1>
-          <div className='flex flex-wrap text-white text-center'>
+          <div className='flex flex-wrap justify-center items-center text-white text-center'>
             <div className={styles['tech-icons']}>
               <DiJavascript1 />
             </div>
@@ -144,7 +144,7 @@ export default function About() {
               <DiGit />
             </div>
             <div className={styles['tech-icons']}>
-              <DiDjango />
+              <SiDjango />
             </div>
             <div className={styles['tech-icons']}>
               <SiRedis />
@@ -167,13 +167,8 @@ export default function About() {
             <div className={styles['tech-icons']}>
               <SiJest />
             </div>
-
             <div className={styles['tech-icons']}>
               <SiDocusaurus />
-            </div>
-
-            <div className={styles['tech-icons']}>
-              <SiMacos />
             </div>
             <div className={styles['tech-icons']}>
               <SiFlask />
@@ -185,10 +180,16 @@ export default function About() {
               <SiVuedotjs />
             </div>
           </div>
-          <h1 className='text-center text-4xl'>
-            <span className='text-purple'>Tools</span> I use
+          <h1 className='text-center text-4xl my-4 mt-16 '>
+            <strong className='text-purple'>Tools</strong> I use
           </h1>
-          <div className='flex flex-wrap text-white text-center'>
+          <div className='flex flex-wrap justify-center items-center text-white text-center'>
+            <div className={styles['tech-icons']}>
+              <SiMacos />
+            </div>
+            <div className={styles['tech-icons']}>
+              <SiUbuntu />
+            </div>
             <div className={styles['tech-icons']}>
               <SiVisualstudiocode />
             </div>
@@ -205,13 +206,7 @@ export default function About() {
               <SiTrello />
             </div>
             <div className={styles['tech-icons']}>
-              <SiNginx />
-            </div>
-            <div className={styles['tech-icons']}>
               <SiDocker />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiPostman />
             </div>
             <div className={styles['tech-icons']}>
               <SiSlack />
@@ -220,12 +215,12 @@ export default function About() {
               <SiVercel />
             </div>
           </div>
-          <h1 className='text-center text-4xl'>
-            Days I <span className='text-purple'>Code</span>
+          <h1 className='text-center text-4xl my-8 mt-16'>
+            Days I <strong className='text-purple'>Code</strong>
           </h1>
-          <div>
+          <div className='flex justify-center pb-8'>
             <GitHubCalendar
-              username="Komorebi4829"
+              username='Komorebi4829'
               blockSize={15}
               blockMargin={5}
               theme={{
@@ -235,13 +230,14 @@ export default function About() {
                   'hsla(272, 85%, 74%, 0.6)',
                   'hsla(272, 85%, 74%, 0.76)',
                   'hsla(272, 85%, 74%, 0.92)',
-                ]
+                ],
               }}
               fontSize={16}
+              hideTotalCount={true}
             />
           </div>
         </div>
       </section>
-    </MyLayout >
+    </MyLayout>
   )
 }

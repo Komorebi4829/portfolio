@@ -7,7 +7,7 @@ function Blog() {
       <section className='flex flex-1 justify-center'>
         <div className='text-3xl flex flex-col justify-center items-center'>
           <span>( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</span>
-          <span>Under Construction</span>
+          <span className='mt-6'>Under Construction</span>
         </div>
       </section>
     </MyLayout>
