@@ -1,32 +1,39 @@
 import clsx from 'clsx'
 import React from 'react'
 import Type from '@site/src/components/Type'
-import HomeMain from '@site/static/img/home-main.svg'
-import Avatar from '@site/static/img/avatar.svg'
+import HomeMainSvg from '@site/static/img/home-main.svg'
+import AvatarSvg from '@site/static/img/avatar.svg'
 import styles from './index.module.css'
+import Translate from '@docusaurus/Translate'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
 export default function Hero() {
+  const { i18n } = useDocusaurusContext()
+  const lang = i18n.currentLocale
+  /* lang === 'en' */
   return (
     <>
       <section className='w-full mx-auto color-[whitesmoke] text-left pt-36 pr-0 pb-8 xl:max-w-[1140px]'>
         <div className='flex flex-wrap'>
           <div className='mt-[50px] w-1/2'>
             <h1 className='mb-[15px] text-5xl pl-[50px]'>
-              Hi There!{' '}
+              <Translate id='homepage.hero.greet'>你好! </Translate>
               <span role='img' aria-labelledby='wave' className='wave'>
                 👋🏻
               </span>
             </h1>
             <h1 className='mb-[15px] text-5xl pl-[50px]'>
-              I'M
-              <strong className='text-purple'> KENT RIVER</strong>
+              <Translate id='homepage.hero.im'>我是</Translate>
+              <strong className='text-purple'>
+                <Translate id='homepage.hero.name'> KENT </Translate>
+              </strong>
             </h1>
             <div className='p-[50px] text-purple text-3xl font-semibold'>
               <Type />
             </div>
           </div>
           <div className='pb-[20px] w-1/2'>
-            <HomeMain className='max-w-full h-auto max-h-[450px] align-middle' />
+            <HomeMainSvg className='max-w-full h-auto max-h-[450px] align-middle' />
           </div>
         </div>
       </section>
@@ -35,42 +42,60 @@ export default function Hero() {
           <div className='flex flex-wrap items-center justify-between'>
             <div className='w-2/3'>
               <h1 className='text-5xl'>
-                LET ME <span className='text-purple'>INTRODUCE</span> MYSELF
+                <Translate id='homepage.introduce.letme'>让我</Translate>
+                <span className='text-purple'>
+                  <Translate id='homepage.introduce.introduce'>介绍</Translate>
+                </span>
+                <Translate id='homepage.introduce.myself'>自己</Translate>
               </h1>
               <p className='pt-[50px] text-xl text-left pb-4 mb-4'>
-                I fell in love with programming and I have at least learnt something, I think… 🤷‍♂️
+                <Translate id='homepage.introduce.sentence1'>我喜欢编程，我想我至少学到了一些东西...</Translate>
+                🤷‍♂️
                 <br />
-                <br />I am fluent in classics like
+                <br />
+                <Translate id='homepage.introduce.sentence2'>我精通诸如</Translate>
                 <i>
                   <b className='text-purple'> Python, Javascript/Typescript. </b>
                 </i>
                 <br />
                 <br />
-                My field of Interest's are building &nbsp;
+                <Translate id='homepage.introduce.sentence3'>我的兴趣领域是</Translate>
+                &nbsp;
                 <i>
-                  <b className='text-purple'>Web Applications </b> and also in areas related to{' '}
-                  <b className='text-purple'>Blockchain.</b>
+                  <b className='text-purple'>
+                    <Translate id='homepage.introduce.webapp'>Web 应用</Translate>
+                  </b>
+                  <Translate id='homepage.introduce.sentence4'>也同样感兴趣于</Translate>{' '}
+                  <b className='text-purple'>
+                    <Translate id='homepage.introduce.blockchain'>区块链.</Translate>
+                  </b>
                 </i>
                 <br />
                 <br />
-                Whenever possible, I also apply my passion for developing products with{' '}
-                <b className='text-purple'>Node.js</b> and
+                <Translate id='homepage.introduce.sentence5'>只要有可能，我也会运用我的热情来开发产品</Translate>{' '}
+                <b className='text-purple'>Node.js </b>
+                <Translate id='homepage.introduce.and'>和</Translate>
                 <i>
-                  <b className='text-purple'> Modern Javascript Library and Frameworks</b>
+                  <b className='text-purple'>
+                    <Translate id='homepage.introduce.sentence6'>现代 Javascript 库和框架 </Translate>
+                  </b>
                 </i>
-                &nbsp; like
+                &nbsp;
+                <Translate id='homepage.introduce.like'>比如</Translate>
                 <i>
                   <b className='text-purple'> React.js and Next.js</b>
                 </i>
               </p>
             </div>
             <div className='w-[217px] h-[237px] '>
-              <Avatar className='w-full h-full' />
+              <AvatarSvg className='w-full h-full' />
             </div>
           </div>
           <div>
             <div className='w-full text-center pt-5 '>
-              <h1 className='text-5xl mb-3'>FIND ME ON</h1>
+              <h1 className='text-5xl mb-3'>
+                <Translate id='homepage.introduce.find_me_on'>找到我</Translate>
+              </h1>
               <p className='mb-5 text-xl'>
                 Feel free to <span className='text-purple'>connect </span>with me
               </p>

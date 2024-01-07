@@ -45,9 +45,7 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: ['./src/css/custom.scss', './src/css/main.scss'],
@@ -76,7 +74,7 @@ const config: Config = {
         tagName: 'meta',
         attributes: {
           name: 'description',
-          content: '肯特的个人博客',
+          content: 'Kent 的个人博客',
         },
       },
     ],
@@ -89,7 +87,7 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       logo: {
-        alt: 'Kent/肯特',
+        alt: 'Kent',
         src: 'img/logo.svg', // TODO
         srcDark: 'img/logo.svg', // TODO
       },
@@ -104,7 +102,7 @@ const config: Config = {
           label: '项目',
           position: 'right',
           // to: 'https://google.com/ncr',
-          to: '/Showcase',
+          to: '/showcase',
         },
         {
           label: '博客',
@@ -161,11 +159,10 @@ const config: Config = {
           ],
         },
         {
-          title: 'Contact',
+          title: 'More',
           items: [
             {
-              label: 'Email',
-              href: 'mailto:', // TODO
+              html: `<a href="https://docusaurus.io/" target="_blank"><img style="height:50px;margin-top:0.5rem" src="/img/buildwith.png" /><a/>`,
             },
           ],
         },

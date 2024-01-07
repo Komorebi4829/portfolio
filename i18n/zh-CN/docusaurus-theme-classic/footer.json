@@ -1,0 +1,34 @@
+{
+  "link.title.About": {
+    "message": "About",
+    "description": "The title of the footer links column with title=About in the footer"
+  },
+  "link.title.Socials": {
+    "message": "Socials",
+    "description": "The title of the footer links column with title=Socials in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Showcase": {
+    "message": "Showcase",
+    "description": "The label of footer link with label=Showcase linking to /showcase"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/"
+  },
+  "copyright": {
+    "message": "<p>Copyright © 2024 - PRESENT Kent Built with Docusaurus.</p>",
+    "description": "The footer copyright"
+  }
+}

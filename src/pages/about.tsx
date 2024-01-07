@@ -2,6 +2,8 @@ import clsx from 'clsx'
 import React, { useEffect } from 'react'
 import MyLayout from '@site/src/theme/MyLayout'
 import styles from './about.module.css'
+// import ForefingerSvg from '@site/static/img/forefinger.svg'
+import Translate from '@docusaurus/Translate'
 import { DiJavascript1, DiReact, DiNodejs, DiMongodb, DiPython, DiGit } from 'react-icons/di'
 import {
   SiRedis,
@@ -27,6 +29,9 @@ import {
   SiUbuntu,
   SiDjango,
 } from 'react-icons/si'
+import { GrGamepad } from 'react-icons/gr'
+import { BsBook } from 'react-icons/bs'
+import BadmintonSvg from '@site/static/img/badminton.svg'
 import GitHubCalendar from 'react-github-calendar'
 
 export default function About() {
@@ -35,84 +40,51 @@ export default function About() {
       <section className='relative pt-[150px] pb-[30px] w-full mx-auto xl:max-w-[1140px] text-[#fff]'>
         <div className='flex justify-center items-center'>
           <div className='w-7/12'>
-            <h1 className='text-4xl pb-2xl'>About Me</h1>
+            <h1 className='text-4xl pb-2xl'>
+              <Translate id='homepage.about.about_me'>关于我</Translate>
+            </h1>
             <div className='flex-1 text-xl'>
               <p className='text-justify leading-8'>
-                Hello, I am <span className='text-purple'>Kent River</span>
+                <Translate id='homepage.about.greet'>你好, 我是</Translate>
+                <span className='text-purple'>
+                  <Translate id='homepage.about.name'> Kent</Translate>
+                </span>
                 <br />
-                写过3年 Python Web 后端, 也会写 Python 爬虫, 因为机缘一直写前端到现在;
+                <Translate id='homepage.about.sentence1'>
+                  写过3年 Python Web 后端, 也会写 Python 爬虫, 因为机缘一直写前端到现在;
+                </Translate>
                 <br />
-                曾在疫情期间作为前端主力维护过省级核酸小程序;
+                <Translate id='homepage.about.sentence2'>曾在疫情期间作为前端主力维护过省级核酸小程序; </Translate>
                 <br />
-                有5年前端和3年后端经验, 现在主攻 TS 全栈方向
+                <Translate id='homepage.about.sentence3'>有5年前端和3年后端经验, 现在主攻 TS 全栈方向 </Translate>
                 <br />
                 <br />
-                除了编码之外，我还喜欢
+                <Translate id='homepage.about.sentence4'>除了编程之外，我还喜欢 </Translate>
                 <br />
                 <br />
               </p>
               <ul>
                 <li className='pl-1'>
-                  <svg
-                    stroke='currentColor'
-                    fill='currentColor'
-                    stroke-width='0'
-                    version='1.1'
-                    viewBox='0 0 16 16'
-                    height='1em'
-                    width='1em'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path d='M6.5 15h2.5c0.827 0 1.5-0.673 1.5-1.5 0-0.267-0.070-0.518-0.193-0.736 0.417-0.267 0.693-0.734 0.693-1.264 0-0.384-0.145-0.734-0.383-1 0.238-0.266 0.383-0.616 0.383-1 0-0.175-0.030-0.344-0.086-0.5h3.586c0.827 0 1.5-0.673 1.5-1.5s-0.673-1.5-1.5-1.5h-6.167l1.466-2.75c0.131-0.227 0.201-0.486 0.201-0.75 0-0.827-0.673-1.5-1.5-1.5-0.412 0-0.796 0.164-1.082 0.461-0.004 0.004-0.007 0.008-0.011 0.012l-3.407 3.737v-0.71c0-0.276-0.224-0.5-0.5-0.5h-3c-0.276 0-0.5 0.224-0.5 0.5v10c0 0.276 0.224 0.5 0.5 0.5h3c0.276 0 0.5-0.224 0.5-0.5v-0.691l2.276 1.138c0.069 0.035 0.146 0.053 0.224 0.053zM2.5 14c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5 0.5 0.224 0.5 0.5-0.224 0.5-0.5 0.5zM6.618 14l-2.618-1.309v-5.997l4.143-4.544c0.095-0.097 0.221-0.15 0.357-0.15 0.276 0 0.5 0.224 0.5 0.5 0 0.085-0.020 0.166-0.061 0.239-0.005 0.008-0.010 0.017-0.014 0.025l-1.866 3.5c-0.083 0.155-0.078 0.342 0.013 0.492s0.253 0.243 0.429 0.243h7c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-0.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-2.382z'></path>
-                  </svg>{' '}
-                  Play video games
+                  <GrGamepad />
+                  {/* <ForefingerSvg /> */}
+                  <Translate id='homepage.about.hobby.videoGame'> Playing video games </Translate>
                 </li>
                 <li className='pl-1'>
-                  <svg
-                    stroke='currentColor'
-                    fill='currentColor'
-                    stroke-width='0'
-                    version='1.1'
-                    viewBox='0 0 16 16'
-                    height='1em'
-                    width='1em'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path d='M6.5 15h2.5c0.827 0 1.5-0.673 1.5-1.5 0-0.267-0.070-0.518-0.193-0.736 0.417-0.267 0.693-0.734 0.693-1.264 0-0.384-0.145-0.734-0.383-1 0.238-0.266 0.383-0.616 0.383-1 0-0.175-0.030-0.344-0.086-0.5h3.586c0.827 0 1.5-0.673 1.5-1.5s-0.673-1.5-1.5-1.5h-6.167l1.466-2.75c0.131-0.227 0.201-0.486 0.201-0.75 0-0.827-0.673-1.5-1.5-1.5-0.412 0-0.796 0.164-1.082 0.461-0.004 0.004-0.007 0.008-0.011 0.012l-3.407 3.737v-0.71c0-0.276-0.224-0.5-0.5-0.5h-3c-0.276 0-0.5 0.224-0.5 0.5v10c0 0.276 0.224 0.5 0.5 0.5h3c0.276 0 0.5-0.224 0.5-0.5v-0.691l2.276 1.138c0.069 0.035 0.146 0.053 0.224 0.053zM2.5 14c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5 0.5 0.224 0.5 0.5-0.224 0.5-0.5 0.5zM6.618 14l-2.618-1.309v-5.997l4.143-4.544c0.095-0.097 0.221-0.15 0.357-0.15 0.276 0 0.5 0.224 0.5 0.5 0 0.085-0.020 0.166-0.061 0.239-0.005 0.008-0.010 0.017-0.014 0.025l-1.866 3.5c-0.083 0.155-0.078 0.342 0.013 0.492s0.253 0.243 0.429 0.243h7c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-0.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-2.382z'></path>
-                  </svg>{' '}
-                  Play badminton
+                  <BadmintonSvg />
+                  {/* <ForefingerSvg /> */}
+                  <Translate id='homepage.about.hobby.badminton'> Playing badminton </Translate>
                 </li>
                 <li className='pl-1'>
-                  <svg
-                    stroke='currentColor'
-                    fill='currentColor'
-                    stroke-width='0'
-                    version='1.1'
-                    viewBox='0 0 16 16'
-                    height='1em'
-                    width='1em'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path d='M6.5 15h2.5c0.827 0 1.5-0.673 1.5-1.5 0-0.267-0.070-0.518-0.193-0.736 0.417-0.267 0.693-0.734 0.693-1.264 0-0.384-0.145-0.734-0.383-1 0.238-0.266 0.383-0.616 0.383-1 0-0.175-0.030-0.344-0.086-0.5h3.586c0.827 0 1.5-0.673 1.5-1.5s-0.673-1.5-1.5-1.5h-6.167l1.466-2.75c0.131-0.227 0.201-0.486 0.201-0.75 0-0.827-0.673-1.5-1.5-1.5-0.412 0-0.796 0.164-1.082 0.461-0.004 0.004-0.007 0.008-0.011 0.012l-3.407 3.737v-0.71c0-0.276-0.224-0.5-0.5-0.5h-3c-0.276 0-0.5 0.224-0.5 0.5v10c0 0.276 0.224 0.5 0.5 0.5h3c0.276 0 0.5-0.224 0.5-0.5v-0.691l2.276 1.138c0.069 0.035 0.146 0.053 0.224 0.053zM2.5 14c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5 0.5 0.224 0.5 0.5-0.224 0.5-0.5 0.5zM6.618 14l-2.618-1.309v-5.997l4.143-4.544c0.095-0.097 0.221-0.15 0.357-0.15 0.276 0 0.5 0.224 0.5 0.5 0 0.085-0.020 0.166-0.061 0.239-0.005 0.008-0.010 0.017-0.014 0.025l-1.866 3.5c-0.083 0.155-0.078 0.342 0.013 0.492s0.253 0.243 0.429 0.243h7c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-0.5c-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-2.382z'></path>
-                  </svg>{' '}
-                  Read books
+                  <BsBook />
+                  {/* <ForefingerSvg /> */}
+                  <Translate id='homepage.about.hobby.reading'> Reading books </Translate>
                 </li>
               </ul>
               <br />
               <p className='text-center' style={{ color: 'rgb(155, 126, 172)' }}>
-                "生命不息, 折腾不止!"
+                <Translate id='homepage.about.motto'>"生命不息, 折腾不止!"</Translate>
               </p>
               <footer className={clsx('text-center', styles['blockquote-footer'])}>Kent</footer>
-              {/* 
-                Apart from coding, some other activities that I love to do!
-                  Play video games
-                  Play badminton
-                  Reading books
-
-                  "生命不息, 折腾不止!"
-                  Keep going, keep exploring
-                  --Kent
-               */}
             </div>
           </div>
           <div className='w-5/12'>

@@ -6,6 +6,7 @@ import { CgWebsite } from 'react-icons/cg'
 import { BsGithub } from 'react-icons/bs'
 import { useHistory } from '@docusaurus/router'
 import ProjectItem from '@site/src/components/ProjectItem'
+import Translate from '@docusaurus/Translate'
 
 export default function Showcase() {
   const history = useHistory()
@@ -15,15 +16,20 @@ export default function Showcase() {
         <div className=''>
           <div className='text-center mb-10'>
             <h1 className='text-4xl'>
-              Some <strong className='text-purple'>Showcases</strong>
+              <Translate id='homepage.showcase.some'></Translate>
+              <strong className='text-purple'>
+                <Translate id='homepage.showcase.showcases'>项目展示</Translate>
+              </strong>
             </h1>
-            <p className='py-4'>Here are some projects I want to show you.</p>
+            <p className='py-4'>
+              <Translate id='homepage.showcase.sentence1'>下面是一些项目展示</Translate>
+            </p>
           </div>
         </div>
         <div className='flex justify-center flex-wrap pb-4'>
           <ProjectItem
             name='Portfolio'
-            desc='我的个人小站, 使用 Docusaurus 构建.'
+            desc={'我的个人小站, 使用 Docusaurus 构建.'}
             src='/img/projects/chatify.png'
             actions={
               <>
