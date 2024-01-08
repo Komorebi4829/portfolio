@@ -150,11 +150,11 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/',
+              href: 'https://github.com/Komorebi4829',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/',
+              href: 'https://twitter.com/kentkomorebi',
             },
           ],
         },
