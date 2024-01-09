@@ -33,56 +33,60 @@ import { GrGamepad } from 'react-icons/gr'
 import { BsBook } from 'react-icons/bs'
 import BadmintonSvg from '@site/static/img/badminton.svg'
 import GitHubCalendar from 'react-github-calendar'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
 export default function About() {
+  const { i18n } = useDocusaurusContext()
+  const lang = i18n.currentLocale
   return (
     <MyLayout maxWidth={1280}>
-      <section className='relative pt-[150px] pb-[30px] w-full mx-auto xl:max-w-[1140px] text-[#fff]'>
+      <section className='relative pt-[130px] pb-[30px] w-full mx-auto xl:max-w-[1140px] text-[#fff]'>
         <div className='flex justify-center items-center'>
           <div className='w-7/12'>
-            <h1 className='text-4xl pb-2xl'>
-              <Translate id='homepage.about.about_me'>关于我</Translate>
+            <h1 className='text-4xl pb-2xl text-center mb-12'>
+              <Translate id='page.about.about_me'>关于我</Translate>
             </h1>
             <div className='flex-1 text-xl'>
               <p className='text-justify leading-8'>
-                <Translate id='homepage.about.greet'>你好, 我是</Translate>
+                <Translate id='page.about.greet'>你好, 我是</Translate>
                 <span className='text-purple'>
-                  <Translate id='homepage.about.name'> Kent</Translate>
+                  <Translate id='page.about.name'> Kent, </Translate>
                 </span>
+                <Translate id='page.about.one_person'>一个半路出家的程序员</Translate>
                 <br />
-                <Translate id='homepage.about.sentence1'>
-                  写过3年 Python Web 后端, 也会写 Python 爬虫, 因为机缘一直写前端到现在;
+                <Translate id='page.about.sentence1'>
+                  写过 Python Web 后端, 也会写 Python 爬虫, 后来因为机缘一直写前端到现在;
                 </Translate>
                 <br />
-                <Translate id='homepage.about.sentence2'>曾在疫情期间作为前端主力维护过省级核酸小程序; </Translate>
+                <Translate id='page.about.sentence2'>曾在疫情期间作为前端主力维护过省级核酸小程序; </Translate>
                 <br />
-                <Translate id='homepage.about.sentence3'>有5年前端和3年后端经验, 现在主攻 TS 全栈方向 </Translate>
+                <Translate id='page.about.sentence3'>有5年前端和3年后端经验, 现在主攻 TS 全栈方向 </Translate>
                 <br />
                 <br />
-                <Translate id='homepage.about.sentence4'>除了编程之外，我还喜欢 </Translate>
+                <Translate id='page.about.sentence4'>除了编程之外，我还喜欢 </Translate>
                 <br />
                 <br />
               </p>
-              <ul>
+              <ul className='pl-6'>
                 <li className='pl-1'>
                   <GrGamepad />
                   {/* <ForefingerSvg /> */}
-                  <Translate id='homepage.about.hobby.videoGame'> Playing video games </Translate>
+                  <Translate id='page.about.hobby.videoGame'> Playing video games </Translate>
                 </li>
                 <li className='pl-1'>
                   <BadmintonSvg />
                   {/* <ForefingerSvg /> */}
-                  <Translate id='homepage.about.hobby.badminton'> Playing badminton </Translate>
+                  <Translate id='page.about.hobby.badminton'> Playing badminton </Translate>
                 </li>
                 <li className='pl-1'>
                   <BsBook />
                   {/* <ForefingerSvg /> */}
-                  <Translate id='homepage.about.hobby.reading'> Reading books </Translate>
+                  <Translate id='page.about.hobby.reading'> Reading books </Translate>
                 </li>
               </ul>
               <br />
               <p className='text-center' style={{ color: 'rgb(155, 126, 172)' }}>
-                <Translate id='homepage.about.motto'>"生命不息, 折腾不止!"</Translate>
+                <Translate id='page.about.motto'>"生命不息, 折腾不止!"</Translate>
               </p>
               <footer className={clsx('text-center', styles['blockquote-footer'])}>Kent</footer>
             </div>

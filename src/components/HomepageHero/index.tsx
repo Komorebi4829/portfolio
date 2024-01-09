@@ -10,7 +10,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 export default function Hero() {
   const { i18n } = useDocusaurusContext()
   const lang = i18n.currentLocale
-  /* lang === 'en' */
+  console.log('lang', lang)
   return (
     <>
       <section className='w-full mx-auto color-[whitesmoke] text-left pt-36 pr-0 pb-8 xl:max-w-[1140px]'>
@@ -48,43 +48,55 @@ export default function Hero() {
                 </span>
                 <Translate id='homepage.introduce.myself'>自己</Translate>
               </h1>
-              <p className='pt-[50px] text-xl text-left pb-4 mb-4'>
-                <Translate id='homepage.introduce.sentence1'>我喜欢编程，我想我至少学到了一些东西...</Translate>
-                🤷‍♂️
-                <br />
-                <br />
-                <Translate id='homepage.introduce.sentence2'>我精通诸如</Translate>
-                <i>
-                  <b className='text-purple'> Python, Javascript/Typescript. </b>
-                </i>
-                <br />
-                <br />
-                <Translate id='homepage.introduce.sentence3'>我的兴趣领域是</Translate>
-                &nbsp;
-                <i>
-                  <b className='text-purple'>
-                    <Translate id='homepage.introduce.webapp'>Web 应用</Translate>
-                  </b>
-                  <Translate id='homepage.introduce.sentence4'>也同样感兴趣于</Translate>{' '}
-                  <b className='text-purple'>
-                    <Translate id='homepage.introduce.blockchain'>区块链.</Translate>
-                  </b>
-                </i>
-                <br />
-                <br />
-                <Translate id='homepage.introduce.sentence5'>只要有可能，我也会运用我的热情来开发产品</Translate>{' '}
-                <b className='text-purple'>Node.js </b>
-                <Translate id='homepage.introduce.and'>和</Translate>
-                <i>
-                  <b className='text-purple'>
-                    <Translate id='homepage.introduce.sentence6'>现代 Javascript 库和框架 </Translate>
-                  </b>
-                </i>
-                &nbsp;
-                <Translate id='homepage.introduce.like'>比如</Translate>
-                <i>
-                  <b className='text-purple'> React.js and Next.js</b>
-                </i>
+              <p className='pt-[50px] text-xl text-left pb-4 mb-4 text-[#fff]'>
+                {lang === 'zh-CN' && (
+                  <>
+                    通过多年的实践和项目经验，我掌握了前端和后端开发技术，能够熟练使用
+                    <i>
+                      <b className='text-purple'> Python，JavaScript/TypeScript </b>
+                    </i>
+                    编程语言。
+                    <br />
+                    <br />
+                    我热衷于使用
+                    <i>
+                      <b className='text-purple'> React.js，Next.js，Nest.js </b>
+                    </i>
+                    构建出色的 <b className='text-purple'>Web应用程序，</b>
+                    并且有丰富的实践经验。同时对计算机底层原理感兴趣。
+                    <br />
+                    <br />
+                    我对自己的
+                    <b className='text-purple'>代码质量</b>
+                    非常重视，注重代码的结构性和可维护性，以确保项目的长期成功和可持续发展。我期待能够为您的项目带来价值，并与您
+                    <b className='text-purple'>共同努力，</b>
+                    创造出卓越的软件解决方案。
+                  </>
+                )}
+                {lang !== 'zh-CN' && (
+                  <>
+                    I fell in love with programming and I have at least learnt something, I think… 🤷‍♂️
+                    <br />
+                    <br />I am mastered in programming languages like
+                    <i>
+                      <b className='text-purple'> Python, JavaScript/TypeScript. </b>
+                    </i>
+                    I am passionate about building modern <b className='text-purple'>Web Applications</b> using
+                    technologies like
+                    <i>
+                      <b className='text-purple'> React.js, Next.js, and Nest.js, </b>
+                    </i>
+                    and I have extensive hands-on experience in this field. I am also interested in the underlying
+                    knowledge of computer science.
+                    <br />
+                    <br />I place great importance on the <b className='text-purple'>quality</b> of my code, focusing on
+                    code structure and maintainability to ensure long-term success and sustainability of projects. I
+                    look forward to
+                    <b className='text-purple'> bringing value</b> to your projects and
+                    <b className='text-purple'> working together </b>
+                    to create exceptional software solutions.
+                  </>
+                )}
               </p>
             </div>
             <div className='w-[217px] h-[237px] '>

@@ -58,11 +58,11 @@ const config: Config = {
     metadata: [
       {
         name: 'keywords',
-        content: 'Kent, 肯特',
+        content: 'Kent, Kent River, 肯特',
       },
       {
         name: 'keywords',
-        content: 'portfolio, javascript, typescript, node, python, flask, vue, react, web',
+        content: 'portfolio, javascript, typescript, node, python, flask, vue, react, web, fullstack',
       },
       {
         name: 'keywords',
@@ -74,7 +74,7 @@ const config: Config = {
         tagName: 'meta',
         attributes: {
           name: 'description',
-          content: 'Kent 的个人博客',
+          content: 'Kent 的小站',
         },
       },
     ],
@@ -101,7 +101,6 @@ const config: Config = {
         {
           label: '项目',
           position: 'right',
-          // to: 'https://google.com/ncr',
           to: '/showcase',
         },
         {
@@ -110,19 +109,6 @@ const config: Config = {
           // to: 'https://google.com/ncr',
           to: '/blog',
         },
-
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Tutorial',
-        // },
-        // { to: '/blog', label: 'Blog', position: 'left' },
-        // {
-        //   href: 'https://github.com/facebook/docusaurus',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
         {
           type: 'localeDropdown',
           position: 'right',

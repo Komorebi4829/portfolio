@@ -1,35 +1,38 @@
 {
-  "homepage.about.about_me": {
+  "page.about.about_me": {
     "message": "About Me"
   },
-  "homepage.about.greet": {
+  "page.about.greet": {
     "message": "Hello, I am "
   },
-  "homepage.about.name": {
-    "message": "Kent River"
+  "page.about.name": {
+    "message": "Kent River, "
   },
-  "homepage.about.sentence1": {
-    "message": "写过3年 Python Web 后端, 也会写 Python 爬虫, 因为机缘一直写前端到现在;"
+  "page.about.one_person": {
+    "message": "a self-taught programmer."
   },
-  "homepage.about.sentence2": {
-    "message": "曾在疫情期间作为前端主力维护过省级核酸小程序;"
+  "page.about.sentence1": {
+    "message": "I have worked as a Python engineer, and I also developed Python web crawlers. Later, due to opportunity, I have been writing front-end until now."
   },
-  "homepage.about.sentence3": {
-    "message": "有5年前端和3年后端经验, 现在主攻 TS 全栈方向"
+  "page.about.sentence2": {
+    "message": "During COVID-19, I was part of the team responsible for maintaining the nucleic acid testing mini-programs in province."
   },
-  "homepage.about.sentence4": {
+  "page.about.sentence3": {
+    "message": "I have 5 years of frontend and 3 years of backend experience. I am currently working on TypeScript full-stack development."
+  },
+  "page.about.sentence4": {
     "message": "Apart from coding, some other activities that I love to do!"
   },
-  "homepage.about.hobby.videoGame": {
+  "page.about.hobby.videoGame": {
     "message": " Playing video games "
   },
-  "homepage.about.hobby.badminton": {
+  "page.about.hobby.badminton": {
     "message": " Playing badminton "
   },
-  "homepage.about.hobby.reading": {
+  "page.about.hobby.reading": {
     "message": " Reading books "
   },
-  "homepage.about.motto": {
+  "page.about.motto": {
     "message": "\"Keep learning, keep going, keep exploring!\""
   },
   "homepage.hero.greet": {
@@ -49,36 +52,6 @@
   },
   "homepage.introduce.myself": {
     "message": "MYSELF"
-  },
-  "homepage.introduce.sentence1": {
-    "message": "I fell in love with programming and I have at least learnt something, I think… "
-  },
-  "homepage.introduce.sentence2": {
-    "message": "I am fluent in classics like "
-  },
-  "homepage.introduce.sentence3": {
-    "message": "My field of Interest's are building "
-  },
-  "homepage.introduce.webapp": {
-    "message": "Web Applications "
-  },
-  "homepage.introduce.sentence4": {
-    "message": "and also in areas related to "
-  },
-  "homepage.introduce.blockchain": {
-    "message": "Blockchain."
-  },
-  "homepage.introduce.sentence5": {
-    "message": "Whenever possible, I also apply my passion for developing products with"
-  },
-  "homepage.introduce.sentence6": {
-    "message": "Modern Javascript Library and Frameworks"
-  },
-  "homepage.introduce.and": {
-    "message": "and"
-  },
-  "homepage.introduce.like": {
-    "message": "like"
   },
   "homepage.introduce.find_me_on": {
     "message": "FIND ME ON"
@@ -402,13 +375,13 @@
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
   },
-  "homepage.showcase.some": {
+  "page.showcase.some": {
     "message": "Some "
   },
-  "homepage.showcase.showcases": {
+  "page.showcase.showcases": {
     "message": "Showcases"
   },
-  "homepage.showcase.sentence1": {
+  "page.showcase.sentence1": {
     "message": "Here are some projects I want to show you."
   },
   "component.Type.tsFullstackEngineer": {
@@ -425,5 +398,8 @@
   },
   "component.Type.freelancer": {
     "message": ""
+  },
+  "page.blog.under_construction": {
+    "message": "Under construction"
   }
 }

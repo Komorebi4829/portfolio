@@ -16,13 +16,13 @@ export default function Showcase() {
         <div className=''>
           <div className='text-center mb-10'>
             <h1 className='text-4xl'>
-              <Translate id='homepage.showcase.some'></Translate>
+              <Translate id='page.showcase.some'></Translate>
               <strong className='text-purple'>
-                <Translate id='homepage.showcase.showcases'>项目展示</Translate>
+                <Translate id='page.showcase.showcases'>项目展示</Translate>
               </strong>
             </h1>
             <p className='py-4'>
-              <Translate id='homepage.showcase.sentence1'>下面是一些项目展示</Translate>
+              <Translate id='page.showcase.sentence1'>下面是一些项目展示</Translate>
             </p>
           </div>
         </div>

@@ -1,35 +1,38 @@
 {
-  "homepage.about.about_me": {
+  "page.about.about_me": {
     "message": "关于我"
   },
-  "homepage.about.greet": {
+  "page.about.greet": {
     "message": "你好, 我是"
   },
-  "homepage.about.name": {
-    "message": " Kent."
+  "page.about.name": {
+    "message": " Kent, "
   },
-  "homepage.about.sentence1": {
-    "message": "写过3年 Python Web 后端, 也会写 Python 爬虫, 因为机缘一直写前端到现在;"
+  "page.about.one_person": {
+    "message": "一个半路出家的程序员"
   },
-  "homepage.about.sentence2": {
+  "page.about.sentence1": {
+    "message": "写过 Python Web 后端, 也会写 Python 爬虫, 后来因为机缘一直写前端到现在;"
+  },
+  "page.about.sentence2": {
     "message": "曾在疫情期间作为前端主力维护过省级核酸小程序;"
   },
-  "homepage.about.sentence3": {
+  "page.about.sentence3": {
     "message": "有5年前端和3年后端经验, 现在主攻 TS 全栈方向"
   },
-  "homepage.about.sentence4": {
+  "page.about.sentence4": {
     "message": "除了编程之外，我还喜欢"
   },
-  "homepage.about.hobby.videoGame": {
+  "page.about.hobby.videoGame": {
     "message": " 打游戏 "
   },
-  "homepage.about.hobby.badminton": {
+  "page.about.hobby.badminton": {
     "message": " 打羽毛球 "
   },
-  "homepage.about.hobby.reading": {
+  "page.about.hobby.reading": {
     "message": " 看书 "
   },
-  "homepage.about.motto": {
+  "page.about.motto": {
     "message": "\"生命不息, 折腾不止!\""
   },
   "homepage.hero.greet": {
@@ -49,36 +52,6 @@
   },
   "homepage.introduce.myself": {
     "message": "自己"
-  },
-  "homepage.introduce.sentence1": {
-    "message": "我喜欢编程，我想我至少学到了一些东西......"
-  },
-  "homepage.introduce.sentence2": {
-    "message": "我精通诸如"
-  },
-  "homepage.introduce.sentence3": {
-    "message": "我的兴趣领域是"
-  },
-  "homepage.introduce.webapp": {
-    "message": "Web 应用"
-  },
-  "homepage.introduce.sentence4": {
-    "message": "也同样感兴趣于"
-  },
-  "homepage.introduce.blockchain": {
-    "message": "区块链."
-  },
-  "homepage.introduce.sentence5": {
-    "message": "只要有可能，我也会运用我的热情来开发产品"
-  },
-  "homepage.introduce.sentence6": {
-    "message": "现代 Javascript 库和框架"
-  },
-  "homepage.introduce.and": {
-    "message": "和"
-  },
-  "homepage.introduce.like": {
-    "message": "比如"
   },
   "homepage.introduce.find_me_on": {
     "message": "找到我"
@@ -402,13 +375,13 @@
     "message": "此页面未列出。搜索引擎不会对其索引，只有拥有直接链接的用户才能访问。",
     "description": "The unlisted content banner message"
   },
-  "homepage.showcase.some": {
+  "page.showcase.some": {
     "message": ""
   },
-  "homepage.showcase.showcases": {
+  "page.showcase.showcases": {
     "message": "项目展示"
   },
-  "homepage.showcase.sentence1": {
+  "page.showcase.sentence1": {
     "message": "下面是一些项目展示"
   },
   "component.Type.tsFullstackEngineer": {
@@ -425,5 +398,8 @@
   },
   "component.Type.freelancer": {
     "message": ""
+  },
+  "page.blog.under_construction": {
+    "message": "页面正在建设中"
   }
 }
