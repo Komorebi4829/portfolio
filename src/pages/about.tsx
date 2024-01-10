@@ -13,14 +13,14 @@ import {
   SiTailwindcss,
   SiNestjs,
   SiJest,
-  SiFigma,
-  SiDrone,
-  SiJenkins,
-  SiTrello,
+  // SiFigma,
+  // SiDrone,
+  // SiJenkins,
+  // SiTrello,
   SiDocker,
   SiDocusaurus,
   SiVisualstudiocode,
-  SiSlack,
+  // SiSlack,
   SiVercel,
   SiMacos,
   SiFlask,
@@ -40,9 +40,9 @@ export default function About() {
   const lang = i18n.currentLocale
   return (
     <MyLayout maxWidth={1280}>
-      <section className='relative pt-[130px] pb-[30px] w-full mx-auto xl:max-w-[1140px] text-[#fff]'>
-        <div className='flex justify-center items-center'>
-          <div className='w-7/12'>
+      <section className='relative pt-[130px] pb-[30px] px-6 w-full mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] text-[#fff]'>
+        <div className='flex justify-center items-center flex-wrap'>
+          <div className='w-full text-center md:w-7/12 lg:w-7/12 lg:text-left'>
             <h1 className='text-4xl pb-2xl text-center mb-12'>
               <Translate id='page.about.about_me'>关于我</Translate>
             </h1>
@@ -67,7 +67,7 @@ export default function About() {
                 <br />
                 <br />
               </p>
-              <ul className='pl-6'>
+              <ul className='pl-6 text-justify'>
                 <li className='pl-1'>
                   <GrGamepad />
                   {/* <ForefingerSvg /> */}
@@ -91,7 +91,7 @@ export default function About() {
               <footer className={clsx('text-center', styles['blockquote-footer'])}>Kent</footer>
             </div>
           </div>
-          <div className='w-5/12'>
+          <div className='max-w-full mt-12 md:w-5/12 lg:w-5/12 md:mt-0 lg:mt-0'>
             <img className='max-w-full h-auto' src='/img/about.png' />
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function About() {
             <div className={styles['tech-icons']}>
               <SiVisualstudiocode />
             </div>
-            <div className={styles['tech-icons']}>
+            {/* <div className={styles['tech-icons']}>
               <SiFigma />
             </div>
             <div className={styles['tech-icons']}>
@@ -177,16 +177,16 @@ export default function About() {
             </div>
             <div className={styles['tech-icons']}>
               <SiJenkins />
-            </div>
-            <div className={styles['tech-icons']}>
+            </div> */}
+            {/* <div className={styles['tech-icons']}>
               <SiTrello />
-            </div>
+            </div> */}
             <div className={styles['tech-icons']}>
               <SiDocker />
             </div>
-            <div className={styles['tech-icons']}>
+            {/* <div className={styles['tech-icons']}>
               <SiSlack />
-            </div>
+            </div> */}
             <div className={styles['tech-icons']}>
               <SiVercel />
             </div>
@@ -194,7 +194,7 @@ export default function About() {
           <h1 className='text-center text-4xl my-8 mt-16'>
             Days I <strong className='text-purple'>Code</strong>
           </h1>
-          <div className='flex justify-center pb-8'>
+          <div className={clsx(styles['github-calendar'], 'flex justify-center pb-8 flex-wrap')}>
             <GitHubCalendar
               username='Komorebi4829'
               blockSize={15}

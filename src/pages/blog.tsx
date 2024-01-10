@@ -7,7 +7,7 @@ function Blog() {
     <MyLayout maxWidth={1280}>
       <section className='flex flex-1 justify-center'>
         <div className='text-3xl flex flex-col justify-center items-center'>
-          <span>( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</span>
+          <span className='font-[system-ui]'>( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</span>
           <span className='mt-6'>
             <Translate id='page.blog.under_construction'>Under Construction</Translate>
           </span>

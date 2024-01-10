@@ -26,6 +26,13 @@ svg {
   }
 }
 
+.navbar__items--right{
+  font-size: 1.3rem;
+
+  --ifm-navbar-link-hover-color: var(--my-light-purple);
+  --ifm-link-color: var(--my-light-purple);
+}
+
 #tsparticles {
   z-index: -1;
   position: fixed !important;

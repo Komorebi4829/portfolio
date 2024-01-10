@@ -26,7 +26,7 @@ export default function Showcase() {
             </p>
           </div>
         </div>
-        <div className='flex justify-center flex-wrap pb-4'>
+        <div className='flex justify-center flex-wrap pb-4 sm:px-12 md:px-12 lg:px-0'>
           <ProjectItem
             name='Portfolio'
             desc={'我的个人小站, 使用 Docusaurus 构建.'}

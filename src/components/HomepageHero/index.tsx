@@ -6,6 +6,7 @@ import AvatarSvg from '@site/static/img/avatar.svg'
 import styles from './index.module.css'
 import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import Tilt from 'react-parallax-tilt'
 
 export default function Hero() {
   const { i18n } = useDocusaurusContext()
@@ -13,9 +14,9 @@ export default function Hero() {
   console.log('lang', lang)
   return (
     <>
-      <section className='w-full mx-auto color-[whitesmoke] text-left pt-36 pr-0 pb-8 xl:max-w-[1140px]'>
+      <section className='w-full mx-auto color-[whitesmoke] text-left pt-36 pr-0 pb-8 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]'>
         <div className='flex flex-wrap'>
-          <div className='mt-[50px] w-1/2'>
+          <div className='mt-[50px] w-full text-center lg:w-1/2 lg:text-left'>
             <h1 className='mb-[15px] text-5xl pl-[50px]'>
               <Translate id='homepage.hero.greet'>你好! </Translate>
               <span role='img' aria-labelledby='wave' className='wave'>
@@ -32,15 +33,15 @@ export default function Hero() {
               <Type />
             </div>
           </div>
-          <div className='pb-[20px] w-1/2'>
+          <div className='pb-[20px] max-w-full md:max-w-full lg:w-1/2'>
             <HomeMainSvg className='max-w-full h-auto max-h-[450px] align-middle' />
           </div>
         </div>
       </section>
       <section>
-        <div className='w-full mx-auto my-20 xl:max-w-[1140px] '>
+        <div className='w-full mx-auto my-20 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] '>
           <div className='flex flex-wrap items-center justify-between'>
-            <div className='w-2/3'>
+            <div className='w-full text-center lg:w-2/3 lg:text-left'>
               <h1 className='text-5xl'>
                 <Translate id='homepage.introduce.letme'>让我</Translate>
                 <span className='text-purple'>
@@ -48,7 +49,7 @@ export default function Hero() {
                 </span>
                 <Translate id='homepage.introduce.myself'>自己</Translate>
               </h1>
-              <p className='pt-[50px] text-xl text-left pb-4 mb-4 text-[#fff]'>
+              <p className='pt-[50px] text-xl text-left pb-4 mb-4 text-[#fff] px-8 lg:px-0'>
                 {lang === 'zh-CN' && (
                   <>
                     通过多年的实践和项目经验，我掌握了前端和后端开发技术，能够熟练使用
@@ -99,19 +100,23 @@ export default function Hero() {
                 )}
               </p>
             </div>
-            <div className='w-[217px] h-[237px] '>
-              <AvatarSvg className='w-full h-full' />
+            <div className='w-full text-center lg:text-center lg:w-auto'>
+              <Tilt>
+                <AvatarSvg className='max-w-full h-auto' />
+              </Tilt>
             </div>
           </div>
           <div>
-            <div className='w-full text-center pt-5 '>
+            <div className='w-full text-center pt-14 '>
               <h1 className='text-5xl mb-3'>
-                <Translate id='homepage.introduce.find_me_on'>找到我</Translate>
+                <Translate id='homepage.introduce.find_me_on'>联系我</Translate>
               </h1>
-              <p className='mb-5 text-xl'>
-                Feel free to <span className='text-purple'>connect </span>with me
-              </p>
-              <ul className='pt-[15px] inline-block relative ps-0 mb-2'>
+              {lang !== 'zh-CN' && (
+                <p className='mb-5 text-xl'>
+                  Feel free to <span className='text-purple'>connect </span>with me
+                </p>
+              )}
+              <ul className='pt-6 inline-block relative ps-0 mb-2'>
                 <li className={styles['social-icons']}>
                   <a
                     href='https://github.com/Komorebi4829'
