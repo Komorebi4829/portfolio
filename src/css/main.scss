@@ -33,6 +33,10 @@ svg {
   --ifm-link-color: var(--my-light-purple);
 }
 
+.navbar__brand .navbar__logo img {
+  border-radius: 9999px;
+}
+
 #tsparticles {
   z-index: -1;
   position: fixed !important;

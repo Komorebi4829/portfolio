@@ -88,8 +88,8 @@ const config: Config = {
     navbar: {
       logo: {
         alt: 'Kent',
-        src: 'img/logo.svg', // TODO
-        srcDark: 'img/logo.svg', // TODO
+        src: 'img/logo.png',
+        srcDark: 'img/logo.png',
       },
       hideOnScroll: true,
       items: [
