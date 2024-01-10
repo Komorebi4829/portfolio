@@ -5,11 +5,19 @@ import { translate } from '@docusaurus/Translate'
 function Type() {
   const tsFullstackEngineer = translate({
     id: 'component.Type.tsFullstackEngineer',
-    message: 'TypeScript 全栈工程师',
+    message: 'TS 全栈工程师',
   })
   const frontendEngineer = translate({
     id: 'component.Type.frontendEngineer',
-    message: '前端工程师',
+    message: 'Web 前端工程师',
+  })
+  const backendEngineer = translate({
+    id: 'component.Type.backendEngineer',
+    message: 'Web 后端工程师',
+  })
+  const devops = translate({
+    id: 'component.Type.devops',
+    message: 'CI/CD',
   })
   const pythonWebScrapingEngineer = translate({
     id: 'component.Type.pythonWebScrapingEngineer',
@@ -27,10 +35,11 @@ function Type() {
   return (
     <Typewriter
       options={{
-        strings: [tsFullstackEngineer, frontendEngineer, pythonWebScrapingEngineer, openSourceEnthusiast],
+        strings: [backendEngineer, frontendEngineer, pythonWebScrapingEngineer, tsFullstackEngineer, devops],
         autoStart: true,
         loop: true,
-        deleteSpeed: 50,
+        delay: 100,
+        deleteSpeed: 30,
       }}
     />
   )

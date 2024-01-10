@@ -42,7 +42,7 @@
     "message": "我是"
   },
   "homepage.hero.name": {
-    "message": "KENT"
+    "message": " KENT "
   },
   "homepage.introduce.letme": {
     "message": "让我"
@@ -54,7 +54,7 @@
     "message": "自己"
   },
   "homepage.introduce.find_me_on": {
-    "message": "找到我"
+    "message": "联系我"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -385,13 +385,19 @@
     "message": "下面是一些项目展示"
   },
   "component.Type.tsFullstackEngineer": {
-    "message": "TypeScript 全栈工程师"
+    "message": "TS 全栈开发者"
+  },
+  "component.Type.backendEngineer": {
+    "message": "Web 后端工程师"
   },
   "component.Type.frontendEngineer": {
-    "message": "前端工程师"
+    "message": "Web 前端工程师"
+  },
+  "component.Type.devops": {
+    "message": "CI/CD"
   },
   "component.Type.pythonWebScrapingEngineer": {
-    "message": "Python 爬虫工程师"
+    "message": "爬虫工程师"
   },
   "component.Type.openSourceEnthusiast": {
     "message": "开源爱好者"
