@@ -102,7 +102,8 @@ export default function Hero() {
             </div>
             <div className='w-full text-center lg:text-center lg:w-auto'>
               <Tilt>
-                <AvatarSvg className='max-w-full h-auto' />
+                {/* <AvatarSvg className='max-w-full h-auto' /> */}
+                <img src="/img/avatar.png" alt="avatar" className='max-w-[240px] h-auto rounded-full mx-auto' />
               </Tilt>
             </div>
           </div>
