@@ -12,7 +12,7 @@ function Particle() {
     initParticlesEngine(async (engine: Engine) => {
       await loadStarsPreset(engine)
     }).then(() => {
-      console.log('init done')
+      // console.log('init done')
       setInit(true)
     })
   }, [])
@@ -23,7 +23,7 @@ function Particle() {
   }
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log('particle loaded', container)
+    // console.log('particle loaded', container)
   }
 
   const optionsStar: ISourceOptions = {
