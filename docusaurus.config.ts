@@ -106,8 +106,8 @@ const config: Config = {
         {
           label: '博客',
           position: 'right',
-          // to: 'https://google.com/ncr',
-          to: '/blog',
+          to: 'https://kentriversnook.com/blog',
+          // to: '/blog',
         },
         {
           type: 'localeDropdown',
@@ -122,12 +122,12 @@ const config: Config = {
           title: 'About',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'Showcase',
               to: '/showcase',
+            },
+            {
+              label: 'Blog',
+              to: 'https://kentriversnook.com/blog',
             },
           ],
         },

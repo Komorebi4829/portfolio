@@ -9,15 +9,15 @@ import styles from './index.module.css'
 import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Tilt from 'react-parallax-tilt'
-import { useColorMode } from '@docusaurus/theme-common'
+// import { useColorMode } from '@docusaurus/theme-common'
 
 export default function Hero() {
   const { i18n } = useDocusaurusContext()
   const lang = i18n.currentLocale
   console.log('lang', lang)
 
-  const { colorMode, setColorMode } = useColorMode()
-  console.log(`theme: ${colorMode}`)
+  // const { colorMode, setColorMode } = useColorMode()
+  // console.log(`theme: ${colorMode}`)
 
   return (
     <>
