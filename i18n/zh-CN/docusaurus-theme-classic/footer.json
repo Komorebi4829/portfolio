@@ -13,7 +13,7 @@
   },
   "link.item.label.Blog": {
     "message": "博客",
-    "description": "The label of footer link with label=Blog linking to /blog"
+    "description": "The label of footer link with label=Blog linking to https://kentriversnook.com/blog"
   },
   "link.item.label.Showcase": {
     "message": "项目",
@@ -21,14 +21,18 @@
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/Komorebi4829"
   },
   "link.item.label.Twitter": {
     "message": "Twitter",
-    "description": "The label of footer link with label=Twitter linking to https://twitter.com/"
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/kentkomorebi"
   },
   "copyright": {
     "message": "<p>Copyright © 2024 - PRESENT Kent Built with Docusaurus.</p>",
     "description": "The footer copyright"
+  },
+  "link.item.label.About": {
+    "message": "关于我",
+    "description": "The label of footer link with label=About linking to /about"
   }
 }

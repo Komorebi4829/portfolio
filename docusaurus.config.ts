@@ -122,6 +122,10 @@ const config: Config = {
           title: 'About',
           items: [
             {
+              label: 'About',
+              to: '/about',
+            },  
+            {
               label: 'Showcase',
               to: '/showcase',
             },
