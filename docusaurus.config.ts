@@ -50,6 +50,10 @@ const config: Config = {
         theme: {
           customCss: ['./src/css/custom.scss', './src/css/main.scss'],
         },
+        gtag: {
+          trackingID: 'G-SJ81DTXR6V',
+          anonymizeIP: true,
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -124,7 +128,7 @@ const config: Config = {
             {
               label: 'About',
               to: '/about',
-            },  
+            },
             {
               label: 'Showcase',
               to: '/showcase',
