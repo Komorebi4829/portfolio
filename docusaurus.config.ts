@@ -10,12 +10,11 @@ import { themes as prismThemes } from 'prism-react-renderer'
 import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
-  title: 'Kent 的小站',
-  tagline: '业精于勤荒于嬉, 行成于思毁于随',
+  title: 'Kent\'s Portfolio',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://kentriversnook.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -32,7 +31,7 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh-CN',
+    defaultLocale: 'en',
     locales: ['en', 'zh-CN'],
     localeConfigs: {
       en: {
@@ -66,7 +65,7 @@ const config: Config = {
       },
       {
         name: 'keywords',
-        content: 'portfolio, javascript, typescript, node, python, flask, vue, react, web, fullstack',
+        content: 'portfolio, 小站, javascript, typescript, node, python, flask, vue, react, web, fullstack',
       },
       {
         name: 'keywords',
@@ -81,14 +80,19 @@ const config: Config = {
           content: 'Kent 的小站',
         },
       },
+      {
+        tagName: 'meta',
+        attributes: {
+          name: 'description',
+          content: 'Kent\s Portfolio',
+        },
+      },
     ],
     docs: {
       sidebar: {
         hideable: true,
       },
     },
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
     navbar: {
       logo: {
         alt: 'Kent',
