@@ -84,7 +84,7 @@ const config: Config = {
         tagName: 'meta',
         attributes: {
           name: 'description',
-          content: 'Kent\s Portfolio',
+          content: 'Kent\'s Portfolio',
         },
       },
     ],
@@ -173,7 +173,7 @@ const config: Config = {
     },
     colorMode: {
       defaultMode: 'dark',
-      disableSwitch: true,
+      disableSwitch: false,
       respectPrefersColorScheme: false,
     },
   },

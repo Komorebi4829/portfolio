@@ -2,11 +2,26 @@ import React, { useEffect, useState } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import type { Engine } from '@tsparticles/engine'
 import { loadBasic } from '@tsparticles/basic'
-import { Container, ISourceOptions } from '@tsparticles/engine'
+import { Container, ISourceOptions, IRangeColor } from '@tsparticles/engine'
 import { useCallback, useMemo } from 'react'
+import { useColorMode } from '@docusaurus/theme-common'
 
 function Particle() {
   const [init, setInit] = useState(false)
+
+  const { colorMode, setColorMode } = useColorMode()
+
+  const theme = {
+    dark: {
+      color: '#000',
+      size: { min: 1, max: 1 },
+    },
+    light: {
+      color: '#f0f9ff', // sky-50
+      // color: '#e0f2fe',  // sky-100
+      size: { min: 1, max: 3 },
+    },
+  }
 
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
@@ -15,7 +30,7 @@ function Particle() {
       // console.log('init done')
       setInit(true)
     })
-  }, [])
+  }, [colorMode])
 
   async function loadStarsPreset(engine: Engine, refresh = true) {
     await loadBasic(engine, false)
@@ -33,7 +48,7 @@ function Particle() {
   const options: ISourceOptions = useMemo(
     () => ({
       background: {
-        color: '#000',
+        color: theme[colorMode].color,
       },
       particles: {
         number: {
@@ -58,11 +73,11 @@ function Particle() {
           value: { min: 0, max: 1 },
         },
         size: {
-          value: { min: 1, max: 1 },
+          value: { ...theme[colorMode].size },
         },
       },
     }),
-    [],
+    [colorMode],
   )
 
   return init ? <Particles id='tsparticles' options={optionsStar} particlesLoaded={particlesLoaded} /> : null

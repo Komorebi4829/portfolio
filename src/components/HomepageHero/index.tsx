@@ -9,20 +9,16 @@ import styles from './index.module.css'
 import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Tilt from 'react-parallax-tilt'
-// import { useColorMode } from '@docusaurus/theme-common'
 
 export default function Hero() {
   const { i18n } = useDocusaurusContext()
   const lang = i18n.currentLocale
   console.log('lang', lang)
 
-  // const { colorMode, setColorMode } = useColorMode()
-  // console.log(`theme: ${colorMode}`)
-
   return (
     <>
-      <section className='w-full mx-auto color-[whitesmoke] text-left pt-36 pr-0 pb-8 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]'>
-        <div className='flex flex-wrap'>
+      <section className='w-full mx-auto color-[whitesmoke] text-left mt-36 pr-0 pb-8 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]'>
+        <div className='flex flex-wrap relative'>
           <div className='mt-[50px] w-full text-center lg:w-1/2 lg:text-left'>
             <h1 className='mb-[15px] text-5xl pl-[50px]'>
               <Translate id='homepage.hero.greet'>你好! </Translate>
@@ -42,6 +38,7 @@ export default function Hero() {
           </div>
           <div className='pb-[20px] max-w-full md:max-w-full lg:w-1/2'>
             <HomeMainSvg className='max-w-full h-auto max-h-[450px] align-middle' />
+            <div className={styles.circle}></div>
           </div>
         </div>
       </section>
