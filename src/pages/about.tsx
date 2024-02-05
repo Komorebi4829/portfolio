@@ -40,7 +40,7 @@ export default function About() {
   const lang = i18n.currentLocale
   return (
     <MyLayout maxWidth={1280}>
-      <section className='relative pt-[130px] pb-[30px] px-6 w-full mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] text-[#fff]'>
+      <section className='relative pt-[130px] pb-[30px] px-6 w-full mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]'>
         <div className='flex justify-center items-center flex-wrap relative'>
           <div className='w-full text-center md:w-7/12 lg:w-7/12 lg:text-left'>
             <h1 className='text-4xl pb-2xl text-center mb-12'>
@@ -85,17 +85,20 @@ export default function About() {
                 </li>
               </ul>
               <br />
-              <p className='text-center' style={{ color: 'rgb(155, 126, 172)' }}>
+              <p className='text-center text-purple-dark dark:text-purple-light'>
                 <Translate id='page.about.motto'>"生命不息, 折腾不止!"</Translate>
               </p>
-              <footer className={clsx('text-center', styles['blockquote-footer'])}>Kent</footer>
+              <footer
+                className={clsx('text-center text-purple-dark dark:text-purple-light', styles['blockquote-footer'])}
+              >
+                Kent
+              </footer>
             </div>
           </div>
           <div className='max-w-full mt-12 md:w-5/12 lg:w-5/12 md:mt-0 lg:mt-0'>
             <img className='max-w-full h-auto' src='/img/about.png' />
           </div>
           <div className={styles.circle}></div>
-
         </div>
 
         <div className='mt-16'>

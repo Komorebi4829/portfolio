@@ -53,7 +53,7 @@ export default function Hero() {
                 </span>
                 <Translate id='homepage.introduce.myself'>自己</Translate>
               </h1>
-              <p className='pt-[50px] text-xl text-left pb-4 mb-4 text-[#fff] px-8 lg:px-0'>
+              <p className='pt-[50px] text-xl text-left pb-4 mb-4 px-8 lg:px-0'>
                 {lang === 'zh-CN' && (
                   <>
                     通过多年的实践和项目经验，我掌握了前端和后端开发技术，能够熟练使用

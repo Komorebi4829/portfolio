@@ -1,6 +1,6 @@
-.icon-colour {
+/* .icon-colour {
 	color: #700c86 !important;
-}
+} */
 .social-icons {
 	display: inline-block !important;
 	padding-right: 15px;
@@ -9,15 +9,19 @@
 .home-social-icons {
 	position: relative !important;
 	display: inline-block !important;
-	width: 40px !important;
-	height: 40px !important;
+	width: 56px !important;
+	height: 56px !important;
 	text-align: center !important;
-	font-size: 1.2em !important;
-	line-height: 2em !important;
-	background: rgba(255, 255, 255, 0.972) !important;
+	font-size: 2em !important;
+	line-height: 1.5em !important;
+	border: 1.7px solid rgba(200, 137, 230, 0.637);
 	border-radius: 50% !important;
-	transition: 0.5s !important;
+	transition: all 0.5s ease 0s !important;
 }
+
+.home-social-icons:hover {
+	transform: scale(1.1);
+  }
 
 .circle {
 	background: linear-gradient(90deg, rgba(150, 255, 244, 0.813), rgba(0, 71, 252, 0.806));

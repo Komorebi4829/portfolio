@@ -1,6 +1,3 @@
-.blockquote-footer {
-  color: #a588c0;
-}
 .blockquote-footer::before {
   content: '— ';
 }

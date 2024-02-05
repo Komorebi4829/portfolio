@@ -12,8 +12,26 @@ svg {
   display: initial;
 }
 
-.footer {
-  background-color: rgba(48, 56, 70, 0.6);
+html[data-theme='dark'] {
+  .footer--dark {
+    --ifm-footer-background-color: rgba(48, 56, 70, 0.6);
+  }
+}
+
+html[data-theme='light'] {
+  .footer--dark {
+    --ifm-footer-background-color: rgba(48, 56, 70, 0.9);
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: color 0.3s linear;
 }
 
 .navbar {
@@ -28,9 +46,6 @@ svg {
 
 .navbar__items--right {
   font-size: 1.3rem;
-
-  --ifm-navbar-link-hover-color: var(--my-light-purple);
-  --ifm-link-color: var(--my-light-purple);
 }
 
 .navbar__brand .navbar__logo img {

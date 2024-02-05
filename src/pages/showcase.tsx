@@ -12,7 +12,7 @@ export default function Showcase() {
   const history = useHistory()
   return (
     <MyLayout maxWidth={1280}>
-      <section className='relative pt-[150px] pb-[30px] w-full mx-auto xl:max-w-[1140px] text-[#fff]'>
+      <section className='relative pt-[150px] pb-[30px] w-full mx-auto xl:max-w-[1140px]'>
         <div className=''>
           <div className='text-center mb-10'>
             <h1 className='text-4xl'>
