@@ -2,13 +2,11 @@ import clsx from 'clsx'
 import React from 'react'
 import Type from '@site/src/components/Type'
 import HomeMainSvg from '@site/static/img/home-main.svg'
-import AvatarSvg from '@site/static/img/avatar.svg'
-import GithubSvg from '@site/static/img/github.svg'
-import TwitterSvg from '@site/static/img/twitter.svg'
 import styles from './index.module.css'
 import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Tilt from 'react-parallax-tilt'
+import { SiGithub, SiTwitter } from 'react-icons/si'
 
 export default function Hero() {
   const { i18n } = useDocusaurusContext()
@@ -106,7 +104,6 @@ export default function Hero() {
             </div>
             <div className='w-full text-center lg:text-center lg:w-auto'>
               <Tilt>
-                {/* <AvatarSvg className='max-w-full h-auto' /> */}
                 <img src='/img/avatar.png' alt='avatar' className='max-w-[240px] h-auto rounded-full mx-auto' />
               </Tilt>
             </div>
@@ -129,7 +126,7 @@ export default function Hero() {
                     rel='noreferrer'
                     className={clsx(styles['icon-colour'], styles['home-social-icons'])}
                   >
-                    <GithubSvg />
+                    <SiGithub />
                   </a>
                 </li>
                 <li className={styles['social-icons']}>
@@ -139,7 +136,7 @@ export default function Hero() {
                     rel='noreferrer'
                     className={clsx(styles['icon-colour'], styles['home-social-icons'])}
                   >
-                    <TwitterSvg />
+                    <SiTwitter />
                   </a>
                 </li>
               </ul>

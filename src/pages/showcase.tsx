@@ -25,13 +25,14 @@ export default function Showcase() {
               <Translate id='page.showcase.sentence1'>下面是一些项目展示</Translate>
             </p>
           </div>
+          <div className={styles.circle}></div>
         </div>
         <div className='flex justify-center flex-wrap pb-4 sm:px-12 md:px-12 lg:px-0'>
           <ProjectItem
             name='Portfolio'
             // TODO i18n?
             desc={'我的个人小站, 使用 Docusaurus 构建.'}
-            src='/img/projects/portfolio.png'
+            src='/img/projects/portfolio-min.png'
             actions={
               <>
                 {/* <Button onClick={() => history.push('/')}>
@@ -47,7 +48,7 @@ export default function Showcase() {
           <ProjectItem
             name='Optiwise'
             desc={'基于Next.js搭建的静态企业官网'}
-            src='/img/projects/optiwise.png'
+            src='/img/projects/optiwise-min.png'
             actions={
               <Button onClick={() => window.open('https://showcase.kentriversnook.com/optiwise/')}>
                 <CgWebsite /> &nbsp;Demo
@@ -58,7 +59,7 @@ export default function Showcase() {
           <ProjectItem
             name='新基石官网'
             desc='一个Web3基金会的官网, 技术栈: Flask + React.js'
-            src='/img/projects/xjs-web.png'
+            src='/img/projects/xjs-web-min.png'
             actions={
               <Button onClick={() => window.open('https://showcase.kentriversnook.com/xjs-web/')}>
                 <CgWebsite /> &nbsp;Demo
