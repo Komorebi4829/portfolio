@@ -105,7 +105,7 @@ export default function About() {
           <h1 className='text-center text-4xl my-4'>
             Professional <strong className='text-purple'>Skillset</strong>
           </h1>
-          <div className='flex flex-wrap justify-center items-center text-white text-center'>
+          <div className='flex flex-wrap justify-center items-center text-center'>
             <div className={styles['tech-icons']}>
               <DiJavascript1 />
             </div>
@@ -164,7 +164,7 @@ export default function About() {
           <h1 className='text-center text-4xl my-4 mt-16 '>
             <strong className='text-purple'>Tools</strong> I use
           </h1>
-          <div className='flex flex-wrap justify-center items-center text-white text-center'>
+          <div className='flex flex-wrap justify-center items-center text-center'>
             <div className={styles['tech-icons']}>
               <SiMacos />
             </div>

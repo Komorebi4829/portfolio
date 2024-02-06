@@ -6,7 +6,8 @@ import styles from './index.module.css'
 import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Tilt from 'react-parallax-tilt'
-import { SiGithub, SiTwitter } from 'react-icons/si'
+import { SiGithub, SiTwitter, SiDiscord } from 'react-icons/si'
+import { GrGoogle } from 'react-icons/gr'
 
 export default function Hero() {
   const { i18n } = useDocusaurusContext()
@@ -124,7 +125,7 @@ export default function Hero() {
                     href='https://github.com/Komorebi4829'
                     target='_blank'
                     rel='noreferrer'
-                    className={clsx(styles['icon-colour'], styles['home-social-icons'])}
+                    className={clsx(styles['home-social-icons'])}
                   >
                     <SiGithub />
                   </a>
@@ -134,9 +135,29 @@ export default function Hero() {
                     href='https://twitter.com/kentkomorebi'
                     target='_blank'
                     rel='noreferrer'
-                    className={clsx(styles['icon-colour'], styles['home-social-icons'])}
+                    className={clsx(styles['home-social-icons'])}
                   >
                     <SiTwitter />
+                  </a>
+                </li>
+                <li className={styles['social-icons']}>
+                  <a
+                    href='mailto:kentriver4829@gmail.com'
+                    target='_blank'
+                    rel='noreferrer'
+                    className={clsx(styles['home-social-icons'])}
+                  >
+                    <GrGoogle />
+                  </a>
+                </li>
+                <li className={styles['social-icons']}>
+                  <a
+                    href='https://discordapp.com/users/837700175929016360'
+                    target='_blank'
+                    rel='noreferrer'
+                    className={clsx(styles['home-social-icons'])}
+                  >
+                    <SiDiscord />
                   </a>
                 </li>
               </ul>

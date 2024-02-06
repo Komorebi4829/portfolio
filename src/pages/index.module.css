@@ -4,10 +4,7 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  @apply px-0 py-[4rem] text-center relative overflow-hidden;
 }
 
 @media screen and (max-width: 996px) {
@@ -17,7 +14,5 @@
 }
 
 .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @apply flex items-center justify-center;
 }
