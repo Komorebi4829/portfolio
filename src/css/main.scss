@@ -16,6 +16,9 @@ html[data-theme='dark'] {
   .footer--dark {
     --ifm-footer-background-color: rgba(48, 56, 70, 0.6);
   }
+  .swal2-popup.swal2-modal.swal2-show {
+    background-color: #1e1e20;
+  }
 }
 
 html[data-theme='light'] {

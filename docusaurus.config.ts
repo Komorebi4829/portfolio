@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer'
 import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
-  title: 'Kent\'s Portfolio',
+  title: "Kent's Portfolio",
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -84,7 +84,7 @@ const config: Config = {
         tagName: 'meta',
         attributes: {
           name: 'description',
-          content: 'Kent\'s Portfolio',
+          content: "Kent's Portfolio",
         },
       },
     ],
