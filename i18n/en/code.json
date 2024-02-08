@@ -407,5 +407,11 @@
   },
   "page.blog.under_construction": {
     "message": "Under construction"
+  },
+  "page.showcase.urlFront": {
+    "message": "Frontend demo link"
+  },
+  "page.showcase.urlAdmin": {
+    "message": "Admin Panel demo link"
   }
 }

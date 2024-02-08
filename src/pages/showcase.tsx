@@ -4,16 +4,18 @@ import styles from './showcase.module.css'
 import Button from '@site/src/components/Button'
 import { CgWebsite, CgDetailsMore } from 'react-icons/cg'
 import { BsGithub } from 'react-icons/bs'
-import { useHistory } from '@docusaurus/router'
+import { SlLink } from 'react-icons/sl'
 import ProjectItem from '@site/src/components/ProjectItem'
 import ProjectItemDetail from '@site/src/components/ProjectItemDetail'
 import Translate from '@docusaurus/Translate'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
 export default function Showcase() {
-  const history = useHistory()
   const MySwal = withReactContent(Swal)
+  const { i18n } = useDocusaurusContext()
+  const lang = i18n.currentLocale
 
   const projects = useMemo(() => [
     {
@@ -49,9 +51,8 @@ export default function Showcase() {
           </ul>
         </>
       ),
-      goDemo: null,
       skills: ['React.js', 'Docusaurus', 'TailwindCSS'],
-      urlFront: 'https://kentriversnook.com',
+      urlFront: null,
       urlAdmin: null,
       urlGithub: 'https://github.com/Komorebi4829/portfolio',
     },
@@ -85,7 +86,6 @@ export default function Showcase() {
           </ul>
         </>
       ),
-      goDemo: () => window.open('https://showcase.kentriversnook.com/optiwise/'),
       skills: ['Next.js', 'TailwindCSS'],
       urlFront: 'https://showcase.kentriversnook.com/optiwise/',
       urlAdmin: null,
@@ -130,7 +130,6 @@ export default function Showcase() {
           </ul>
         </>
       ),
-      goDemo: () => window.open('https://showcase.kentriversnook.com/xjs-web/'),
       skills: ['Flask', 'React.js', 'TailwindCSS', 'Mysql', 'Flask-SQLAlchemy', 'MkDocs', 'web3', 'pycoin', 'Redis'],
       urlFront: 'https://showcase.kentriversnook.com/xjs-web/',
       urlAdmin: null,
@@ -160,7 +159,7 @@ export default function Showcase() {
             <ProjectItem
               key={project.name}
               name={project.name}
-              desc={project.desc}
+              desc={lang === 'zh-CN' ? project.desc : project.desc_en}
               src={project.src}
               actions={
                 <>
@@ -175,13 +174,15 @@ export default function Showcase() {
                       })
                     }}
                   >
-                    <CgDetailsMore /> &nbsp;Detail
+                    <CgDetailsMore />
+                    &nbsp;Detail
                   </Button>
 
-                  {project.goDemo && (
-                    <Button onClick={project.goDemo}>
-                      <CgWebsite /> &nbsp;Demo
-                    </Button>
+                  {project.urlFront && (
+                    <a href={project.urlFront} className='flex items-center transition-all'>
+                      <SlLink />
+                      &nbsp;Demo
+                    </a>
                   )}
                 </>
               }

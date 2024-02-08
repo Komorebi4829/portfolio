@@ -407,5 +407,11 @@
   },
   "page.blog.under_construction": {
     "message": "页面正在建设中"
+  },
+  "page.showcase.urlFront": {
+    "message": "前台演示地址"
+  },
+  "page.showcase.urlAdmin": {
+    "message": "后台演示地址"
   }
 }

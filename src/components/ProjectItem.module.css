@@ -40,10 +40,6 @@
   @apply text-lg mb-6 text-center;
 }
 
-.item-body button {
-  @apply mx-2 flex justify-center items-center;
-}
-
 .item-body .item-actions {
   @apply absolute left-0 right-0 bottom-4 flex justify-center;
 }
