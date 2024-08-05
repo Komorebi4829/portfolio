@@ -1,5 +1,5 @@
 kind: pipeline
-type: docker
+type: exec
 name: portfolio
 
 trigger:
@@ -8,8 +8,8 @@ trigger:
 
 steps:
     - name: build
-      image: node:20-alpine
+    #   image: node:20-alpine
       commands:
           - node -v
           - echo ${PWD}
-          - docker -v
+          - echo ${DRONE_WORKSPACE}
