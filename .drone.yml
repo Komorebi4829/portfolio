@@ -1,0 +1,15 @@
+kind: pipeline
+type: docker
+name: portfolio
+
+trigger:
+    branch:
+        - main
+
+steps:
+    - name: build
+      image: node:20-alpine
+      commands:
+          - node -v
+          - echo ${PWD}
+          - docker -v
