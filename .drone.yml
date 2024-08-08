@@ -7,9 +7,16 @@ trigger:
         - main
 
 steps:
-    - name: build
-    #   image: node:20-alpine
+    - name: dependencies
       commands:
           - node -v
-          - echo ${PWD}
-          - echo ${DRONE_WORKSPACE}
+          - node i -g pnpm
+          - pnpm i
+
+    - name: build
+      commands:
+          - pnpm run build
+
+    - name: move
+      commands:
+          - sudo cp -r build/* /var/www/portfolio
