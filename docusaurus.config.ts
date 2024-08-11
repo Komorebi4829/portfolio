@@ -114,7 +114,7 @@ const config: Config = {
         {
           label: '博客',
           position: 'right',
-          to: 'https://kentriversnook.com/blog',
+          to: 'https://blog.kentriversnook.com',
           // to: '/blog',
         },
         {
@@ -139,7 +139,7 @@ const config: Config = {
             },
             {
               label: 'Blog',
-              to: 'https://kentriversnook.com/blog',
+              to: 'https://blog.kentriversnook.com',
             },
           ],
         },
@@ -152,7 +152,7 @@ const config: Config = {
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/kentkomorebi',
+              href: 'https://x.com/kentkomorebi',
             },
           ],
         },
@@ -175,6 +175,12 @@ const config: Config = {
       defaultMode: 'dark',
       disableSwitch: false,
       respectPrefersColorScheme: false,
+    },
+    socials: {
+      github: 'https://github.com/Komorebi4829',
+      twitter: 'https://x.com/kentkomorebi',
+      email: 'mailto:kentriver4829@gmail.com',
+      discord: 'https://discordapp.com/users/837700175929016360',
     },
   },
 

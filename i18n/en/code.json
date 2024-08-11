@@ -35,6 +35,9 @@
   "page.about.motto": {
     "message": "\"Keep learning, keep going, keep exploring!\""
   },
+  "page.userCard.motto": {
+    "message": "Keep learning, keep going, keep exploring!"
+  },
   "homepage.hero.greet": {
     "message": "Hi There!"
   },

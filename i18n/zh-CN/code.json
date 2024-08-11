@@ -35,6 +35,9 @@
   "page.about.motto": {
     "message": "\"生命不息, 折腾不止!\""
   },
+  "page.userCard.motto": {
+    "message": "生命不息, 折腾不止!"
+  },
   "homepage.hero.greet": {
     "message": "你好!"
   },

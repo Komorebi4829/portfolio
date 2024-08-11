@@ -7,12 +7,23 @@ import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Tilt from 'react-parallax-tilt'
 import { SiGithub, SiTwitter, SiDiscord } from 'react-icons/si'
-import { GrGoogle } from 'react-icons/gr'
+import { MdEmail } from "react-icons/md";
+import { useThemeConfig } from '@docusaurus/theme-common'
+import { ThemeConfig } from '@docusaurus/preset-classic'
+
 
 export default function Hero() {
   const { i18n } = useDocusaurusContext()
   const lang = i18n.currentLocale
-  console.log('lang', lang)
+  
+  const themeConfig = useThemeConfig() as ThemeConfig
+
+  const socials = themeConfig.socials as {
+    github: string
+    twitter: string
+    email: string
+    discord: string
+  }  
 
   return (
     <>
@@ -122,7 +133,7 @@ export default function Hero() {
               <ul className='pt-6 inline-block relative ps-0 mb-2'>
                 <li className={styles['social-icons']}>
                   <a
-                    href='https://github.com/Komorebi4829'
+                    href={socials.github}
                     target='_blank'
                     rel='noreferrer'
                     className={clsx(styles['home-social-icons'])}
@@ -132,7 +143,7 @@ export default function Hero() {
                 </li>
                 <li className={styles['social-icons']}>
                   <a
-                    href='https://twitter.com/kentkomorebi'
+                    href={socials.twitter}
                     target='_blank'
                     rel='noreferrer'
                     className={clsx(styles['home-social-icons'])}
@@ -142,17 +153,17 @@ export default function Hero() {
                 </li>
                 <li className={styles['social-icons']}>
                   <a
-                    href='mailto:kentriver4829@gmail.com'
+                    href={socials.email}
                     target='_blank'
                     rel='noreferrer'
                     className={clsx(styles['home-social-icons'])}
                   >
-                    <GrGoogle />
+                    <MdEmail />
                   </a>
                 </li>
                 <li className={styles['social-icons']}>
                   <a
-                    href='https://discordapp.com/users/837700175929016360'
+                    href={socials.discord}
                     target='_blank'
                     rel='noreferrer'
                     className={clsx(styles['home-social-icons'])}
