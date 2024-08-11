@@ -1,5 +1,5 @@
 kind: pipeline
-type: exec
+type: docker
 name: portfolio
 
 trigger:
@@ -12,15 +12,19 @@ platform:
 
 steps:
     - name: dependencies
+      image: node:18.20-alpine
+      volumes:
+          - name: cache
+            path: /tmp/cache
       commands:
           - node -v
-          - node i -g pnpm
+          - npm i -g pnpm
           - pnpm i
-
-    - name: build
-      commands:
           - pnpm run build
+          - cp -r build/* /tmp/cache
 
-    - name: move
-      commands:
-          - sudo cp -r build/* /var/www/portfolio
+
+volumes:
+    - name: cache
+      host:
+        path: /var/www/portfolio
