@@ -1,1 +1,2 @@
 static/img/avatar.png filter=lfs diff=lfs merge=lfs -text
+static/img/projects/kr-nest-admin.png filter=lfs diff=lfs merge=lfs -text

@@ -10,6 +10,9 @@ platform:
   os: linux
   arch: arm64
 
+node:
+  server: o6
+
 steps:
     - name: dependencies
       image: node:18.20-alpine

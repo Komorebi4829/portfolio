@@ -135,6 +135,69 @@ export default function Showcase() {
       urlAdmin: null,
       urlGithub: null,
     },
+    {
+      name: 'KR-Nest-Admin',
+      desc: 'NestJs + React + TailwindCSS 编写的一款前后端分离的管理系统',
+      desc_en: 'NestJs + React + TailwindCSS written as a front-end and back-end separated management system',
+      src: '/img/projects/kr-nest-admin-min.png',
+      detailContent: (
+        <>
+          <h3 className='text-5xl font-bold'>KR-Nest-Admin</h3>
+          <p>
+            项目概述： KR-Nest-Admin 是一个基于 React18、Vite、Ant Design、Ant Design Pro、和 TypeScript
+            开发的企业级中后台管理系统。该平台内置了动态路由、权限验证、并提供了常用的功能组件，旨在帮助开发者快速搭建高效、可靠的中后台产品原型。通过使用最新的前端技术栈，KR-Nest-Admin
+            提供了卓越的用户体验和开发效率。
+          </p>
+          <p>技术栈：</p>
+          <ul>
+            <li>React18：一个用于构建用户界面的 JavaScript 库，具有高效的组件化开发模式。</li>
+            <li>Vite：一个新一代的前端构建工具，提供极速的开发和构建体验。</li>
+            <li>Ant Design：一个企业级的 UI 设计语言和 React 组件库，提供丰富的 UI 组件。</li>
+            <li>Ant Design Pro：一个基于 Ant Design 和 React 的开箱即用的中后台前端解决方案。</li>
+            <li>TypeScript：一种增强了 JavaScript 的类型系统的编程语言，提供更好的代码可读性和可靠性。</li>
+          </ul>
+        </>
+      ),
+      detailContent_en: (
+        <>
+          <h3 className='text-5xl font-bold'>KR-Nest-Admin</h3>
+          <p>
+            Project Overview: KR-Nest-Admin is an enterprise-level backend management system developed using React18,
+            Vite, Ant Design, Ant Design Pro, and TypeScript. The platform comes with built-in dynamic routing,
+            permission validation, and provides commonly used functional components, aiming to help developers quickly
+            build efficient and reliable backend product prototypes. By leveraging the latest front-end technology
+            stack, KR-Nest-Admin offers an excellent user experience and development efficiency.
+          </p>
+          <p>Technology Stack：</p>
+          <ul>
+            <li>
+              React18: A JavaScript library for building user interfaces with an efficient component-based development
+              model.
+            </li>
+            <li>
+              Vite: A next-generation front-end build tool providing an incredibly fast development and build
+              experience.
+            </li>
+            <li>
+              Ant Design: An enterprise-level UI design language and React component library that offers a rich set of
+              UI components.
+            </li>
+            <li>
+              Ant Design Pro: An out-of-the-box front-end solution for enterprise applications built on Ant Design and
+              React.
+            </li>
+            <li>
+              TypeScript: A programming language that enhances JavaScript with a type system, offering better code
+              readability and reliability.
+            </li>
+          </ul>
+        </>
+      ),
+      skills: ['NestJs', 'Vite', 'TailwindCSS', 'React', 'PostgreSQL'],
+      urlFront: null,
+      urlAdmin: 'https://showcase.kentriversnook.com/kr-nest-admin/',
+      urlGithub: 'https://github.com/komorebi4829/kr-nest-admin',
+    },
   ])
 
   return (
@@ -180,6 +243,12 @@ export default function Showcase() {
 
                   {project.urlFront && (
                     <a href={project.urlFront} className='flex items-center transition-all'>
+                      <SlLink />
+                      &nbsp;Demo
+                    </a>
+                  )}
+                  {!project.urlFront && project.urlAdmin && (
+                    <a href={project.urlAdmin} className='flex items-center transition-all'>
                       <SlLink />
                       &nbsp;Demo
                     </a>
