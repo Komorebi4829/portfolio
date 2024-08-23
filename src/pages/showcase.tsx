@@ -25,7 +25,7 @@ export default function Showcase() {
       src: '/img/projects/portfolio-min.png',
       detailContent: (
         <>
-          <h1>Portfolio</h1>
+          <h3 className='text-5xl font-bold'>Portfolio</h3>
           <p>
             项目简介：Portfolio
             是一个展示个人技术作品和职业生涯亮点的网站。该网站采用了Docusaurus静态网站生成器，通过现代化的Web技术栈和设计理念，不仅提供了一个清晰的用户体验，同时也确保了网站的性能和可维护性。
@@ -38,7 +38,7 @@ export default function Showcase() {
       ),
       detailContent_en: (
         <>
-          <h1>Portfolio</h1>
+          <h3 className='text-5xl font-bold'>Portfolio</h3>
           <p>
             Project introduction：Portfolio is a website that displays my professional career highlights. This website
             uses the Docusaurus static website generator,
@@ -63,7 +63,7 @@ export default function Showcase() {
       src: '/img/projects/optiwise-min.png',
       detailContent: (
         <>
-          <h1>Optiwise</h1>
+          <h3 className='text-5xl font-bold'>Optiwise</h3>
           <p>
             项目概述：
             Optiwise企业官网是一个为该公司量身定制的静态网站，旨在为用户提供一个直观、易于导航的在线体验，同时向潜在客户展示公司的服务、产品、团队和企业文化。该网站不仅注重设计美感和用户体验，还通过最新的Web技术确保了网站的快速加载和高性能。
@@ -78,7 +78,7 @@ export default function Showcase() {
       ),
       detailContent_en: (
         <>
-          <h1>Optiwise</h1>
+          <h3 className='text-5xl font-bold'>Optiwise</h3>
           <p>Project description: Optiwise is a static website powered by Next.js.</p>
           <p>Technology stack:</p>
           <ul>
@@ -98,7 +98,7 @@ export default function Showcase() {
       src: '/img/projects/xjs-web-min.png',
       detailContent: (
         <>
-          <h1>新基石官网</h1>
+          <h3 className='text-5xl font-bold'>新基石官网</h3>
           <p>
             项目概述：
             这是一个为推动和加速Web3技术生态系统的发展而设计的在线平台。网站提供了关于基金会的使命、正在进行的研究、资助的项目、合作伙伴和即将到来的行业活动的详细信息。该网站使用了最新的Web技术栈，集成了区块链功能，旨在为访问者提供丰富的信息资源，同时展示Web3基金会在区块链领域的领导地位。
@@ -115,7 +115,7 @@ export default function Showcase() {
       ),
       detailContent_en: (
         <>
-          <h1>XJS</h1>
+          <h3 className='text-5xl font-bold'>XJS</h3>
           <p>Project description: The official website of the Web3 Foundation.</p>
           <p>Technology stack:</p>
           <ul>

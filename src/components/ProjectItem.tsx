@@ -12,7 +12,7 @@ const ProjectItem: FC<{
       <div className={styles['item-view']}>
         <img className='max-w-full h-auto' src={src} alt='' />
         <div className={styles['item-body']}>
-          <p className={styles['item-title']}>{name}</p>
+          <h2 className={styles['item-title']}>{name}</h2>
           <p className={styles['item-desc']}>{desc}</p>
           <div className={styles['item-actions']}>{actions}</div>
         </div>
