@@ -41,6 +41,7 @@
     "dayjs": "^1.11.10",
     "docusaurus-plugin-image-zoom": "^1.0.1",
     "docusaurus-plugin-sass": "^0.2.5",
+    "framer-motion": "^11.3.30",
     "lodash": "^4.17.21",
     "ora": "^7.0.1",
     "postcss": "^8.4.33",

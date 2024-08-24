@@ -7,15 +7,30 @@ import Translate from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Tilt from 'react-parallax-tilt'
 import { SiGithub, SiTwitter, SiDiscord } from 'react-icons/si'
-import { MdEmail } from "react-icons/md";
+import { MdEmail } from 'react-icons/md'
 import { useThemeConfig } from '@docusaurus/theme-common'
 import { ThemeConfig } from '@docusaurus/preset-classic'
+import { Variants, motion } from 'framer-motion'
 
+const variants: Variants = {
+  visible: i => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      damping: 25,
+      stiffness: 100,
+      duration: 0.3,
+      delay: i * 0.3,
+    },
+  }),
+  hidden: { opacity: 0, y: 30 },
+}
 
 export default function Hero() {
   const { i18n } = useDocusaurusContext()
   const lang = i18n.currentLocale
-  
+
   const themeConfig = useThemeConfig() as ThemeConfig
 
   const socials = themeConfig.socials as {
@@ -23,28 +38,34 @@ export default function Hero() {
     twitter: string
     email: string
     discord: string
-  }  
+  }
 
   return (
     <>
       <section className='w-full mx-auto color-[whitesmoke] text-left mt-36 pr-0 pb-8 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]'>
         <div className='flex flex-wrap relative'>
           <div className='mt-[50px] w-full text-center lg:w-1/2 lg:text-left'>
-            <h1 className='mb-[15px] text-5xl pl-[50px]'>
-              <Translate id='homepage.hero.greet'>你好! </Translate>
-              <span role='img' aria-labelledby='wave' className='wave'>
-                👋🏻
-              </span>
-            </h1>
-            <h1 className='mb-[15px] text-5xl pl-[50px]'>
-              <Translate id='homepage.hero.im'>我是</Translate>
-              <strong className='text-purple'>
-                <Translate id='homepage.hero.name'> KENT </Translate>
-              </strong>
-            </h1>
-            <div className='p-[50px] text-purple text-3xl font-semibold'>
-              <Type />
-            </div>
+            <motion.div custom={1} initial='hidden' animate='visible' variants={variants}>
+              <h2 className='mb-[15px] text-5xl pl-[50px]'>
+                <Translate id='homepage.hero.greet'>你好! </Translate>
+                <span role='img' aria-labelledby='wave' className='wave'>
+                  👋🏻
+                </span>
+              </h2>
+            </motion.div>
+            <motion.div custom={2} initial='hidden' animate='visible' variants={variants}>
+              <h1 className='mb-[15px] text-5xl pl-[50px]'>
+                <Translate id='homepage.hero.im'>我是</Translate>
+                <strong className='text-purple'>
+                  <Translate id='homepage.hero.name'> KENT </Translate>
+                </strong>
+              </h1>
+            </motion.div>
+            <motion.div custom={3} initial='hidden' animate='visible' variants={variants}>
+              <div className='p-[50px] text-purple text-3xl font-semibold'>
+                <Type />
+              </div>
+            </motion.div>
           </div>
           <div className='pb-[20px] max-w-full md:max-w-full lg:w-1/2'>
             <HomeMainSvg className='max-w-full h-auto max-h-[450px] align-middle' />
@@ -56,13 +77,13 @@ export default function Hero() {
         <div className='w-full mx-auto my-20 md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] '>
           <div className='flex flex-wrap items-center justify-between'>
             <div className='w-full text-center lg:w-2/3 lg:text-left'>
-              <h1 className='text-5xl'>
+              <h2 className='text-5xl'>
                 <Translate id='homepage.introduce.letme'>让我</Translate>
                 <span className='text-purple'>
                   <Translate id='homepage.introduce.introduce'>介绍</Translate>
                 </span>
                 <Translate id='homepage.introduce.myself'>自己</Translate>
-              </h1>
+              </h2>
               <p className='pt-[50px] text-xl text-left pb-4 mb-4 px-8 lg:px-0'>
                 {lang === 'zh-CN' && (
                   <>
@@ -122,9 +143,9 @@ export default function Hero() {
           </div>
           <div>
             <div className='w-full text-center pt-14 '>
-              <h1 className='text-5xl mb-3'>
+              <h2 className='text-5xl mb-3'>
                 <Translate id='homepage.introduce.find_me_on'>联系我</Translate>
-              </h1>
+              </h2>
               {lang !== 'zh-CN' && (
                 <p className='mb-5 text-xl'>
                   Feel free to <span className='text-purple'>connect </span>with me
