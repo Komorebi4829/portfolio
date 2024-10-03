@@ -1,43 +1,37 @@
 import clsx from 'clsx'
-import React, { useEffect } from 'react'
+import React, { ReactNode, useMemo } from 'react'
 import MyLayout from '@site/src/theme/MyLayout'
 import styles from './about.module.css'
-// import ForefingerSvg from '@site/static/img/forefinger.svg'
 import Translate from '@docusaurus/Translate'
-import { DiJavascript1, DiReact, DiNodejs, DiMongodb, DiPython, DiGit } from 'react-icons/di'
-import {
-  SiRedis,
-  SiNextdotjs,
-  SiPostgresql,
-  SiTypescript,
-  SiTailwindcss,
-  SiNestjs,
-  SiJest,
-  // SiFigma,
-  // SiDrone,
-  // SiJenkins,
-  // SiTrello,
-  SiDocker,
-  SiDocusaurus,
-  SiVisualstudiocode,
-  // SiSlack,
-  SiVercel,
-  SiMacos,
-  SiFlask,
-  SiAntdesign,
-  SiVuedotjs,
-  SiUbuntu,
-  SiDjango,
-} from 'react-icons/si'
 import { GrGamepad } from 'react-icons/gr'
 import { BsBook } from 'react-icons/bs'
 import BadmintonSvg from '@site/static/img/badminton.svg'
 import GitHubCalendar from 'react-github-calendar'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import { STACKS } from '@site/src/components/stacks'
+import Marquee from 'react-fast-marquee'
+
+const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (
+  <div className={clsx('flex items-center gap-2 mr-3 rounded-full py-2 px-5 w-max', styles['tech-icons'])}>
+    {icon}
+    <span>{title}</span>
+  </div>
+)
 
 export default function About() {
   const { i18n } = useDocusaurusContext()
   const lang = i18n.currentLocale
+
+  const shuffledSkills = useMemo(() => {
+    const skillsArray = Object.entries(STACKS)
+    return [...skillsArray].sort(() => Math.random() - 0.5)
+  }, [])
+
+  const sliders = Array.from({ length: 3 }, (_, index) => {
+    const sliderSkills = [...shuffledSkills].sort(() => Math.random() - 0.5)
+    return sliderSkills.map(([title, icon], index) => <Tag key={index} icon={icon} title={title} />)
+  })
+
   return (
     <MyLayout maxWidth={1280}>
       <section className='relative pt-[130px] pb-[30px] px-6 w-full mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]'>
@@ -105,97 +99,21 @@ export default function About() {
           <h1 className='text-center text-4xl my-4'>
             Professional <strong className='text-purple'>Skillset</strong>
           </h1>
-          <div className='flex flex-wrap justify-center items-center text-center'>
-            <div className={styles['tech-icons']}>
-              <DiJavascript1 />
-            </div>
-            <div className={styles['tech-icons']}>
-              <DiReact />
-            </div>
-            <div className={styles['tech-icons']}>
-              <DiNodejs />
-            </div>
-            <div className={styles['tech-icons']}>
-              <DiPython />
-            </div>
-            <div className={styles['tech-icons']}>
-              <DiMongodb />
-            </div>
-            <div className={styles['tech-icons']}>
-              <DiGit />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiDjango />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiRedis />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiNextdotjs />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiPostgresql />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiTypescript />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiTailwindcss />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiNestjs />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiJest />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiDocusaurus />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiFlask />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiAntdesign />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiVuedotjs />
+          <div className='overflow-hidden'>
+            <div className='relative flex flex-col gap-y-4 justify-start py-2 w-full '>
+              <Marquee className={styles['custom-marquee']} direction='left' speed={20}>
+                {sliders[0]}
+              </Marquee>
+              <Marquee className={styles['custom-marquee']} direction='right' speed={20}>
+                {sliders[1]}
+              </Marquee>
+              <Marquee className={styles['custom-marquee']} direction='left' speed={20}>
+                {sliders[2]}
+              </Marquee>
+              <div className={clsx('hidden dark:flex fade', styles['my-fade'])} />
             </div>
           </div>
-          <h1 className='text-center text-4xl my-4 mt-16 '>
-            <strong className='text-purple'>Tools</strong> I use
-          </h1>
-          <div className='flex flex-wrap justify-center items-center text-center'>
-            <div className={styles['tech-icons']}>
-              <SiMacos />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiUbuntu />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiVisualstudiocode />
-            </div>
-            {/* <div className={styles['tech-icons']}>
-              <SiFigma />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiDrone />
-            </div>
-            <div className={styles['tech-icons']}>
-              <SiJenkins />
-            </div> */}
-            {/* <div className={styles['tech-icons']}>
-              <SiTrello />
-            </div> */}
-            <div className={styles['tech-icons']}>
-              <SiDocker />
-            </div>
-            {/* <div className={styles['tech-icons']}>
-              <SiSlack />
-            </div> */}
-            <div className={styles['tech-icons']}>
-              <SiVercel />
-            </div>
-          </div>
+
           <h1 className='text-center text-4xl my-8 mt-16'>
             Days I <strong className='text-purple'>Code</strong>
           </h1>

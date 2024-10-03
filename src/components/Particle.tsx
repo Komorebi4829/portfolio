@@ -13,7 +13,7 @@ function Particle() {
 
   const theme = {
     dark: {
-      color: '#000',
+      color: '#120A2A',
       size: { min: 1, max: 1 },
     },
     light: {
