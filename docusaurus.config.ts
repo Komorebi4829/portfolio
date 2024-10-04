@@ -60,16 +60,9 @@ const config: Config = {
   themeConfig: {
     metadata: [
       {
-        name: 'keywords',
-        content: 'Kent, Kent River, 肯特',
-      },
-      {
-        name: 'keywords',
-        content: 'portfolio, 小站, javascript, typescript, node, python, flask, vue, react, web, fullstack',
-      },
-      {
-        name: 'keywords',
-        content: '编程爱好者, Web开发者, 搞过Python, 写过爬虫, 现在主攻TS全栈',
+        name: 'description',
+        content:
+          'Kent River的个人小站 - 全栈Web开发者,熟悉JavaScript/TypeScript、Node.js、Python、Vue、React等技术。热爱编程,擅长全栈开发,曾开发爬虫项目。探索Kent的作品集与技术博客。',
       },
     ],
     headTags: [
