@@ -58,29 +58,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    metadata: [
-      {
-        name: 'description',
-        content:
-          'Kent River的个人小站 - 全栈Web开发者,熟悉JavaScript/TypeScript、Node.js、Python、Vue、React等技术。热爱编程,擅长全栈开发,曾开发爬虫项目。探索Kent的作品集与技术博客。',
-      },
-    ],
-    headTags: [
-      {
-        tagName: 'meta',
-        attributes: {
-          name: 'description',
-          content: 'Kent 的小站',
-        },
-      },
-      {
-        tagName: 'meta',
-        attributes: {
-          name: 'description',
-          content: "Kent's Portfolio",
-        },
-      },
-    ],
     docs: {
       sidebar: {
         hideable: true,
