@@ -198,6 +198,64 @@ export default function Showcase() {
       urlAdmin: 'https://showcase.kentriversnook.com/kr-nest-admin/',
       urlGithub: 'https://github.com/komorebi4829/kr-nest-admin',
     },
+    {
+      name: 'KR-Next-Starter',
+      desc: '基于NextJS、React和TailwindCSS的快速启动landing page模板',
+      desc_en: 'A quick-start landing page template built with NextJS, React, and TailwindCSS',
+      src: 'https://minio.kentriversnook.com/portfolio/kr-nextjs-starter.png',
+      detailContent: (
+        <>
+          <h3 className='text-5xl font-bold'>NextJS Landing Page Starter</h3>
+          <p>
+            项目概述：NextJS Landing Page Starter 是一个基于 NextJS、React 和 TailwindCSS 开发的高效landing
+            page模板。该模板提供了现代化的设计和优化的性能，旨在帮助开发者快速创建引人注目的着陆页。通过利用NextJS的服务器端渲染和静态生成功能，本模板确保了卓越的加载速度和搜索引擎优化。
+          </p>
+          <p>技术栈：</p>
+          <ul>
+            <li>NextJS：一个基于React的强大框架，提供服务器端渲染、静态网站生成等功能。</li>
+            <li>React：一个用于构建用户界面的JavaScript库，具有高效的组件化开发模式。</li>
+            <li>TailwindCSS：一个实用为先的CSS框架，用于快速构建自定义设计。</li>
+            <li>TypeScript：一种增强了JavaScript的类型系统的编程语言，提供更好的代码可读性和可靠性。</li>
+            <li>Responsive Design：采用响应式设计，确保在各种设备上的最佳显示效果。</li>
+          </ul>
+        </>
+      ),
+      detailContent_en: (
+        <>
+          <h3 className='text-5xl font-bold'>NextJS Landing Page Starter</h3>
+          <p>
+            Project Overview: NextJS Landing Page Starter is an efficient landing page template developed using NextJS,
+            React, and TailwindCSS. This template offers modern design and optimized performance, aimed at helping
+            developers quickly create eye-catching landing pages. By leveraging NextJS's server-side rendering and
+            static generation capabilities, this template ensures excellent loading speeds and search engine
+            optimization.
+          </p>
+          <p>Technology Stack：</p>
+          <ul>
+            <li>
+              NextJS: A powerful React-based framework providing features like server-side rendering and static site
+              generation.
+            </li>
+            <li>
+              React: A JavaScript library for building user interfaces with an efficient component-based development
+              model.
+            </li>
+            <li>TailwindCSS: A utility-first CSS framework for rapidly building custom designs.</li>
+            <li>
+              TypeScript: A programming language that enhances JavaScript with a type system, offering better code
+              readability and reliability.
+            </li>
+            <li>
+              Responsive Design: Employs responsive design principles to ensure optimal display across various devices.
+            </li>
+          </ul>
+        </>
+      ),
+      skills: ['NextJS', 'React', 'TailwindCSS', 'TypeScript', 'Responsive Design'],
+      urlFront: 'https://kr-nextjs-starter.vercel.app/',
+      urlAdmin: null,
+      urlGithub: 'https://github.com/Komorebi4829/kr-nextjs-starter',
+    },
   ])
 
   return (
