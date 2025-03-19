@@ -1,0 +1,297 @@
+---
+title: 前端代码片段(二)
+description: 
+slug: fontend-snippets
+date: '2021-02-24'
+featured: fasle
+type: css3
+draft: false
+---
+
+# CSS 代码片段
+
+## 全站变灰
+
+### 全站变灰(悼念)
+``` CSS
+html{
+    filter: grayscale(100%);
+     -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"grayscale\"><feColorMatrix type=\"matrix\" values=\"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\"/></filter></svg>#grayscale");
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    filter: gray;
+    -webkit-filter: grayscale(1);
+}
+```
+
+
+## 重置默认行为
+
+### 禁止文本选中
+``` CSS
+-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+-khtml-user-select: none;
+user-select: none;
+```
+
+### 禁用输入法
+``` CSS
+ime-mode:disabled;
+```
+
+### 禁用系统默认菜单
+``` CSS
+-webkit-touch-callout:none;
+```
+
+### 禁止触发鼠标或者触屏事件
+``` CSS
+pointer-events: none;
+```
+
+### 自定义文本选择
+``` CSS
+::selection { background: #e2eae2; }
+::-moz-selection { background: #e2eae2; }
+::-webkit-selection { background: #e2eae2; }
+```
+
+## 自定义滚动条
+
+### 自定义滚动条
+```css
+::-webkit-scrollbar{width:12px;height:12px;}
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment{width:0;height:0;}
+::-webkit-scrollbar-button:vertical:increment{background:transparent;}
+::-webkit-scrollbar-track-piece:vertical{background:#DFE7EF;}
+::-webkit-scrollbar-track-piece:vertical:hover{background:#DFE7EF;}
+::-webkit-scrollbar-track-piece:horizontal{background-color:transparent;}
+::-webkit-scrollbar-thumb:vertical{height:100px;background:rgba(110,146,182,.5);}
+::-webkit-scrollbar-thumb:vertical:hover{background:rgba(110,146,182,.4);}
+::-webkit-scrollbar-thumb:horizontal{width:80px;height:10px;background-color:#ccc;}
+```
+
+### iOS自定义滚动条兼容
+```css
+-webkit-overflow-scrolling:touch;		/* 惯性 */
+-webkit-transform:translate3d(0,0,0);	/* 下滑卡顿并出现空白 */
+```
+
+## 滤镜
+
+### 模糊
+```css
+-webkit-filter:blur(5px);
+```
+
+### 叠加褐色
+取值范围0-1，此处表示50%的褐色
+```css
+-webkit-filter:sepia(0.5);
+```
+
+### 亮度
+取值范围0-1，5倍亮度（数字为0时为正常样式，为1时表示的是100%亮度，无法看到图片）
+```css
+-webkit-filter:brightness(0.5);
+```
+
+### 色相
+按照色相环进行旋转，顺时针方向，红-橙-黄-黄绿-绿-蓝绿-蓝-蓝紫-紫-紫红-红
+```css
+-webkit-filter:hue-rotate(30deg);
+```
+
+### 反色
+取值范围0-1,0为原图，1为彻底反色之后，0.5为灰色
+```css
+-webkit-filter:invert(1);
+```
+
+### 饱和度
+取值范围0~*,0为无饱和度，1为原图，值越高饱和度越大
+```css
+-webkit-filter:saturate(4);
+```
+
+### 对比度
+取值范围0~*,0为无对比度（灰色），1为原图，值越高对比度越大
+```css
+-webkit-filter:contrast(2);
+```
+
+### 透明度
+取值范围0~1,0为全透明，1为原图
+```css
+-webkit-filter:opacity(0.8);
+```
+
+### 阴影
+```css
+-webkit-filter:drop-shadow(17px 17px 20px black);
+```
+
+## 文本省略号
+
+### 文本超出省略号
+``` CSS
+display:block;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+```
+
+### 多行文本超出省略号
+``` CSS
+display: -webkit-box;
+-webkit-box-orient: vertical;
+text-overflow: ellipsis;
+overflow: hidden;
+-webkit-line-clamp: 2;
+```
+
+## placeholder
+
+Chrome浏览器(webkit)
+``` CSS
+::-webkit-input-placeholder {
+  color: #999;
+}
+```
+注：webkit下在文本框获取焦点后不显示placeholder，以便使其与其他浏览器表现一致
+``` CSS
+:focus::-webkit-input-placeholder {
+  color: transparent !important;
+}
+```
+
+Firefox浏览器
+``` CSS
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
+  color: #999;
+}
+/* Mozilla Firefox 19+ */
+::-moz-placeholder {
+  color: #999;
+}
+```
+
+IE浏览器
+``` CSS
+/* Internet Explorer 10+ */
+:-ms-input-placeholder {
+  color: #999;
+}
+```
+
+## 重置按键样式
+
+### 去除表单自动填充颜色(Chrome浏览器)
+``` CSS
+input:-webkit-autofill {
+  background-color: #FAFFBD;
+  background-image: none;
+  color: #000;
+}
+```
+
+### 去除按键圆角(iPhone)
+``` CSS
+-webkit-appearance:none;
+```
+
+### 去除搜索按键(Chrome浏览器)
+``` CSS
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{
+  -webkit-appearance: none;
+}
+```
+
+### 去除数字输入框增减按键(Chrome浏览器)
+``` CSS
+input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+```
+
+### 去除date类型文本框多了个叉叉清除内容的效果(Chrome浏览器)
+``` CSS
+::-webkit-clear-button {
+    -webkit-appearance: none;
+ }
+ ```
+
+### 去除按键虚线框(Firefox浏览器)
+``` CSS
+button::-moz-focus-inner,input::-moz-focus-inner{
+
+}
+```
+
+### 改变password类型input框的默认样式(IE浏览器)
+``` CSS
+::-ms-reveal{display: none; }
+::-ms-reveal{background-color:#f0f3f9; }
+```
+
+### 设置默认线框距离
+``` CSS
+input {outline-offset: 4px ;}
+```
+
+### input字体垂直居中
+``` CSS
+font-family:  Tahoma,Arial, Helvetica,"Microsoft YaHei";
+```
+
+## 全局样式重置
+
+```css
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html { height: 101%; }
+body { font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, sans-serif; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; }
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+p { font-size: 1.2em; line-height: 1.0em; color: #333; }
+```
+
+## 包裹长文本
+
+```css
+pre {
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+```
+
+## css3 盒阴影
+
+```css
+#mydiv {
+    -webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
+}
+```

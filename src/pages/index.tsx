@@ -1,29 +1,31 @@
-import React, { useEffect } from 'react'
-import Layout from '@theme/Layout'
-import HomepageHero from '@site/src/components/HomepageHero'
-import MyLayout from '@site/src/theme/MyLayout'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import Head from '@docusaurus/Head'
+import { GetStaticProps, NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 
-function Home() {
-  const { i18n } = useDocusaurusContext()
-  const lang = i18n.currentLocale
+import Container from '@/common/components/elements/Container';
+import { getCollection } from '@/common/libs/mdx';
+import { BlogItemProps } from '@/common/types/blog';
+import { siteMetadata } from '@/contents/siteMetadata';
+import Home from '@/modules/home';
 
-  const isZhCN = lang === 'zh-CN'
-  const description = isZhCN
-    ? 'Kent River的个人小站 - 全栈Web开发者,熟悉JavaScript/TypeScript、Node.js、Python、Vue、React等技术。热爱编程,擅长全栈开发,曾开发多个全栈和爬虫项目。探索Kent的作品集与技术博客。'
-    : "Kent River's personal website - Full-stack Web Developer, master of JavaScript/TypeScript, Node.js, Python, Vue, React. Enjoys coding, skilled in full-stack development, has developed multiple full-stack and crawler projects. Explore Kent's work and technology blog."
-
+const HomePage: NextPage<{ blogList: BlogItemProps[] }> = ({ blogList }) => {
   return (
-    <MyLayout description='Description will go into a meta tag in <head />' maxWidth={1280}>
-      <Head>
-        <meta name='description' content={description} />
-      </Head>
-      <main className='container-wrapper'>
-        <HomepageHero></HomepageHero>
-      </main>
-    </MyLayout>
-  )
-}
+    <>
+      <NextSeo title={`${siteMetadata.author} - Personal Website`} />
+      <Container data-aos='fade-up'>
+        <Home blogList={blogList} />
+      </Container>
+    </>
+  );
+};
 
-export default Home
+export default HomePage;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const blogList = await getCollection('blog');
+
+  return {
+    props: {
+      blogList: blogList.slice(0, 5),
+    },
+  };
+};
