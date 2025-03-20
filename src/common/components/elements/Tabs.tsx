@@ -1,24 +1,24 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 interface TabProps {
-  label: string;
-  children: React.ReactNode;
+  label: string
+  children: React.ReactNode
 }
 
 interface TabsProps {
-  children: React.ReactElement<TabProps>[];
+  children: React.ReactElement<TabProps>[]
 }
 
 export const Tab = ({ children }: TabProps) => {
-  return <>{children}</>;
-};
+  return <>{children}</>
+}
 
 export const Tabs = ({ children }: TabsProps) => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(0)
 
   const handleTabClick = (index: number) => {
-    setActiveTab(index);
-  };
+    setActiveTab(index)
+  }
 
   return (
     <div className='border-b border-x dark:border-neutral-800 rounded-lg'>
@@ -39,5 +39,5 @@ export const Tabs = ({ children }: TabsProps) => {
       </div>
       <div className='py-5 px-8'>{children[activeTab]}</div>
     </div>
-  );
-};
+  )
+}

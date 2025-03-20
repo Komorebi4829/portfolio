@@ -1,8 +1,8 @@
 // import { ABOUT } from '@/common/constant/about';
-import MDXComponent from '@/common/components/elements/MDXComponent';
+import MDXComponent from '@/common/components/elements/MDXComponent'
 
 interface ContentBodyProps {
-  content: string;
+  content: string
 }
 
 const ContentBody = ({ content }: ContentBodyProps) => {
@@ -10,10 +10,10 @@ const ContentBody = ({ content }: ContentBodyProps) => {
     <div className='space-y-5 leading-[1.8] dark:text-neutral-300 mt-5'>
       <MDXComponent>{content}</MDXComponent>
     </div>
-  );
-};
+  )
+}
 
-export default ContentBody;
+export default ContentBody
 
 // const Story = () => {
 //   return (

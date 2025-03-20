@@ -1,15 +1,15 @@
-import Giscus from '@giscus/react';
-import { useTheme } from 'next-themes';
+import Giscus from '@giscus/react'
+import { useTheme } from 'next-themes'
 
-import { commentConfig } from '@/contents/siteMetadata';
+import { commentConfig } from '@/contents/siteMetadata'
 
-const config = commentConfig.giscusConfig;
+const config = commentConfig.giscusConfig
 
 const GiscusComment = () => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   if (!commentConfig.enable) {
-    return null;
+    return null
   }
 
   return (
@@ -30,7 +30,7 @@ const GiscusComment = () => {
         loading='lazy'
       />
     </div>
-  );
-};
+  )
+}
 
-export default GiscusComment;
+export default GiscusComment

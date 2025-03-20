@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { LuDownload as DownloadIcon } from 'react-icons/lu';
+import Link from 'next/link'
+import { LuDownload as DownloadIcon } from 'react-icons/lu'
 
 const Resume = ({ resumeUrl }: { resumeUrl: string }) => {
   if (!resumeUrl) {
-    return null;
+    return null
   }
 
   return (
@@ -17,7 +17,7 @@ const Resume = ({ resumeUrl }: { resumeUrl: string }) => {
       <DownloadIcon />
       <span>Download Resume</span>
     </Link>
-  );
-};
+  )
+}
 
-export default Resume;
+export default Resume

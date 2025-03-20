@@ -7,4 +7,4 @@ module.exports = {
   siteUrl: process.env.SITE_URL || 'https://kentriversnook.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-};
+}

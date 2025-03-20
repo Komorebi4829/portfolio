@@ -1,20 +1,20 @@
-import { motion } from 'framer-motion';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import { motion } from 'framer-motion'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
-import EmptyState from '@/common/components/elements/EmptyState';
-import { ProjectsProps } from '@/common/types/projects';
+import EmptyState from '@/common/components/elements/EmptyState'
+import { ProjectsProps } from '@/common/types/projects'
 
-import ProjectCard from './ProjectCard';
+import ProjectCard from './ProjectCard'
 
 interface ProjectsComponentProps {
-  projects: ProjectsProps['projects'];
-  loadMore: () => void;
-  hasMore: boolean;
+  projects: ProjectsProps['projects']
+  loadMore: () => void
+  hasMore: boolean
 }
 
 const Projects = ({ projects, loadMore, hasMore }: ProjectsComponentProps) => {
   if (projects.length === 0) {
-    return <EmptyState message='No Data' />;
+    return <EmptyState message='No Data' />
   }
 
   return (
@@ -38,7 +38,7 @@ const Projects = ({ projects, loadMore, hasMore }: ProjectsComponentProps) => {
         ))}
       </div>
     </InfiniteScroll>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

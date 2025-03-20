@@ -1,18 +1,14 @@
-import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
-import {
-  HiCheckCircle as CheckIcon,
-  HiOutlineClipboardCopy as CopyIcon,
-} from 'react-icons/hi';
-import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
-import diff from 'react-syntax-highlighter/dist/cjs/languages/prism/diff';
-import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
-import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
-import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
-import { a11yDark as themeColor } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import { useCopyToClipboard } from 'usehooks-ts';
+import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
+import { HiCheckCircle as CheckIcon, HiOutlineClipboardCopy as CopyIcon } from 'react-icons/hi'
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
+import diff from 'react-syntax-highlighter/dist/cjs/languages/prism/diff'
+import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
+import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
+import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
+import { a11yDark as themeColor } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { useCopyToClipboard } from 'usehooks-ts'
 
 const languages = {
   javascript: 'javascript',
@@ -20,39 +16,43 @@ const languages = {
   diff: 'diff',
   tsx: 'tsx',
   css: 'css',
-};
+}
 
-SyntaxHighlighter.registerLanguage(languages.javascript, javascript);
-SyntaxHighlighter.registerLanguage(languages.typescript, typescript);
-SyntaxHighlighter.registerLanguage(languages.diff, diff);
-SyntaxHighlighter.registerLanguage(languages.tsx, tsx);
-SyntaxHighlighter.registerLanguage(languages.css, css);
+interface CodeProps {
+  node: Node;
+  inline?: boolean;
+  className?: string;
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  [key: string]: any;
+}
 
-const CodeBlock = ({
-  className = '',
-  children,
-  inline,
-  ...props
-}: CodeProps) => {
-  const [isCopied, setIsCopied] = useState<boolean>(false);
+SyntaxHighlighter.registerLanguage(languages.javascript, javascript)
+SyntaxHighlighter.registerLanguage(languages.typescript, typescript)
+SyntaxHighlighter.registerLanguage(languages.diff, diff)
+SyntaxHighlighter.registerLanguage(languages.tsx, tsx)
+SyntaxHighlighter.registerLanguage(languages.css, css)
+
+const CodeBlock = ({ className = '', children, inline, ...props }: CodeProps) => {
+  const [isCopied, setIsCopied] = useState<boolean>(false)
   // eslint-disable-next-line unused-imports/no-unused-vars
-  const [value, copy] = useCopyToClipboard();
-  const match = /language-(\w+)/.exec(className || '');
+  const [value, copy] = useCopyToClipboard()
+  const match = /language-(\w+)/.exec(className || '')
 
   const handleCopy = (code: string) => {
-    copy(code);
-    setIsCopied(true);
-  };
+    copy(code)
+    setIsCopied(true)
+  }
 
   useEffect(() => {
     if (isCopied) {
       const timeout = setTimeout(() => {
-        setIsCopied(false);
-      }, 2000);
+        setIsCopied(false)
+      }, 2000)
 
-      return () => clearTimeout(timeout);
+      return () => clearTimeout(timeout)
     }
-  }, [isCopied]);
+  }, [isCopied])
 
   return (
     <>
@@ -62,7 +62,7 @@ const CodeBlock = ({
             className='absolute top-3 right-3 p-2 border border-neutral-700 rounded-lg hover:bg-neutral-800'
             type='button'
             aria-label='Copy to Clipboard'
-            onClick={() => handleCopy(children.toString())}
+            onClick={() => handleCopy(children?.toString() || '')}
             data-umami-event='Click Copy Code'
           >
             {!isCopied ? (
@@ -94,12 +94,12 @@ const CodeBlock = ({
         </code>
       )}
     </>
-  );
-};
+  )
+}
 
-const LoadingPlaceholder = () => <div className='w-full mt-12 mb-12 h-36' />;
+const LoadingPlaceholder = () => <div className='w-full mt-12 mb-12 h-36' />
 
 export default dynamic(() => Promise.resolve(CodeBlock), {
   ssr: false,
   loading: LoadingPlaceholder,
-});
+})

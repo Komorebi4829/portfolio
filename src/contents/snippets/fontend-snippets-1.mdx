@@ -1,6 +1,6 @@
 ---
 title: 前端代码片段(一)
-description: 
+description:
 slug: fontend-snippets
 date: '2021-02-24'
 featured: fasle
@@ -11,208 +11,259 @@ draft: false
 # meta 标签
 
 ## 内容类型
+
 HTML4
+
 ```html
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 ```
+
 HTML5
+
 ```html
-<meta charset="utf-8">
+<meta charset="utf-8" />
 ```
 
-
 ## 兼容模式
+
 ```html
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 ```
 
 ## 网页字符集
+
 ```html
 <meta http-equiv="charset" content="iso-8859-1" />
 ```
 
 ## 有效期
+
 ```html
 <meta http-equiv="expires" content="31 Dec 2008" />
 ```
 
 ## 重定向
+
 ```html
 <meta http-equiv="refresh" content="5;url=http://www.baidu.com" />
 ```
 
 ## 添加页面描述
+
 ```html
 <meta name="description" content="" />
 ```
 
 ## 关键词
+
 ```html
 <meta name="keywords" content="" />
 ```
 
 ## 创作者
+
 ```html
 <meta name="author" content="" />
 ```
 
 ## 校订
+
 ```html
 <meta name="revised" content="" />
 ```
 
 ## 搜索引擎索引方式
+
 ```html
-<meta name="robots" Content=All|None|Index|Noindex|Follow|Nofollow>
+<meta name="robots" content="All|None|Index|Noindex|Follow|Nofollow" />
 ```
 
 ## Webapp
+
 页面适应移动设备
+
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
 ```
+
 浏览器主题颜色
+
 ```html
-<meta name="theme-color" content="#de698c">
+<meta name="theme-color" content="#de698c" />
 ```
+
 Safari私有meta标签，它表示：允许全屏模式浏览
+
 ```html
-<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable" />
 ```
+
 Safari私有标签，它指定Safari顶端状态条的样式,隐藏状态栏
+
 ```html
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 ```
+
 告诉设备忽略将页面中的数字识别为电话号码
+
 ```html
-<meta content="telephone=no" name="format-detection"/>
+<meta content="telephone=no" name="format-detection" />
 ```
+
 Android用于禁用iOS对页面中电话号码的自动识别
+
 ```html
-<meta content="email=no" name="format-detection"/>
+<meta content="email=no" name="format-detection" />
 ```
+
 离线应用的另一个技巧
+
 ```html
 <meta name="apple-mobile-web-app-capable" content="yes" />
 ```
+
 Safari浏览器应用推荐
+
 ```html
-<meta name="apple-itunes-app" content="app-id=432274380"/>
+<meta name="apple-itunes-app" content="app-id=432274380" />
 ```
 
 # Link 标签
 
 ## iOS图标
+
 ```html
-<link rel="apple-touch-icon-precomposed"sizes="180x180"href="retinahd_icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="retinahd_icon.png" />
 ```
+
 在设置书签的时候可以显示好看的图标
+
 ```html
-<link rel="apple-touch-icon" href="iphon_tetris_icon.png"/>
+<link rel="apple-touch-icon" href="iphon_tetris_icon.png" />
 ```
+
 设置开始页面图片
+
 ```html
-<link rel="apple-touch-startup-image" href="startup.png"/>
+<link rel="apple-touch-startup-image" href="startup.png" />
 ```
 
 ## DNS预加载
+
 ```html
-<link rel="dns-prefetch" href="//www.passer-by.com">
+<link rel="dns-prefetch" href="//www.passer-by.com" />
 ```
 
 ## 页面预加载
+
 ```html
-<link rel="prefetch" href="//www.passer-by.com"/>
+<link rel="prefetch" href="//www.passer-by.com" />
 ```
 
 ## 提前加载整个页面
+
 ```html
-<link rel="prerender" href="//www.passer-by.com"/>
+<link rel="prerender" href="//www.passer-by.com" />
 ```
 
 ## 提前加载资源
+
 ```html
-<link rel='subresource' href='main.js'>
+<link rel="subresource" href="main.js" />
 ```
 
 # 属性
 
 ## 取消过去输入联想
+
 ```html
-<input type="text" name="title" value="" disableautocomplete/>
+<input type="text" name="title" value="" disableautocomplete />
 ```
 
 ## 禁止自动填写表单
+
 ```html
-<input type="text" name="title" value="" autocomplete="off"/>
+<input type="text" name="title" value="" autocomplete="off" />
 ```
 
 ## 语音输入
+
 ```html
-<input type="text" x-webkit-speech lang="zh-CN"/>
+<input type="text" x-webkit-speech lang="zh-CN" />
 ```
 
 ## 表单必填项
+
 ```html
-<input type="text" name="username" aria-required="true"/>
+<input type="text" name="username" aria-required="true" />
 ```
 
 ## 可开启该元素的编辑模式
-```html
-<div contentEditable='true'></div>
-```
 
+```html
+<div contenteditable="true"></div>
+```
 
 # 离线储存
 
 ## 离线存储
+
 HTML5的离线存储使用一个manifest文件来标明哪些文件是需要被存储的
+
 ```html
-<html manifest='offline.manifest'>
+<html manifest="offline.manifest"></html>
 ```
 
 offline.manifest文件内容
+
 ```html
 <mime-mapping>
-    <extension>manifest</extension>
-    <mime-type>text/cache-manifest</mime-type>
+  <extension>manifest</extension>
+  <mime-type>text/cache-manifest</mime-type>
 </mime-mapping>
-```  
+```
 
 # 图片
 
 ## Base64编码的1x1大小的空白GIF文件
+
 ```html
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" />
 ```
 
 # 浏览器
 
 ## 切换至兼容IE7模式
+
 ```html
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 ```
 
 ## 切换至IE8
+
 ```html
-<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
 ```
 
 ## 360浏览器内核切换
+
 极速核
+
 ```html
-<meta name="renderer" content="webkit">
+<meta name="renderer" content="webkit" />
 ```
 
 IE兼容内核
+
 ```html
-<meta name="renderer" content="ie-comp">
+<meta name="renderer" content="ie-comp" />
 ```
 
 IE标准内核
+
 ```html
-<meta name="renderer" content="ie-stand">
+<meta name="renderer" content="ie-stand" />
 ```

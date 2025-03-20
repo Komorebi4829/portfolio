@@ -1,22 +1,15 @@
-import Link from 'next/link';
-import { AiFillPushpin as PinIcon } from 'react-icons/ai';
-import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
+import Link from 'next/link'
+import { AiFillPushpin as PinIcon } from 'react-icons/ai'
+import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import Tooltip from '@/common/components/elements/Tooltip';
-import { ProjectItemProps } from '@/common/types/projects';
-import { STACKS } from '@/contents/stacks';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import Tooltip from '@/common/components/elements/Tooltip'
+import { ProjectItemProps } from '@/common/types/projects'
+import { STACKS } from '@/contents/stacks'
 
-const ProjectCard = ({
-  title,
-  slug,
-  description,
-  image,
-  stacks,
-  is_featured,
-}: ProjectItemProps) => {
-  const stacksArray = stacks;
+const ProjectCard = ({ title, slug, description, image, stacks, is_featured }: ProjectItemProps) => {
+  const stacksArray = stacks
 
   return (
     <Link href={`/projects/${slug}`}>
@@ -46,9 +39,7 @@ const ProjectCard = ({
               {title}
             </div>
           </div>
-          <p className='text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed'>
-            {description}
-          </p>
+          <p className='text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed'>{description}</p>
           <div className='flex flex-wrap items-center gap-3 pt-2'>
             {stacksArray?.map((stack) => (
               <div key={stack}>
@@ -59,7 +50,7 @@ const ProjectCard = ({
         </div>
       </Card>
     </Link>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

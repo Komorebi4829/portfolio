@@ -1,6 +1,6 @@
 ---
 title: 前端代码片段(三)
-description: 
+description:
 slug: fontend-snippets
 date: '2021-02-24'
 featured: fasle
@@ -13,100 +13,112 @@ draft: false
 ## 克隆
 
 ### 对象深度克隆
-``` javascript
+
+```javascript
 Object.prototype.clone = function () {
-    var newObj = {};
-    for (var i in this) {
-        console.log("i = " + i)
-        if (typeof(this[i]) == 'object'|| typeof(this[i]) == 'function') {
-            newObj[i] = this[i].clone()
-        } else {
-            newObj[i] = this[i]
-        }
+  var newObj = {}
+  for (var i in this) {
+    console.log('i = ' + i)
+    if (typeof this[i] == 'object' || typeof this[i] == 'function') {
+      newObj[i] = this[i].clone()
+    } else {
+      newObj[i] = this[i]
     }
-    return newObj
+  }
+  return newObj
 }
 ```
 
-
-
 #### 简单的克隆：
+
 方法一
-``` javascript
-obj = eval(uneval(o));
+
+```javascript
+obj = eval(uneval(o))
 ```
+
 方法二(系列化对象)
-``` javascript
-obj= JSON.parse(JSON.stringify(o));
+
+```javascript
+obj = JSON.parse(JSON.stringify(o))
 ```
 
 ### 数组深度克隆
-``` javascript
+
+```javascript
 Array.prototype.clone = function () {
-    var newArray = []
-    for (var i = 0; i < this.length; i++) {
-        if (typeof(this[i]) == 'object' || typeof(this[i]) == 'function') {
-            newArray[i] = this[i].clone()
-        } else {
-            newArray[i] = this[i]
-        }
+  var newArray = []
+  for (var i = 0; i < this.length; i++) {
+    if (typeof this[i] == 'object' || typeof this[i] == 'function') {
+      newArray[i] = this[i].clone()
+    } else {
+      newArray[i] = this[i]
     }
-    return newArray
+  }
+  return newArray
 }
 ```
 
 ### 函数深度克隆
-``` javascript
+
+```javascript
 Function.prototype.clone = function () {
-    var that = this;
-    var newFunc = function () {
-        return that.apply(this, arguments);
-    };
-    for (var o in this) {
-        newFunc[o] = this[o];
-    }
-    return newFunc;
+  var that = this
+  var newFunc = function () {
+    return that.apply(this, arguments)
+  }
+  for (var o in this) {
+    newFunc[o] = this[o]
+  }
+  return newFunc
 }
 ```
 
 ## 全屏
 
 ### 使用全屏
-``` javascript
-var docElm = document.documentElement;
-if (docElm.requestFullscreen) {    //W3C  
-    docElm.requestFullscreen();  
-}else if (docElm.mozRequestFullScreen) {  //FireFox  
-    docElm.mozRequestFullScreen();  
-}else if (docElm.webkitRequestFullScreen) {  //Chrome等  
-    docElm.webkitRequestFullScreen();  
-}else if (elem.msRequestFullscreen) { //IE11
-  elem.msRequestFullscreen();
+
+```javascript
+var docElm = document.documentElement
+if (docElm.requestFullscreen) {
+  //W3C
+  docElm.requestFullscreen()
+} else if (docElm.mozRequestFullScreen) {
+  //FireFox
+  docElm.mozRequestFullScreen()
+} else if (docElm.webkitRequestFullScreen) {
+  //Chrome等
+  docElm.webkitRequestFullScreen()
+} else if (elem.msRequestFullscreen) {
+  //IE11
+  elem.msRequestFullscreen()
 }
 ```
 
 ### 退出全屏
-``` javascript
-if (document.exitFullscreen) {  
-    document.exitFullscreen();  
-}else if (document.mozCancelFullScreen) {  
-    document.mozCancelFullScreen();  
-}else if (document.webkitCancelFullScreen) {  
-    document.webkitCancelFullScreen();  
-}else if (document.msexitFullscreen) {
-      document.msexitFullscreen();
+
+```javascript
+if (document.exitFullscreen) {
+  document.exitFullscreen()
+} else if (document.mozCancelFullScreen) {
+  document.mozCancelFullScreen()
+} else if (document.webkitCancelFullScreen) {
+  document.webkitCancelFullScreen()
+} else if (document.msexitFullscreen) {
+  document.msexitFullscreen()
 }
 ```
 
 ### 事件监听
-``` javascript
-document.addEventListener("fullscreenchange", function () {  
-    fullscreenState.innerHTML = (document.fullscreen)? "" : "not ";}, false);  
+
+```javascript
+document.addEventListener("fullscreenchange", function () {
+    fullscreenState.innerHTML = (document.fullscreen)? "" : "not ";}, false);
 }
-document.addEventListener("mozfullscreenchange", function () {  
-    fullscreenState.innerHTML = (document.mozFullScreen)? "" : "not ";}, false);  
+document.addEventListener("mozfullscreenchange", function () {
+    fullscreenState.innerHTML = (document.mozFullScreen)? "" : "not ";}, false);
 }
-document.addEventListener("webkitfullscreenchange", function () {  
+document.addEventListener("webkitfullscreenchange", function () {
     fullscreenState.innerHTML = (document.webkitIsFullScreen)? "" : "not ";}, false);
 }
 document.addEventListener("msfullscreenchange", function () {
@@ -115,16 +127,16 @@ document.addEventListener("msfullscreenchange", function () {
 ```
 
 ### 全屏样式设置
-``` css
-在浏览器全屏的使用我们还可以进行样式设置
-html:-moz-full-screen { 
-    background: red;  
-}  
-html:-webkit-full-screen {  
-    background: red;  
-}  
-html:fullscreen {  
-    background: red;  
+
+```css
+在浏览器全屏的使用我们还可以进行样式设置 html:-moz-full-screen {
+  background: red;
+}
+html:-webkit-full-screen {
+  background: red;
+}
+html:fullscreen {
+  background: red;
 }
 ```
 
@@ -137,19 +149,18 @@ debounce 的关注点是空闲的间隔时间,强制函数在某段时间内只�
 空闲控制 返回函数连续调用时，空闲时间必须大于或等于 delay，fn 才会执行
 
 ```javascript
-function debounce(fn,delay){
-	var timer;
-	return function(){
-		var context = this;
-		var args = arguments;
-		timer&&clearTimeout(timer);
-		timer = setTimeout(function(){
-			fn.apply(context,args);
-		},delay);
-	}
+function debounce(fn, delay) {
+  var timer
+  return function () {
+    var context = this
+    var args = arguments
+    timer && clearTimeout(timer)
+    timer = setTimeout(function () {
+      fn.apply(context, args)
+    }, delay)
+  }
 }
 ```
-
 
 ### 节流（Throttling/Throttle）
 
@@ -158,25 +169,25 @@ throttle 的关注点是连续的执行间隔时间,强制函数以固定的速�
 频率控制 返回函数连续调用时，action 执行频率限定为 次 / delay
 
 ```javascript
-function throttle(fn, threshhold){
-	var last;
-	var timer;
-	threshhold || (threshhold = 250);
-	return function(){
-		var context = this;
-		var args = arguments;
-		var now = + new Date();
-		if(last && now < last + threshhold){
-			timer&&clearTimeout(timer);
-			timer = setTimeout(function(){
-				last = now;
-				fn.apply(context, args);
-			},threshhold);
-		}else{
-			last = now;
-			fn.apply(context,args);
-		}
-	}
+function throttle(fn, threshhold) {
+  var last
+  var timer
+  threshhold || (threshhold = 250)
+  return function () {
+    var context = this
+    var args = arguments
+    var now = +new Date()
+    if (last && now < last + threshhold) {
+      timer && clearTimeout(timer)
+      timer = setTimeout(function () {
+        last = now
+        fn.apply(context, args)
+      }, threshhold)
+    } else {
+      last = now
+      fn.apply(context, args)
+    }
+  }
 }
 ```
 
@@ -185,84 +196,97 @@ function throttle(fn, threshhold){
 通用事件兼容框架：[EventUtil](https://github.com/mumuy/tools-library/blob/gh-pages/code/EventUtil.js)
 
 ### 取消浏览器默认行为
-``` javascript
-function stopDefault( e ) {
-    if ( e && e.preventDefault ){
-        e.preventDefault();
-    }else{
-        window.event.returnValue = false;
-    }
-    return false;
+
+```javascript
+function stopDefault(e) {
+  if (e && e.preventDefault) {
+    e.preventDefault()
+  } else {
+    window.event.returnValue = false
+  }
+  return false
 }
 ```
 
 ### 阻止事件冒泡
-``` javascript
-function stopBubble(e){
-    if (e && e.stopPropagation) {
-        e.stopPropagation();
-    }else if (window.event) {
-        window.event.cancelBubble = true;
-    }
-}
-```
 
-### 模拟触发点击事件
-``` javascript
-function simulateClick(el) {
-  var evt;
-  if (document.createEvent) { // DOM Level 2 standard
-    evt = document.createEvent("MouseEvents");
-    evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-    el.dispatchEvent(evt);
-  } else if (el.fireEvent) { // IE
-    el.fireEvent('onclick');
+```javascript
+function stopBubble(e) {
+  if (e && e.stopPropagation) {
+    e.stopPropagation()
+  } else if (window.event) {
+    window.event.cancelBubble = true
   }
 }
 ```
 
-``` javascript
+### 模拟触发点击事件
+
+```javascript
+function simulateClick(el) {
+  var evt
+  if (document.createEvent) {
+    // DOM Level 2 standard
+    evt = document.createEvent('MouseEvents')
+    evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+    el.dispatchEvent(evt)
+  } else if (el.fireEvent) {
+    // IE
+    el.fireEvent('onclick')
+  }
+}
+```
+
+```javascript
 createEvent(eventType)
 ```
-|参数|描述|
-|-----|-----|
-|eventType|想获取的 Event 对象的事件模块名。|
+
+| 参数      | 描述                              |
+| --------- | --------------------------------- |
+| eventType | 想获取的 Event 对象的事件模块名。 |
 
 #### 返回值
+
 返回新创建的 Event 对象，具有指定的类型。
 
 #### 抛出
+
 如果实现支持需要的事件类型，该方法将抛出代码为 NOT_SUPPORTED_ERR 的 DOMException 异常。
 
 #### 说明
+
 该方法将创建一种新的事件类型，该类型由参数 eventType 指定。注意，该参数的值不是要创建的事件接口的名称，而是定义那个接口的 DOM 模块的名称。
 
-下表列出了 eventType 的合法值和每个值创建的事件接口：
-eventType 的合法值和每个值创建的事件接口：
+下表列出了 eventType 的合法值和每个值创建的事件接口：eventType 的合法值和每个值创建的事件接口：
 
-|参数|事件接口|初始化方法|
-|-----|-----|-----|
-|HTMLEvents|HTMLEvent|iniEvent()|
-|MouseEvents|MouseEvent|iniMouseEvent()|
-|UIEvents|UIEvent|iniUIEvent()|
+| 参数        | 事件接口   | 初始化方法      |
+| ----------- | ---------- | --------------- |
+| HTMLEvents  | HTMLEvent  | iniEvent()      |
+| MouseEvents | MouseEvent | iniMouseEvent() |
+| UIEvents    | UIEvent    | iniUIEvent()    |
+
 用该方法创建了 Event 对象以后，必须用上表中所示的初始化方法初始化对象。
 
 ## 正则表达式
 
 ### 电子邮箱
-``` javascript
-/^[0-9a-z][0-9a-z\-\_\.]+@([0-9a-z][0-9a-z\-]*\.)+[a-z]{2,}$/i
+
+```javascript
+;/^[0-9a-z][0-9a-z\-\_\.]+@([0-9a-z][0-9a-z\-]*\.)+[a-z]{2,}$/i
 ```
 
 ### 固定电话
-``` javascript
-/^0[0-9]{2,3}[2-9][0-9]{6,7}$/
+
+```javascript
+;/^0[0-9]{2,3}[2-9][0-9]{6,7}$/
 ```
 
 ### 手机号码
-``` javascript
-/^(\+?0{0,2}86([\ |\-])?)?1((3[0-9])|(4[57])|(5([0-3]|[5-9]))|(66)|(7[01])|(8[0-9])|(9[89]))\d{8}$/
+
+```javascript
+;/^(\+?0{0,2}86([\ |\-])?)?1((3[0-9])|(4[57])|(5([0-3]|[5-9]))|(66)|(7[01])|(8[0-9])|(9[89]))\d{8}$/
 ```
+
 移动号段：139 138 137 136 135 134 147 150 151 152 157 158 159 178 182 183 184 187 188 198
 
 联通号段：130 131 132 155 156 185 186 145 176 166
@@ -272,91 +296,124 @@ eventType 的合法值和每个值创建的事件接口：
 虚拟运营商号段：170 171
 
 ### 身份证号码
-``` javascript
-/^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/
+
+```javascript
+;/^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/
 ```
 
 ### ip地址
-``` javascript
+
+```javascript
 // IPv4
 /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$/
 
 // IPv6
-/^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/ 
+/^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/
 ```
 
 ### 域名
-``` javascript
-/^([a-zA-Z0-9][-a-zA-Z0-9]{0,62}\.)+([a-zA-Z]{0,63})\.?$/
+
+```javascript
+;/^([a-zA-Z0-9][-a-zA-Z0-9]{0,62}\.)+([a-zA-Z]{0,63})\.?$/
 ```
 
 ### 任意Unicode字符
+
 /[\0-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/
 
 ## 数组
 
 ### 数组复制技巧
+
 方法一
-``` javascript
-var a = [1,2,3];
-b = a.slice(0);
+
+```javascript
+var a = [1, 2, 3]
+b = a.slice(0)
 ```
+
 方法二
-``` javascript
-var a = [1,2,3];
-b = a.concat();
+
+```javascript
+var a = [1, 2, 3]
+b = a.concat()
 ```
 
 ### 打乱数字数组的顺序
-``` javascript
-numbers.sort(function(){ return Math.random() - 0.5});
+
+```javascript
+numbers.sort(function () {
+  return Math.random() - 0.5
+})
 ```
 
 ### 给数组创建一个随机项
-``` javascript
-var items = [12, 548 , 'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' , 2145 , 119];
-var randomItem = items[Math.floor(Math.random() * items.length)];
+
+```javascript
+var items = [12, 548, 'a', 2, 5478, 'foo', 8852, , 'Doe', 2145, 119]
+var randomItem = items[Math.floor(Math.random() * items.length)]
 ```
 
 ### 数组追加
-``` javascript
-Array.prototype.push.apply(array1, array2);
+
+```javascript
+Array.prototype.push.apply(array1, array2)
 ```
 
 ### 获得数组中的最大值
+
 写法一
-``` javascript
-var a = [10,1,2,3,4,8,9];
-Math.max.apply(null,a);
+
+```javascript
+var a = [10, 1, 2, 3, 4, 8, 9]
+Math.max.apply(null, a)
 ```
+
 写法二
-``` javascript
-Array.prototype.max = function() {
-    return Math.max.apply({},this); 
+
+```javascript
+Array.prototype.max = function () {
+  return Math.max.apply({}, this)
 }
 ```
 
 ### 类数组转换成数组
+
 写法一
-``` javascript
-var args = Array.prototype.slice.call(arguments, 0);
+
+```javascript
+var args = Array.prototype.slice.call(arguments, 0)
 ```
+
 写法二
-``` javascript
-var args = [].slice.call(arguments);
+
+```javascript
+var args = [].slice.call(arguments)
 ```
+
 ES6的实现
-``` javascript
-var args = Array.from(arguments);
+
+```javascript
+var args = Array.from(arguments)
 ```
 
 ### 不用for循环创造0～100的数组
-``` javascript
-Array.from({length:100}).map(function(item,index){return index});
+
+```javascript
+Array.from({ length: 100 }).map(function (item, index) {
+  return index
+})
 ```
-``` javascript
-Array(100).join(",").split(",").map(function(key,index){return index;});
+
+```javascript
+Array(100)
+  .join(',')
+  .split(',')
+  .map(function (key, index) {
+    return index
+  })
 ```
-``` javascript
-Object.keys(Array(100).toString().split(","));
+
+```javascript
+Object.keys(Array(100).toString().split(','))
 ```

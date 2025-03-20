@@ -48,8 +48,7 @@ module.exports = {
         'looping-tag': 'loop 100s linear infinite',
       },
       boxShadow: {
-        popover:
-          '-0.0625rem 0 1.25rem rgba(23, 24, 24, 0.05), 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.15)',
+        popover: '-0.0625rem 0 1.25rem rgba(23, 24, 24, 0.05), 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.15)',
         'popover-dark':
           '0.0625rem 0 1.25rem rgba(242, 242, 242, 0.05), 0 -0.0625rem 0.3125rem rgba(255, 255, 255, 0.15)',
         // intense: 'rgba(17, 17, 26, 0.1) 0px 0px 16px',
@@ -66,4 +65,4 @@ module.exports = {
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],
-};
+}

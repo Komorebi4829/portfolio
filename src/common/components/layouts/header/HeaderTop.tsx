@@ -1,34 +1,29 @@
-import clsx from 'clsx';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
-import { BiCommand as CommandIcon } from 'react-icons/bi';
-import { FiMenu as MenuIcon } from 'react-icons/fi';
-import {
-  MdClose as CloseIcon,
-  MdVerified as VerifiedIcon,
-} from 'react-icons/md';
+import clsx from 'clsx'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useContext, useState } from 'react'
+import { BiCommand as CommandIcon } from 'react-icons/bi'
+import { FiMenu as MenuIcon } from 'react-icons/fi'
+import { MdClose as CloseIcon, MdVerified as VerifiedIcon } from 'react-icons/md'
 
-import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
-import { MENU_ITEMS } from '@/contents/menu';
-import { author, siteMetadata } from '@/contents/siteMetadata';
+import { CommandPaletteContext } from '@/common/context/CommandPaletteContext'
+import { MENU_ITEMS } from '@/contents/menu'
+import { author, siteMetadata } from '@/contents/siteMetadata'
 
-import Image from '../../elements/Image';
-import ThemeToggleButton from '../../elements/ThemeToggleButton';
-import Tooltip from '../../elements/Tooltip';
-import Profile from '../../sidebar/Profile';
-import useIsMobile from '../../../hooks/useIsMobile';
+import useIsMobile from '../../../hooks/useIsMobile'
+import Image from '../../elements/Image'
+import ThemeToggleButton from '../../elements/ThemeToggleButton'
+import Tooltip from '../../elements/Tooltip'
+import Profile from '../../sidebar/Profile'
 
 const HeaderTop = () => {
-  const { setIsOpen } = useContext(CommandPaletteContext);
-  const [showMenu, setShowMenu] = useState(false);
+  const { setIsOpen } = useContext(CommandPaletteContext)
+  const [showMenu, setShowMenu] = useState(false)
 
-  const router = useRouter();
-  const isMobile = useIsMobile();
+  const router = useRouter()
+  const isMobile = useIsMobile()
 
-  const menus = MENU_ITEMS.filter(
-    (item) => item.isShow && item.title !== 'Home'
-  );
+  const menus = MENU_ITEMS.filter((item) => item.isShow && item.title !== 'Home')
 
   return (
     <header>
@@ -47,16 +42,10 @@ const HeaderTop = () => {
           {!showMenu && (
             <div className='flex items-center gap-3'>
               <Link href='/' passHref>
-                <h2 className='flex-grow text-lg lg:text-xl font-sora font-medium'>
-                  {siteMetadata.siteShortTitle}
-                </h2>
+                <h2 className='flex-grow text-lg lg:text-xl font-sora font-medium'>{siteMetadata.siteShortTitle}</h2>
               </Link>
               <Tooltip title='Verified'>
-                <VerifiedIcon
-                  size={18}
-                  className='text-blue-400'
-                  data-aos='flip-right'
-                />
+                <VerifiedIcon size={18} className='text-blue-400' data-aos='flip-right' />
               </Tooltip>
             </div>
           )}
@@ -72,8 +61,7 @@ const HeaderTop = () => {
                   passHref
                   className={clsx(
                     'text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 hover:dark:text-neutral-100',
-                    router.pathname === menu?.href &&
-                      '!text-neutral-800 dark:!text-neutral-100'
+                    router.pathname === menu?.href && '!text-neutral-800 dark:!text-neutral-100',
                   )}
                 >
                   <div>{menu.title}</div>
@@ -85,11 +73,7 @@ const HeaderTop = () => {
           {!showMenu && (
             <>
               {!isMobile && <ThemeToggleButton />}
-              <CommandIcon
-                onClick={() => setIsOpen(true)}
-                className='cursor-pointer'
-                size={20}
-              />
+              <CommandIcon onClick={() => setIsOpen(true)} className='cursor-pointer' size={20} />
             </>
           )}
 
@@ -105,7 +89,7 @@ const HeaderTop = () => {
         <Profile />
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default HeaderTop;
+export default HeaderTop

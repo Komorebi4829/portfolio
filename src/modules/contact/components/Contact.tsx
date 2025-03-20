@@ -1,10 +1,10 @@
-import Breakline from '@/common/components/elements/Breakline';
-import { author, featureSwich } from '@/contents/siteMetadata';
-import {} from '@/contents/siteMetadata';
+import Breakline from '@/common/components/elements/Breakline'
+import { author, featureSwich } from '@/contents/siteMetadata'
+import {} from '@/contents/siteMetadata'
 
-import BookACall from './BookACall';
-import ContactForm from './ContactForm';
-import SocialMediaList from './SocialMediaList';
+import BookACall from './BookACall'
+import ContactForm from './ContactForm'
+import SocialMediaList from './SocialMediaList'
 
 const Contact = () => {
   return (
@@ -26,7 +26,7 @@ const Contact = () => {
         </div>
       )}
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

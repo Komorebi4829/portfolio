@@ -1,29 +1,27 @@
-import { BiRocket as ContactIcon } from 'react-icons/bi';
+import { BiRocket as ContactIcon } from 'react-icons/bi'
 import {
   BsEnvelopeAtFill as EmailIcon,
   BsGithub as GithubIcon,
   BsInstagram as InstagramIcon,
   BsLinkedin as LinkedinIcon,
   BsTwitter as TwitterIcon,
-} from 'react-icons/bs';
+} from 'react-icons/bs'
 import {
-  FiBookOpen as LearnIcon,
   FiCode as SnippetsIcon,
   FiCoffee as ProjectIcon,
   FiCpu as DashboardIcon,
-  FiLayers as WeeklyIcon,
   FiPieChart as AnalyticsIcon,
   FiPocket as HomeIcon,
   FiRss as BlogIcon,
   FiUser as ProfileIcon,
-} from 'react-icons/fi';
+} from 'react-icons/fi'
 // import { PiChatCircleDotsBold as ChatIcon } from 'react-icons/pi';
-import { SiJavascript } from 'react-icons/si';
+import { SiJavascript } from 'react-icons/si'
 
-import { MenuItemProps } from '@/common/types/menu';
-import { siteMetadata, socialAccounts } from '@/contents/siteMetadata';
+import { MenuItemProps } from '@/common/types/menu'
+import { siteMetadata, socialAccounts } from '@/contents/siteMetadata'
 
-const iconSize = 20;
+const iconSize = 20
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
@@ -116,7 +114,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     eventName: 'Pages: Playground',
     type: 'Pages',
   },
-];
+]
 
 export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
@@ -171,8 +169,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     type: 'Link',
   },
 ].filter((item) => {
-  return !!item.href;
-});
+  return !!item.href
+})
 
 export const EXTERNAL_LINKS: MenuItemProps[] = [
   {
@@ -184,4 +182,4 @@ export const EXTERNAL_LINKS: MenuItemProps[] = [
     eventName: 'External Link: Analytics',
     type: 'Link',
   },
-];
+]

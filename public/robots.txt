@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: kentriversnook.com
+Host: https://kentriversnook.com
 
 # Sitemaps
-Sitemap: kentriversnook.com/sitemap.xml
+Sitemap: https://kentriversnook.com/sitemap.xml

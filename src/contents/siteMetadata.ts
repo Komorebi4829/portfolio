@@ -8,7 +8,8 @@ export const siteMetadata = {
   siteDescription:
     "Kent's personal website - Full-stack Web Developer, master of JavaScript/TypeScript, Node.js, Python, Vue, React. Enjoys coding, skilled in full-stack development, has developed multiple full-stack and crawler projects. Explore Kent's work and technology blog.TODO:把旧站的星空和一大块背景色搬过来。",
   author: 'Kent River',
-  shortDescription: "Hello! I'm Kent, an experienced full-stack developer proficient in TS (NestJS, Next.js) and Python (Django, FastAPI). With 9 years of development experience, I'm passionate about team collaboration and delivering high-quality, scalable web applications. Let's create excellence together!",
+  shortDescription:
+    "Hello! I'm Kent, an experienced full-stack developer proficient in TS (NestJS, Next.js) and Python (Django, FastAPI). With 9 years of development experience, I'm passionate about team collaboration and delivering high-quality, scalable web applications. Let's create excellence together!",
   fullName: 'Kent River',
   location: '[::1]:443 - China',
   timeZone: 'Asia/Shanghai',
@@ -25,13 +26,13 @@ export const siteMetadata = {
     // plausibleDataDomain: '',
     // simpleAnalytics: false, // true | false
     analyticsURL: '',
-    umamiScriptSrc: '',
-    umamiSiteId: '',
-    // googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
+    umamiScriptSrc: 'https://umami.kentriversnook.com/script.js',
+    umamiSiteId: '8ab51f5e-d40f-404b-8078-9d088f47d9a6',
+    googleAnalyticsId: 'G-SJ81DTXR6V', // e.g. UA-000000-2 or G-XXXXXXX
   },
 
   postPageSize: 9,
-};
+}
 
 /**
  * Select a provider and use the environment variables associated to it
@@ -58,7 +59,7 @@ export const commentConfig = {
     themeURL: '',
     lang: 'zh-CN',
   },
-};
+}
 
 export const socialAccounts = {
   x: '',
@@ -69,7 +70,7 @@ export const socialAccounts = {
   facebook: '',
   youtube: '',
   linkedin: '',
-};
+}
 
 export const author = {
   name: 'Kent River',
@@ -91,7 +92,7 @@ export const author = {
       is_active: true,
     },
   ],
-};
+}
 
 export const featureSwich = {
   // chatGPT
@@ -103,10 +104,10 @@ export const featureSwich = {
   dashboard_wakatime: false,
   dashboard_github: true,
   topBanner: false,
-};
+}
 
 export const docSearch = {
   apiKey: 'd291a440fb755a9b202844a68064d4e9', // search only key
   indexName: 'BrianStyle',
   appId: 'A4M5OCLKX8',
-};
+}

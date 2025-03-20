@@ -115,8 +115,7 @@ Feel welcome to utilize this website as a point of reference, a wellspring of in
 
 Should you find value in this resource, your consideration of leaving a rating is greatly appreciated. 😎👍🏻
 
-If you have any questions, suggestions, input or anything else, don't hesitate to contact me🧑‍💻
-<br /><br />
+If you have any questions, suggestions, input or anything else, don't hesitate to contact me🧑‍💻 <br /><br />
 
 ## Features
 
@@ -158,8 +157,7 @@ The data fetching technique used to retrieve articles from WordPress CMS API inv
 
 The data projects on this blog are taken from the MySQL database connected through the Prisma Client. The database for this application is hosted on PlanetScale DB.
 
-The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details..
-<br /><br />
+The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details.. <br /><br />
 
 ## Performance
 
@@ -173,8 +171,7 @@ Report URL: https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form
 
 Report URL: [https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop](https://gtmetrix.com/reports/aulianza.id/REEiduoo/)
 
-![image](https://github.com/aulianza/aulianza.id/assets/15605885/953dc131-bf52-4ef6-913c-f6eb8fb6c6a7)
-<br /><br />
+![image](https://github.com/aulianza/aulianza.id/assets/15605885/953dc131-bf52-4ef6-913c-f6eb8fb6c6a7) <br /><br />
 
 ## Getting Started
 
@@ -202,8 +199,7 @@ If you are interested in running this project on your local machine, you can do 
 
 4. Deploy to Vercel or Netlify, etc
 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/aulianza/aulianza.id)
-   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/aulianza/aulianza.id)
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/aulianza/aulianza.id) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/aulianza/aulianza.id)
 
 ### 2. Install dependencies
 
@@ -221,8 +217,7 @@ You can start the server using this command:
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
-<br /><br />
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`. <br /><br />
 
 ## License
 

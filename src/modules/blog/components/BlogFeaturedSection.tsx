@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 
-import { BlogFeaturedProps } from '@/common/types/blog';
+import { BlogFeaturedProps } from '@/common/types/blog'
 
-import BlogFeaturedHero from './BlogFeaturedHero';
+import BlogFeaturedHero from './BlogFeaturedHero'
 
 const BlogFeaturedSection = ({ data }: BlogFeaturedProps) => {
-  const featuredData = data;
+  const featuredData = data
 
   return (
     <>
       <BlogFeaturedHero data={featuredData} />
     </>
-  );
-};
+  )
+}
 
-export default BlogFeaturedSection;
+export default BlogFeaturedSection

@@ -1,41 +1,33 @@
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { FiExternalLink as LinkIcon } from 'react-icons/fi';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { FiExternalLink as LinkIcon } from 'react-icons/fi'
 
-import Tooltip from '@/common/components/elements/Tooltip';
-import { SubContentMetaProps } from '@/common/types/learn';
-import { STACKS } from '@/contents/stacks';
+import Tooltip from '@/common/components/elements/Tooltip'
+import { SubContentMetaProps } from '@/common/types/learn'
+import { STACKS } from '@/contents/stacks'
 
-const ContentDetailHeader = ({
-  title,
-  category,
-  source,
-  difficulty,
-  language,
-  source_url,
-}: SubContentMetaProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+const ContentDetailHeader = ({ title, category, source, difficulty, language, source_url }: SubContentMetaProps) => {
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      setIsScrolled(scrollTop > 250);
-    };
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      setIsScrolled(scrollTop > 250)
+    }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
-  const transition = { duration: 0.3, ease: 'easeInOut' };
+  const transition = { duration: 0.3, ease: 'easeInOut' }
   const titleVariants = {
     initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 },
-  };
+  }
 
   return (
     <>
@@ -84,7 +76,7 @@ const ContentDetailHeader = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ContentDetailHeader;
+export default ContentDetailHeader

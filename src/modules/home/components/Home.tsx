@@ -1,9 +1,9 @@
-import Breakline from '@/common/components/elements/Breakline';
-import { BlogItemProps } from '@/common/types/blog';
+import Breakline from '@/common/components/elements/Breakline'
+import { BlogItemProps } from '@/common/types/blog'
 
-import BlogPreview from './BlogPreview';
-import Introduction from './Introduction';
-import Services from './Services';
+import BlogPreview from './BlogPreview'
+import Introduction from './Introduction'
+import Services from './Services'
 
 const Home = ({ blogList }: { blogList: BlogItemProps[] }) => {
   return (
@@ -14,7 +14,7 @@ const Home = ({ blogList }: { blogList: BlogItemProps[] }) => {
       <Breakline className='my-8' />
       <Services />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

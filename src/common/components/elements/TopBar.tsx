@@ -1,13 +1,13 @@
-import { useTheme } from 'next-themes';
+import { useTheme } from 'next-themes'
 
-import Image from '@/common/components/elements/Image';
-import { siteMetadata } from '@/contents/siteMetadata';
+import Image from '@/common/components/elements/Image'
+import { siteMetadata } from '@/contents/siteMetadata'
 const TopBar = () => {
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme()
 
-  const lightBg = 'linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%)';
-  const darkBg = 'linear-gradient(to top, #b224ef 0%, #7579ff 100%)';
-  const bg = resolvedTheme === 'light' ? lightBg : darkBg;
+  const lightBg = 'linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%)'
+  const darkBg = 'linear-gradient(to top, #b224ef 0%, #7579ff 100%)'
+  const bg = resolvedTheme === 'light' ? lightBg : darkBg
 
   return (
     <div
@@ -17,21 +17,12 @@ const TopBar = () => {
       <span>🌟🍺✨🎉</span>
       <span>你好，2024</span>
       <span>🎉✨🍺🌟</span>
-      <a
-        href={siteMetadata.siteUrl}
-        target='_blank'
-        className='ml-0.5 underline'
-      >
+      <a href={siteMetadata.siteUrl} target='_blank' className='ml-0.5 underline'>
         {siteMetadata.siteTitle}
       </a>
-      <Image
-        src='/images/dot_new_animated.svg'
-        width={30}
-        height={30}
-        alt='new'
-      />
+      <Image src='/images/dot_new_animated.svg' width={30} height={30} alt='new' />
     </div>
-  );
-};
+  )
+}
 
-export default TopBar;
+export default TopBar

@@ -1,32 +1,32 @@
-import { GetStaticProps, NextPage } from 'next';
-import Link from 'next/link';
-import { NextSeo } from 'next-seo';
+import { GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
+import { NextSeo } from 'next-seo'
 
-import Container from '@/common/components/elements/Container';
-import PageHeading from '@/common/components/elements/PageHeading';
-import { getCollection } from '@/common/libs/mdx';
-import { MdxFileContentProps } from '@/common/types/snippets';
-import { BrandIcon } from '@/common/types/StackIcon';
-import { siteMetadata } from '@/contents/siteMetadata';
+import Container from '@/common/components/elements/Container'
+import PageHeading from '@/common/components/elements/PageHeading'
+import { getCollection } from '@/common/libs/mdx'
+import { MdxFileContentProps } from '@/common/types/snippets'
+import { BrandIcon } from '@/common/types/StackIcon'
+import { siteMetadata } from '@/contents/siteMetadata'
 
 interface ContentPageProps {
-  contentList: MdxFileContentProps[];
+  contentList: MdxFileContentProps[]
 }
 
 const SnippetsContentPage: NextPage<ContentPageProps> = ({ contentList }) => {
   if (!contentList.length) {
-    return null;
+    return null
   }
 
-  const title = '代码段';
-  const description = '这里是代码片段，可以直接过来拷贝使用';
+  const title = '代码段'
+  const description = '这里是代码片段，可以直接过来拷贝使用'
 
-  const canonicalUrl = `${siteMetadata.siteUrl}/snippets`;
+  const canonicalUrl = `${siteMetadata.siteUrl}/snippets`
 
   const activeClasses = `flex justify-between w-full font-sora items-center gap-2 rounded-lg group
     text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 
      hover:dark:!text-neutral-300 hover:lg:rounded-lg lg:transition-all lg:duration-300
-  `;
+  `
   return (
     <>
       <NextSeo
@@ -72,13 +72,13 @@ const SnippetsContentPage: NextPage<ContentPageProps> = ({ contentList }) => {
         </div>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default SnippetsContentPage;
+export default SnippetsContentPage
 
 export const getStaticProps: GetStaticProps = async () => {
-  const contentList = await getCollection('snippets');
+  const contentList = await getCollection('snippets')
 
   if (!contentList.length) {
     return {
@@ -86,12 +86,12 @@ export const getStaticProps: GetStaticProps = async () => {
         destination: '/404',
         permanent: false,
       },
-    };
+    }
   }
 
   return {
     props: {
       contentList: contentList,
     },
-  };
-};
+  }
+}

@@ -1,34 +1,30 @@
-import { motion } from 'framer-motion';
-import { ReactNode, useState } from 'react';
+import { motion } from 'framer-motion'
+import { ReactNode, useState } from 'react'
 
 interface TooltipProps {
-  title: string;
-  children: ReactNode;
+  title: string
+  children: ReactNode
 }
 
 const Tooltip = ({ title, children }: TooltipProps) => {
-  const [isTooltipVisible, setTooltipVisible] = useState(false);
+  const [isTooltipVisible, setTooltipVisible] = useState(false)
 
   const handleMouseEnter = () => {
-    setTooltipVisible(true);
-  };
+    setTooltipVisible(true)
+  }
 
   const handleMouseLeave = () => {
-    setTooltipVisible(false);
-  };
+    setTooltipVisible(false)
+  }
 
   const tooltipVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },
-  };
+  }
 
   return (
     <div className='relative inline-block'>
-      <div
-        className='tooltip-container relative'
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div className='tooltip-container relative' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {children}
       </div>
       {isTooltipVisible && (
@@ -42,7 +38,7 @@ const Tooltip = ({ title, children }: TooltipProps) => {
         </motion.div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Tooltip;
+export default Tooltip

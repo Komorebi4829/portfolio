@@ -1,11 +1,13 @@
-import { BsFillBootstrapFill, BsRobot } from 'react-icons/bs';
+import { ReactElement } from 'react'
+import { BsFillBootstrapFill } from 'react-icons/bs'
+import { FaBitcoin } from 'react-icons/fa'
 import {
-  SiAngular,
   SiAntdesign,
   SiCss3,
-  SiExpress,
+  SiDjango,
+  SiFastapi,
   SiFirebase,
-  SiGatsby,
+  SiFlask,
   SiJavascript,
   SiJest,
   SiJquery,
@@ -16,8 +18,9 @@ import {
   SiNuxtdotjs,
   SiPrisma,
   SiPwa,
+  SiPython,
   SiReact,
-  SiRemix,
+  SiRedis,
   SiSocketdotio,
   SiStorybook,
   SiStyledcomponents,
@@ -27,19 +30,13 @@ import {
   SiVite,
   SiVuedotjs,
   SiWebpack,
-  SiFlask,
-  SiRedis,
-  SiPython,
-  SiDjango,
-  SiFastapi,
-} from 'react-icons/si';
-import { FaBitcoin } from "react-icons/fa";
+} from 'react-icons/si'
 
 export type stacksProps = {
-  [key: string]: JSX.Element;
-};
+  [key: string]: ReactElement
+}
 
-const iconSize = 24;
+const iconSize = 24
 
 export const STACKS: stacksProps = {
   // PHP: <SiPhp size={iconSize} className='text-blue-500' />,
@@ -48,9 +45,7 @@ export const STACKS: stacksProps = {
   'Next.js': <SiNextdotjs size={iconSize} />,
   'React.js': <SiReact size={iconSize} className='text-sky-500' />,
   TailwindCSS: <SiTailwindcss size={iconSize} className='text-cyan-300' />,
-  Bootstrap: (
-    <BsFillBootstrapFill size={iconSize} className='text-purple-500' />
-  ),
+  Bootstrap: <BsFillBootstrapFill size={iconSize} className='text-purple-500' />,
   // GraphQL: <SiGraphql size={iconSize} className='text-pink-600' />,
   // Apollo: <SiApollographql size={iconSize} />,
   // WordPress: <SiWordpress size={iconSize} />,
@@ -72,9 +67,7 @@ export const STACKS: stacksProps = {
   // Gatsby: <SiGatsby size={iconSize} className='text-purple-600' />,
   // Redux: <SiRedux size={iconSize} className='text-purple-500' />,
   Webpack: <SiWebpack size={iconSize} className='text-blue-500' />,
-  'Styled Components': (
-    <SiStyledcomponents size={iconSize} className='text-pink-500' />
-  ),
+  'Styled Components': <SiStyledcomponents size={iconSize} className='text-pink-500' />,
   PWA: <SiPwa size={iconSize} className='text-amber-600' />,
   Nginx: <SiNginx size={iconSize} className='text-green-500' />,
   Jest: <SiJest size={iconSize} className='text-red-600' />,
@@ -251,4 +244,4 @@ export const STACKS: stacksProps = {
   //     />{' '}
   //   </svg>
   // ),
-};
+}

@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import Particles, { initParticlesEngine } from '@tsparticles/react'
-import type { Engine } from '@tsparticles/engine'
 import { loadBasic } from '@tsparticles/basic'
-import { Container, ISourceOptions, IRangeColor } from '@tsparticles/engine'
-import { useCallback, useMemo } from 'react'
-import { useTheme } from 'next-themes';
+import type { Engine } from '@tsparticles/engine'
+import { Container, ISourceOptions } from '@tsparticles/engine'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
+import { useTheme } from 'next-themes'
+import React, { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 
 function Particle() {
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme()
   const [init, setInit] = useState(false)
 
-  const colorMode = (resolvedTheme as  'dark' | 'light') || 'light'
+  const colorMode = (resolvedTheme as 'dark' | 'light') || 'light'
 
   const theme = {
     dark: {

@@ -1,25 +1,23 @@
-import { GetStaticProps, NextPage } from 'next';
-import { NextSeo } from 'next-seo';
+import { GetStaticProps, NextPage } from 'next'
+import { NextSeo } from 'next-seo'
 
-import BackButton from '@/common/components/elements/BackButton';
-import Container from '@/common/components/elements/Container';
-import { getCollection, getEntry } from '@/common/libs/mdx';
-import { MdxFileContentProps } from '@/common/types/snippets';
-import { siteMetadata } from '@/contents/siteMetadata';
-import ContentDetail from '@/modules/snippets/components/ContentDetail';
-import ContentDetailHeader from '@/modules/snippets/components/ContentDetailHeader';
+import BackButton from '@/common/components/elements/BackButton'
+import Container from '@/common/components/elements/Container'
+import { getCollection, getEntry } from '@/common/libs/mdx'
+import { MdxFileContentProps } from '@/common/types/snippets'
+import { siteMetadata } from '@/contents/siteMetadata'
+import ContentDetail from '@/modules/snippets/components/ContentDetail'
+import ContentDetailHeader from '@/modules/snippets/components/ContentDetailHeader'
 
-const SnippetsContentDetailPage: NextPage<{ data: MdxFileContentProps }> = ({
-  data,
-}) => {
-  const { content, frontMatter } = data;
+const SnippetsContentDetailPage: NextPage<{ data: MdxFileContentProps }> = ({ data }) => {
+  const { content, frontMatter } = data
 
-  const meta = frontMatter;
+  const meta = frontMatter
 
-  const endpointer = 'Snippets';
-  const PAGE_TITLE = meta?.title;
+  const endpointer = 'Snippets'
+  const PAGE_TITLE = meta?.title
 
-  const PAGE_DESCRIPTION = `${endpointer} - ${PAGE_TITLE} with detailed explanations`;
+  const PAGE_DESCRIPTION = `${endpointer} - ${PAGE_TITLE} with detailed explanations`
 
   return (
     <article>
@@ -47,31 +45,31 @@ const SnippetsContentDetailPage: NextPage<{ data: MdxFileContentProps }> = ({
         <ContentDetail content={content} frontMatter={frontMatter} />
       </Container>
     </article>
-  );
-};
+  )
+}
 
-export default SnippetsContentDetailPage;
+export default SnippetsContentDetailPage
 
 export const getStaticPaths = async () => {
-  const contentList = await getCollection('snippets');
+  const contentList = await getCollection('snippets')
   const paths = contentList.reduce((acc, curr) => {
     acc.push({
       params: {
         slug: curr.slug,
       },
-    });
-    return acc;
-  }, [] as object[]);
+    })
+    return acc
+  }, [] as object[])
 
   return {
     paths: paths,
     fallback: false,
-  };
-};
+  }
+}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params?.slug as string;
-  const contentData = await getEntry('snippets', slug);
+  const slug = params?.slug as string
+  const contentData = await getEntry('snippets', slug)
 
   if (!contentData) {
     return {
@@ -79,12 +77,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         destination: '/404',
         permanent: false,
       },
-    };
+    }
   }
 
   return {
     props: {
       data: contentData,
     },
-  };
-};
+  }
+}

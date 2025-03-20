@@ -1,43 +1,40 @@
-import clsx from 'clsx';
-import { ChangeEvent, FormEvent, useRef, useState } from 'react';
-import { FiSend as SendIcon } from 'react-icons/fi';
+import clsx from 'clsx'
+import { ChangeEvent, FormEvent, useRef, useState } from 'react'
+import { FiSend as SendIcon } from 'react-icons/fi'
 
-import { ChatInputProps } from '@/common/types/chat';
+import { ChatInputProps } from '@/common/types/chat'
 
-import ChatUserInfo from './ChatUserInfo';
+import ChatUserInfo from './ChatUserInfo'
 
-const ChatInput = ({
-  onSendMessage,
-  isWidget,
-}: ChatInputProps & { isWidget?: boolean }) => {
-  const [message, setMessage] = useState('');
-  const [isSending, setIsSending] = useState(false);
+const ChatInput = ({ onSendMessage, isWidget }: ChatInputProps & { isWidget?: boolean }) => {
+  const [message, setMessage] = useState('')
+  const [isSending, setIsSending] = useState(false)
 
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   const handleSendMessage = async (e: FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    if (isSending) return;
+    if (isSending) return
 
-    setIsSending(true);
+    setIsSending(true)
 
     try {
-      await onSendMessage(message);
-      setMessage('');
+      await onSendMessage(message)
+      setMessage('')
     } catch (error) {
       // console.error('Error sending message:', error);
     } finally {
-      setIsSending(false);
+      setIsSending(false)
       setTimeout(() => {
-        inputRef.current?.focus();
-      }, 0);
+        inputRef.current?.focus()
+      }, 0)
     }
-  };
+  }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setMessage(e.target.value);
-  };
+    setMessage(e.target.value)
+  }
 
   return (
     <>
@@ -57,7 +54,7 @@ const ChatInput = ({
           onClick={handleSendMessage}
           className={clsx(
             'ml-2 bg-sky-600 text-white p-3 rounded-md',
-            !message.trim() && '!bg-neutral-600 cursor-not-allowed'
+            !message.trim() && '!bg-neutral-600 cursor-not-allowed',
           )}
           disabled={isSending || !message.trim()}
           data-umami-event='Chat Widget: Send Chat'
@@ -67,7 +64,7 @@ const ChatInput = ({
       </form>
       <ChatUserInfo isWidget={isWidget} />
     </>
-  );
-};
+  )
+}
 
-export default ChatInput;
+export default ChatInput

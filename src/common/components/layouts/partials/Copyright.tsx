@@ -1,4 +1,4 @@
-import { siteMetadata, socialAccounts } from '@/contents/siteMetadata';
+import { siteMetadata, socialAccounts } from '@/contents/siteMetadata'
 
 const Copyright = () => {
   return (
@@ -9,12 +9,10 @@ const Copyright = () => {
       <span className='text-red-500 animate-pulse'>❤</span>
       <span>by</span>
       <a href={socialAccounts.github} target='_blank' rel='noopener noreferrer'>
-        <span className='hover:dark:text-neutral-400 cursor-pointer'>
-          {siteMetadata.siteShortTitle}
-        </span>
+        <span className='hover:dark:text-neutral-400 cursor-pointer'>{siteMetadata.siteShortTitle}</span>
       </a>
     </div>
-  );
-};
+  )
+}
 
-export default Copyright;
+export default Copyright

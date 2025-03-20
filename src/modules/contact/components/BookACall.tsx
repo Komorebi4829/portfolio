@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { FiCalendar, FiClock, FiVideo } from 'react-icons/fi';
+import Link from 'next/link'
+import { FiCalendar, FiClock, FiVideo } from 'react-icons/fi'
 
 const BookACall = ({ calMeetingUrl }: { calMeetingUrl: string }) => {
   return (
@@ -16,9 +16,7 @@ const BookACall = ({ calMeetingUrl }: { calMeetingUrl: string }) => {
             <div className='flex items-center gap-2 text-base md:text-lg font-medium'>
               <span>1 on 1 Chit-chat Session</span>
             </div>
-            <p className='dark:text-neutral-300 text-sm md:text-base'>
-              Let’s find some time to talk about anything
-            </p>
+            <p className='dark:text-neutral-300 text-sm md:text-base'>Let’s find some time to talk about anything</p>
           </div>
           <div className='p-3 border-2 border-neutral-400 dark:border-teal-600 dark:text-neutral-100 rounded-full'>
             <FiCalendar size={22} />
@@ -36,7 +34,7 @@ const BookACall = ({ calMeetingUrl }: { calMeetingUrl: string }) => {
         </div>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default BookACall;
+export default BookACall

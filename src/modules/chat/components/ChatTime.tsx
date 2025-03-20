@@ -1,32 +1,28 @@
-import { format, formatDistanceToNow, isToday } from 'date-fns';
-import { useEffect, useState } from 'react';
+import { format, formatDistanceToNow, isToday } from 'date-fns'
+import { useEffect, useState } from 'react'
 
 interface ChatTimeProps {
-  datetime: string;
+  datetime: string
 }
 
 const ChatTime = ({ datetime }: ChatTimeProps) => {
   const [formattedTime, setFormattedTime] = useState<string>(
-    formatDistanceToNow(new Date(datetime), { addSuffix: true })
-  );
+    formatDistanceToNow(new Date(datetime), { addSuffix: true }),
+  )
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFormattedTime(
-        formatDistanceToNow(new Date(datetime), { addSuffix: true })
-      );
-    }, 60000);
+      setFormattedTime(formatDistanceToNow(new Date(datetime), { addSuffix: true }))
+    }, 60000)
 
-    return () => clearInterval(interval);
-  }, [datetime]);
+    return () => clearInterval(interval)
+  }, [datetime])
 
   return (
     <div className='text-neutral-500 text-xs'>
-      {isToday(new Date(datetime))
-        ? formattedTime
-        : format(new Date(datetime), 'dd/MM/yyyy, HH:mm')}
+      {isToday(new Date(datetime)) ? formattedTime : format(new Date(datetime), 'dd/MM/yyyy, HH:mm')}
     </div>
-  );
-};
+  )
+}
 
-export default ChatTime;
+export default ChatTime

@@ -1,7 +1,7 @@
-import { siteMetadata } from '@/contents/siteMetadata';
-const canonicalUrl = siteMetadata.siteUrl;
-const metaImage = siteMetadata.siteScreenshot;
-const metaDescription = siteMetadata.siteDescription;
+import { siteMetadata } from '@/contents/siteMetadata'
+const canonicalUrl = siteMetadata.siteUrl
+const metaImage = siteMetadata.siteScreenshot
+const metaDescription = siteMetadata.siteDescription
 
 const defaultSEOConfig = {
   defaultTitle: siteMetadata.siteTitle,
@@ -39,6 +39,6 @@ const defaultSEOConfig = {
     site: '@site',
     cardType: 'summary_large_image',
   },
-};
+}
 
-export default defaultSEOConfig;
+export default defaultSEOConfig

@@ -1,16 +1,15 @@
-import { motion } from 'framer-motion';
-import { useRef } from 'react';
-import { useDraggable } from 'react-use-draggable-scroll';
+import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { useDraggable } from 'react-use-draggable-scroll'
 
-import { BlogItemProps } from '@/common/types/blog';
-import BlogCardNew from '@/modules/blog/components/BlogCardNew';
+import { BlogItemProps } from '@/common/types/blog'
+import BlogCardNew from '@/modules/blog/components/BlogCardNew'
 
 const BlogCarousel = ({ blogList }: { blogList: BlogItemProps[] }) => {
-  const blogData = blogList;
+  const blogData = blogList
 
-  const ref =
-    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>;
-  const { events } = useDraggable(ref);
+  const ref = useRef<HTMLDivElement>(null) as React.MutableRefObject<HTMLInputElement>
+  const { events } = useDraggable(ref)
 
   const renderBlogCards = () => {
     return blogData.map((item, index) => (
@@ -24,18 +23,14 @@ const BlogCarousel = ({ blogList }: { blogList: BlogItemProps[] }) => {
       >
         <BlogCardNew {...item} />
       </motion.div>
-    ));
-  };
+    ))
+  }
 
   return (
-    <div
-      className='flex p-1 gap-4 overflow-x-scroll scrollbar-hide'
-      {...events}
-      ref={ref}
-    >
+    <div className='flex p-1 gap-4 overflow-x-scroll scrollbar-hide' {...events} ref={ref}>
       {renderBlogCards()}
     </div>
-  );
-};
+  )
+}
 
-export default BlogCarousel;
+export default BlogCarousel

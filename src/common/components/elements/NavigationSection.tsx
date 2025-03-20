@@ -1,19 +1,16 @@
-import Link from 'next/link';
-import {
-  FiArrowLeft as PreviousButtonIcon,
-  FiArrowRight as NextButtonIcon,
-} from 'react-icons/fi';
+import Link from 'next/link'
+import { FiArrowLeft as PreviousButtonIcon, FiArrowRight as NextButtonIcon } from 'react-icons/fi'
 
-type PageInfo = { title: string; href: string };
+type PageInfo = { title: string; href: string }
 interface NavigationSectionProps {
-  prev: PageInfo | null;
-  next: PageInfo | null;
+  prev: PageInfo | null
+  next: PageInfo | null
 }
 
 const activeClasses = `flex font-sora items-center gap-2 py-2 px-4 rounded-lg group
   text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 
   hover:dark:lg:bg-neutral-800 hover:dark:!text-neutral-300 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300
-`;
+`
 
 const NavigationSection = ({ prev, next }: NavigationSectionProps) => {
   return (
@@ -38,7 +35,7 @@ const NavigationSection = ({ prev, next }: NavigationSectionProps) => {
         </Link>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default NavigationSection;
+export default NavigationSection

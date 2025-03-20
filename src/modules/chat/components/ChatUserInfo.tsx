@@ -1,18 +1,18 @@
-import clsx from 'clsx';
-import { signOut, useSession } from 'next-auth/react';
-import { HiOutlineLogout as SignOutIcon } from 'react-icons/hi';
+import clsx from 'clsx'
+import { signOut, useSession } from 'next-auth/react'
+import { HiOutlineLogout as SignOutIcon } from 'react-icons/hi'
 
 const ChatUserInfo = ({ isWidget = false }: { isWidget?: boolean }) => {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
 
-  const userName = session?.user?.name ?? null;
-  const userEmail = session?.user?.email ?? null;
+  const userName = session?.user?.name ?? null
+  const userEmail = session?.user?.email ?? null
 
   return session ? (
     <div
       className={clsx(
         'flex flex-col md:flex-row items-start md:items-center gap-2 px-4 text-sm pb-3',
-        isWidget && 'text-xs'
+        isWidget && 'text-xs',
       )}
     >
       <div className='flex flex-wrap gap-1 text-neutral-500'>
@@ -34,7 +34,7 @@ const ChatUserInfo = ({ isWidget = false }: { isWidget?: boolean }) => {
         </>
       )}
     </div>
-  ) : null;
-};
+  ) : null
+}
 
-export default ChatUserInfo;
+export default ChatUserInfo

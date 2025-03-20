@@ -1,36 +1,30 @@
-import Link from 'next/link';
-import { BsGithub as GithubIcon } from 'react-icons/bs';
-import useSWR from 'swr';
+import Link from 'next/link'
+import { BsGithub as GithubIcon } from 'react-icons/bs'
+import useSWR from 'swr'
 
-import SectionHeading from '@/common/components/elements/SectionHeading';
-import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { fetcher } from '@/services/fetcher';
+import SectionHeading from '@/common/components/elements/SectionHeading'
+import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
+import { fetcher } from '@/services/fetcher'
 
-import Calendar from './Calendar';
-import Overview from './Overview';
+import Calendar from './Calendar'
+import Overview from './Overview'
 
 type ContributionsProps = {
-  username: string;
-  type: string;
-  endpoint: string;
-};
+  username: string
+  type: string
+  endpoint: string
+}
 
 const Contributions = ({ username, endpoint }: ContributionsProps) => {
-  const { data } = useSWR(endpoint, fetcher);
+  const { data } = useSWR(endpoint, fetcher)
 
-  const contributionCalendar =
-    data?.contributionsCollection?.contributionCalendar;
+  const contributionCalendar = data?.contributionsCollection?.contributionCalendar
 
   return (
     <section className='flex flex-col gap-y-2'>
-      <SectionHeading
-        title='Contributions'
-        icon={<GithubIcon className='mr-1' />}
-      />
+      <SectionHeading title='Contributions' icon={<GithubIcon className='mr-1' />} />
       <SectionSubHeading>
-        <p className='dark:text-neutral-400'>
-          My contributions from last year on github.
-        </p>
+        <p className='dark:text-neutral-400'>My contributions from last year on github.</p>
         <Link
           href={`https://github.com/${username}`}
           target='_blank'
@@ -50,7 +44,7 @@ const Contributions = ({ username, endpoint }: ContributionsProps) => {
         </div>
       )}
     </section>
-  );
-};
+  )
+}
 
-export default Contributions;
+export default Contributions

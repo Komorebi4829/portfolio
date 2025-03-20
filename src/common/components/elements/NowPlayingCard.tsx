@@ -1,43 +1,34 @@
-import clsx from 'clsx';
-import Image from 'next/image';
-import { useState } from 'react';
-import { BsSpotify as SpotifyIcon } from 'react-icons/bs';
-import { MdClose as CloseIcon } from 'react-icons/md';
-import useSWR from 'swr';
+import clsx from 'clsx'
+import Image from 'next/image'
+import { useState } from 'react'
+import { BsSpotify as SpotifyIcon } from 'react-icons/bs'
+import { MdClose as CloseIcon } from 'react-icons/md'
+import useSWR from 'swr'
 
-import { NowPlayingProps } from '@/common/types/spotify';
-import { fetcher } from '@/services/fetcher';
+import { NowPlayingProps } from '@/common/types/spotify'
+import { fetcher } from '@/services/fetcher'
 
-import AnimatedBars from './AnimatedBars';
+import AnimatedBars from './AnimatedBars'
 
 const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
-  const { data } = useSWR<NowPlayingProps>('/api/now-playing', fetcher);
+  const { data } = useSWR<NowPlayingProps>('/api/now-playing', fetcher)
 
-  const [expand, setExpand] = useState(isExpand);
+  const [expand, setExpand] = useState(isExpand)
 
-  const trimmedSongTitle =
-    data?.title &&
-    data?.title.slice(0, 40) + (data?.title?.length > 40 ? '...' : '');
+  const trimmedSongTitle = data?.title && data?.title.slice(0, 40) + (data?.title?.length > 40 ? '...' : '')
 
-  const trimmedSongArtist =
-    data?.artist &&
-    data?.artist.slice(0, 20) + (data?.artist?.length > 20 ? '...' : '');
+  const trimmedSongArtist = data?.artist && data?.artist.slice(0, 20) + (data?.artist?.length > 20 ? '...' : '')
 
   const handleOpenSongUrl = (url?: string) => {
-    url && window.open(url, '_blank');
-  };
+    url && window.open(url, '_blank')
+  }
 
-  const handleMusicToggle = () => setExpand(!expand);
+  const handleMusicToggle = () => setExpand(!expand)
 
-  if (!data?.songUrl) return null;
+  if (!data?.songUrl) return null
 
   return (
-    <div
-      className={clsx(
-        'fixed bottom-0 p-3 z-2 w-full',
-        !expand && 'flex justify-end'
-      )}
-    >
+    <div className={clsx('fixed bottom-0 p-3 z-2 w-full', !expand && 'flex justify-end')}>
       {!expand ? (
         <div
           className='bg-neutral-950 rounded-full m-2 transition-all duration-100 cursor-pointer'
@@ -65,23 +56,17 @@ const NowPlayingCard = ({ isExpand = false }: { isExpand?: boolean }) => {
               <div className='font-medium text-sm'>{trimmedSongTitle}</div>
               <div className='flex gap-2 items-center text-xs'>
                 <AnimatedBars />
-                <span className='text-neutral-800 text-[14px] pt-1'>
-                  {trimmedSongArtist}
-                </span>
+                <span className='text-neutral-800 text-[14px] pt-1'>{trimmedSongArtist}</span>
               </div>
             </div>
           </div>
           <div className='flex gap-3 pr-0.5'>
-            <CloseIcon
-              size={28}
-              className='text-neutral-900 pt-0.5 cursor-pointer'
-              onClick={handleMusicToggle}
-            />
+            <CloseIcon size={28} className='text-neutral-900 pt-0.5 cursor-pointer' onClick={handleMusicToggle} />
           </div>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default NowPlayingCard;
+export default NowPlayingCard

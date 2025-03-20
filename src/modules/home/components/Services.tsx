@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { BiRocket as RocketIcon } from 'react-icons/bi'
 
-import Button from '@/common/components/elements/Button'
 import Card from '@/common/components/elements/Card'
 import SectionHeading from '@/common/components/elements/SectionHeading'
 import { author } from '@/contents/siteMetadata'

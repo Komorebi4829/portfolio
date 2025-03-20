@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 const Status = () => {
   return (
@@ -8,11 +8,9 @@ const Status = () => {
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 0.5, repeat: Infinity }}
       />
-      <span className='text-sm  text-neutral-600 dark:text-neutral-400 font-sora font-thin'>
-        Open for collabs!
-      </span>
+      <span className='text-sm  text-neutral-600 dark:text-neutral-400 font-sora font-thin'>Open for collabs!</span>
     </div>
-  );
-};
+  )
+}
 
-export default Status;
+export default Status

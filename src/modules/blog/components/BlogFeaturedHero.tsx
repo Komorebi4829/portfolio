@@ -1,53 +1,42 @@
-import clsx from 'clsx';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import {
-  BiChevronLeft as PrevIcon,
-  BiChevronRight as NextIcon,
-  BiStar as StarIcon,
-} from 'react-icons/bi';
-import { TbCalendarBolt as DateIcon } from 'react-icons/tb';
+import clsx from 'clsx'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { BiChevronLeft as PrevIcon, BiChevronRight as NextIcon, BiStar as StarIcon } from 'react-icons/bi'
+import { TbCalendarBolt as DateIcon } from 'react-icons/tb'
 
-import Image from '@/common/components/elements/Image';
-import { formatDate, formatExcerpt } from '@/common/helpers';
-import { BlogFeaturedProps } from '@/common/types/blog';
+import Image from '@/common/components/elements/Image'
+import { formatDate, formatExcerpt } from '@/common/helpers'
+import { BlogFeaturedProps } from '@/common/types/blog'
 
 const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
-  const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState<number>(0);
+  const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState<number>(0)
 
-  const currentFeatured = data[currentFeaturedIndex];
+  const currentFeatured = data[currentFeaturedIndex]
 
-  const featuredData = data.slice(0, 4);
+  const featuredData = data.slice(0, 4)
 
-  const defaultImage = '/images/placeholder.png';
+  const defaultImage = '/images/placeholder.png'
 
   const nextFeatured = () => {
-    setCurrentFeaturedIndex((prevIndex) =>
-      prevIndex === featuredData.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+    setCurrentFeaturedIndex((prevIndex) => (prevIndex === featuredData.length - 1 ? 0 : prevIndex + 1))
+  }
 
   const prevFeatured = () => {
-    setCurrentFeaturedIndex((prevIndex) =>
-      prevIndex === 0 ? featuredData.length - 1 : prevIndex - 1
-    );
-  };
+    setCurrentFeaturedIndex((prevIndex) => (prevIndex === 0 ? featuredData.length - 1 : prevIndex - 1))
+  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentFeaturedIndex((prevIndex) =>
-        prevIndex === featuredData.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
+      setCurrentFeaturedIndex((prevIndex) => (prevIndex === featuredData.length - 1 ? 0 : prevIndex + 1))
+    }, 5000)
 
     return () => {
-      clearInterval(intervalId);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [featuredData]);
+      clearInterval(intervalId)
+    }
+  }, [featuredData])
 
   if (!data || data.length === 0) {
-    return null;
+    return null
   }
 
   return (
@@ -83,15 +72,11 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
                   <span className='absolute -bottom-0.5 left-0 w-full h-0.5 bg-white origin-left transform scale-x-0 transition-transform group-hover:scale-x-100'></span>
                 </h3>
               </Link>
-              <p className='hidden sm:block'>
-                {formatExcerpt(currentFeatured.frontMatter.summary)}
-              </p>
+              <p className='hidden sm:block'>{formatExcerpt(currentFeatured.frontMatter.summary)}</p>
               <div className='flex gap-x-5 pt-1 text-neutral-400'>
                 <div className='flex gap-1 items-center '>
                   <DateIcon size={16} />
-                  <span className='text-xs ml-0.5'>
-                    {formatDate(currentFeatured.frontMatter.date)}
-                  </span>
+                  <span className='text-xs ml-0.5'>{formatDate(currentFeatured.frontMatter.date)}</span>
                 </div>
               </div>
             </div>
@@ -121,7 +106,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
               onClick={() => setCurrentFeaturedIndex(index)}
               className={clsx(
                 'relative w-16 h-16 overflow-hidden cursor-pointer mb-2 border-2 bg-black transition-all duration-300 hover:scale-105',
-                index === currentFeaturedIndex && 'border-sky-300 scale-105'
+                index === currentFeaturedIndex && 'border-sky-300 scale-105',
               )}
               style={{ borderRadius: '50%' }}
             >
@@ -137,7 +122,7 @@ const BlogFeaturedHero = ({ data }: BlogFeaturedProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogFeaturedHero;
+export default BlogFeaturedHero

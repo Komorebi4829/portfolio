@@ -1,8 +1,8 @@
-import Breakline from '@/common/components/elements/Breakline';
-import MDXComponent from '@/common/components/elements/MDXComponent';
-import { BlogDetailProps } from '@/common/types/blog';
+import Breakline from '@/common/components/elements/Breakline'
+import MDXComponent from '@/common/components/elements/MDXComponent'
+import { BlogDetailProps } from '@/common/types/blog'
 
-import BlogHeader from './BlogHeader';
+import BlogHeader from './BlogHeader'
 
 const BlogDetail = (blogData: BlogDetailProps) => {
   return (
@@ -34,7 +34,7 @@ const BlogDetail = (blogData: BlogDetailProps) => {
       )}
       <Breakline className='!my-10' />
     </article>
-  );
-};
+  )
+}
 
-export default BlogDetail;
+export default BlogDetail

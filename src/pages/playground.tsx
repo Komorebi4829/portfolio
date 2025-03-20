@@ -1,12 +1,12 @@
-import { NextPage } from 'next';
-import { NextSeo } from 'next-seo';
-import React from 'react';
+import { NextPage } from 'next'
+import { NextSeo } from 'next-seo'
+import React from 'react'
 
-import Container from '@/common/components/elements/Container';
-import { siteMetadata } from '@/contents/siteMetadata';
-import Playground from '@/modules/playground';
+import Container from '@/common/components/elements/Container'
+import { siteMetadata } from '@/contents/siteMetadata'
+import Playground from '@/modules/playground'
 
-const PAGE_TITLE = 'JavaScript Playground';
+const PAGE_TITLE = 'JavaScript Playground'
 
 const playground: NextPage = () => {
   return (
@@ -16,7 +16,7 @@ const playground: NextPage = () => {
         <Playground id='playground' isHeading />
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default playground;
+export default playground

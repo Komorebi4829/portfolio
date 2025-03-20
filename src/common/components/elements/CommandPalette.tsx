@@ -1,59 +1,52 @@
-import { Combobox, Dialog, Transition, TransitionChild } from '@headlessui/react';
-import clsx from 'clsx';
-import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
-import { Fragment, useContext, useEffect, useState } from 'react';
-import {
-  BiMoon as DarkModeIcon,
-  BiSearch as SearchIcon,
-  BiSun as LightModeIcon,
-} from 'react-icons/bi';
-import { HiOutlineChat as AiIcon } from 'react-icons/hi';
-import { useDebounceValue } from 'usehooks-ts';
+import { Combobox, Dialog, Transition, TransitionChild } from '@headlessui/react'
+import clsx from 'clsx'
+import { useRouter } from 'next/router'
+import { useTheme } from 'next-themes'
+import { Fragment, useContext, useEffect, useState } from 'react'
+import { BiMoon as DarkModeIcon, BiSearch as SearchIcon, BiSun as LightModeIcon } from 'react-icons/bi'
+import { HiOutlineChat as AiIcon } from 'react-icons/hi'
+import { useDebounceValue } from 'usehooks-ts'
 
-import { CommandPaletteContext } from '@/common/context/CommandPaletteContext';
-import useIsMobile from '@/common/hooks/useIsMobile';
-import { MenuItemProps } from '@/common/types/menu';
-import { EXTERNAL_LINKS, MENU_ITEMS, SOCIAL_MEDIA } from '@/contents/menu';
-import { siteMetadata } from '@/contents/siteMetadata';
-import AiLoading from '@/modules/cmdpallete/components/AiLoading';
-import AiResponses from '@/modules/cmdpallete/components/AiResponses';
-import QueryNotFound from '@/modules/cmdpallete/components/QueryNotFound';
-import { sendMessage } from '@/services/chatgpt';
+import { CommandPaletteContext } from '@/common/context/CommandPaletteContext'
+import useIsMobile from '@/common/hooks/useIsMobile'
+import { MenuItemProps } from '@/common/types/menu'
+import { EXTERNAL_LINKS, MENU_ITEMS, SOCIAL_MEDIA } from '@/contents/menu'
+import { siteMetadata } from '@/contents/siteMetadata'
+import AiLoading from '@/modules/cmdpallete/components/AiLoading'
+import AiResponses from '@/modules/cmdpallete/components/AiResponses'
+import QueryNotFound from '@/modules/cmdpallete/components/QueryNotFound'
+import { sendMessage } from '@/services/chatgpt'
 
 interface MenuOptionItemProps extends MenuItemProps {
-  click?: () => void;
-  closeOnSelect: boolean;
+  click?: () => void
+  closeOnSelect: boolean
 }
 
 interface MenuOptionProps {
-  title: string;
-  children: MenuOptionItemProps[];
+  title: string
+  children: MenuOptionItemProps[]
 }
 
 const CommandPalette = () => {
-  const [query, setQuery] = useState('');
-  const [isEmptyState, setEmptyState] = useState(false);
-  const [placeholderIndex, setPlaceholderIndex] = useState(0);
-  const [askAssistantClicked, setAskAssistantClicked] = useState(false);
-  const [aiLoading, setAiLoading] = useState(false);
-  const [aiResponse, setAiResponse] = useState('');
-  const [aiFinished, setAiFinished] = useState(false);
+  const [query, setQuery] = useState('')
+  const [isEmptyState, setEmptyState] = useState(false)
+  const [placeholderIndex, setPlaceholderIndex] = useState(0)
+  const [askAssistantClicked, setAskAssistantClicked] = useState(false)
+  const [aiLoading, setAiLoading] = useState(false)
+  const [aiResponse, setAiResponse] = useState('')
+  const [aiFinished, setAiFinished] = useState(false)
 
-  const router = useRouter();
-  const isMobile = useIsMobile();
-  const { isOpen, setIsOpen } = useContext(CommandPaletteContext);
-  const { resolvedTheme, setTheme } = useTheme();
-  const [debouncedValue, setValue] = useDebounceValue(query, 500);
-  const queryDebounce = debouncedValue;
+  const router = useRouter()
+  const isMobile = useIsMobile()
+  const { isOpen, setIsOpen } = useContext(CommandPaletteContext)
+  const { resolvedTheme, setTheme } = useTheme()
+  const [debouncedValue, setValue] = useDebounceValue(query, 500)
+  const queryDebounce = debouncedValue
 
-  const placeholders = [
-    'Search or Ask anything...',
-    'Press Cmd + K anytime to access this command pallete',
-  ];
-  const maxIndex = placeholders.length - 1;
+  const placeholders = ['Search or Ask anything...', 'Press Cmd + K anytime to access this command pallete']
+  const maxIndex = placeholders.length - 1
 
-  const placeholder = placeholders[placeholderIndex];
+  const placeholder = placeholders[placeholderIndex]
 
   const menuOptions: MenuOptionProps[] = [
     {
@@ -81,15 +74,8 @@ const CommandPalette = () => {
       title: 'APPEARANCE',
       children: [
         {
-          icon:
-            resolvedTheme === 'dark' ? (
-              <LightModeIcon size={20} />
-            ) : (
-              <DarkModeIcon size={20} />
-            ),
-          title: `Switch to ${
-            resolvedTheme === 'dark' ? 'Light' : 'Dark'
-          } Mode`,
+          icon: resolvedTheme === 'dark' ? <LightModeIcon size={20} /> : <DarkModeIcon size={20} />,
+          title: `Switch to ${resolvedTheme === 'dark' ? 'Light' : 'Dark'} Mode`,
           click: () => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark'),
           href: '#',
           isExternal: false,
@@ -97,121 +83,114 @@ const CommandPalette = () => {
         },
       ],
     },
-  ];
+  ]
 
   const filterMenuOptions: MenuOptionProps[] = queryDebounce
     ? menuOptions.map((menu) => ({
         ...menu,
-        children: menu.children.filter((item) =>
-          item.title.toLowerCase().includes(queryDebounce.toLowerCase())
-        ),
+        children: menu.children.filter((item) => item.title.toLowerCase().includes(queryDebounce.toLowerCase())),
       }))
-    : menuOptions;
+    : menuOptions
 
   const handleDocsearchSelect = (url: string) => {
-    router.replace(url);
-    setQuery('');
-    setIsOpen(false);
-  };
+    router.replace(url)
+    setQuery('')
+    setIsOpen(false)
+  }
 
   const handleSelect = (menu: MenuOptionItemProps) => {
-    setQuery('');
+    setQuery('')
 
-    if (menu.closeOnSelect) setIsOpen(false);
+    if (menu.closeOnSelect) setIsOpen(false)
 
-    menu.click?.();
+    menu.click?.()
 
     if (menu.isExternal) {
-      window.open(menu.href, '_blank');
+      window.open(menu.href, '_blank')
     } else {
-      router.push(menu?.href as string);
+      router.push(menu?.href as string)
     }
-  };
+  }
 
-  const handleSearch = ({
-    target: { value },
-  }: React.ChangeEvent<HTMLInputElement>) => setQuery(value);
+  const handleSearch = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => setQuery(value)
 
   const handleFindGoogle = () => {
     const url = `
     https://www.google.com/search?q=${queryDebounce}&ref=${siteMetadata.siteUrl}
-    `;
-    window.open(url, '_blank');
-  };
+    `
+    window.open(url, '_blank')
+  }
 
   const handleAskAiAssistant = async () => {
-    setEmptyState(true);
-    setAskAssistantClicked(true);
-    setAiLoading(true);
+    setEmptyState(true)
+    setAskAssistantClicked(true)
+    setAiLoading(true)
 
-    const response = await sendMessage(queryDebounce);
+    const response = await sendMessage(queryDebounce)
 
-    setAiResponse(response);
-    setAiLoading(false);
-  };
+    setAiResponse(response)
+    setAiLoading(false)
+  }
 
   const handleAiClose = () => {
-    setAskAssistantClicked(false);
-    setAiResponse('');
-    setAiFinished(false);
-  };
+    setAskAssistantClicked(false)
+    setAiResponse('')
+    setAiFinished(false)
+  }
 
   const isActiveRoute = (href: string) => {
-    return router.pathname === href;
-  };
+    return router.pathname === href
+  }
 
   useEffect(() => {
-    if (query) setEmptyState(false);
-  }, [query]);
+    if (query) setEmptyState(false)
+  }, [query])
 
   useEffect(() => {
     if (!isMobile) {
       const timer = setTimeout(() => {
         setPlaceholderIndex((prevIndex) => {
-          return prevIndex === maxIndex ? 0 : prevIndex + 1;
-        });
-      }, 2500);
+          return prevIndex === maxIndex ? 0 : prevIndex + 1
+        })
+      }, 2500)
 
       return () => {
-        clearTimeout(timer);
-      };
+        clearTimeout(timer)
+      }
     }
-  }, [placeholderIndex, isMobile, maxIndex]);
+  }, [placeholderIndex, isMobile, maxIndex])
 
   useEffect(() => {
     if (!isOpen) {
-      setQuery('');
-      setEmptyState(false);
-      handleAiClose();
+      setQuery('')
+      setEmptyState(false)
+      handleAiClose()
     }
-  }, [isOpen]);
+  }, [isOpen])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
-        setIsOpen(!isOpen);
+        setIsOpen(!isOpen)
       } else if (event.key === 'Escape') {
-        setIsOpen(false);
+        setIsOpen(false)
       }
-    };
+    }
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown)
 
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, setIsOpen]);
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen, setIsOpen])
 
   useEffect(() => {
     if (aiResponse?.includes('```')) {
-      setAiFinished(true);
+      setAiFinished(true)
     }
-  }, [aiResponse]);
+  }, [aiResponse])
 
   return (
     <Transition show={isOpen} as={Fragment}>
-      <Dialog
-        onClose={setIsOpen}
-        className='fixed inset-0 z-[999] overflow-y-auto p-4 pt-[25vh]'
-      >
+      <Dialog onClose={setIsOpen} className='fixed inset-0 z-[999] overflow-y-auto p-4 pt-[25vh]'>
         <TransitionChild
           as={Fragment}
           enter='transition-opacity duration-200 ease-out'
@@ -241,37 +220,18 @@ const CommandPalette = () => {
               disabled={askAssistantClicked}
             >
               <div className='flex gap-3 items-center border-b border-neutral-300 dark:border-neutral-800 px-4'>
-                {askAssistantClicked ? (
-                  <AiIcon size={22} />
-                ) : (
-                  <SearchIcon size={22} />
-                )}
+                {askAssistantClicked ? <AiIcon size={22} /> : <SearchIcon size={22} />}
                 <Combobox.Input
                   onChange={handleSearch}
                   className='h-14 w-full border-0 bg-transparent text-neutral-800 placeholder-neutral-500 focus:outline-none focus:ring-0 dark:text-neutral-200 font-sora'
-                  placeholder={
-                    askAssistantClicked ? queryDebounce : placeholder
-                  }
+                  placeholder={askAssistantClicked ? queryDebounce : placeholder}
                 />
               </div>
 
-              <div
-                className={clsx(
-                  'max-h-80 overflow-y-auto py-2 px-1',
-                  isEmptyState && '!py-0'
-                )}
-              >
+              <div className={clsx('max-h-80 overflow-y-auto py-2 px-1', isEmptyState && '!py-0')}>
                 {filterMenuOptions.map((menu) => (
-                  <div
-                    key={menu.title}
-                    className={clsx(
-                      menu?.children?.length === 0 && 'hidden',
-                      'py-1'
-                    )}
-                  >
-                    <div className='my-2 px-5 text-xs font-medium text-neutral-500'>
-                      {menu?.title}
-                    </div>
+                  <div key={menu.title} className={clsx(menu?.children?.length === 0 && 'hidden', 'py-1')}>
+                    <div className='my-2 px-5 text-xs font-medium text-neutral-500'>{menu?.title}</div>
                     <Combobox.Options static className='space-y-1'>
                       {menu?.children?.map((child, index) => (
                         <Combobox.Option key={index.toString()} value={child}>
@@ -282,7 +242,7 @@ const CommandPalette = () => {
                                   ? 'bg-neutral-200 text-neutral-600 dark:bg-neutral-700/60 dark:text-white'
                                   : 'text-neutral-600 dark:text-neutral-300',
                                 'mx-2 flex cursor-pointer items-center justify-between gap-3 rounded-md py-2 px-4 group',
-                                'dark:hover:bg-[#ffffff14]'
+                                'dark:hover:bg-[#ffffff14]',
                               )}
                             >
                               <div className='flex gap-5 items-center'>
@@ -290,7 +250,7 @@ const CommandPalette = () => {
                                   <div
                                     className={clsx(
                                       'group-hover:-rotate-12 transition-all duration-300',
-                                      isActiveRoute(child?.href) && '-rotate-12'
+                                      isActiveRoute(child?.href) && '-rotate-12',
                                     )}
                                   >
                                     {child?.icon}
@@ -302,9 +262,7 @@ const CommandPalette = () => {
                               </div>
                               <>
                                 {isActiveRoute(child?.href) ? (
-                                  <span className='animate-pulse text-xs font-sora text-neutral-500'>
-                                    You are here
-                                  </span>
+                                  <span className='animate-pulse text-xs font-sora text-neutral-500'>You are here</span>
                                 ) : (
                                   <>
                                     {child?.type && (
@@ -327,9 +285,7 @@ const CommandPalette = () => {
               {!isEmptyState &&
                 !askAssistantClicked &&
                 queryDebounce &&
-                filterMenuOptions.every(
-                  (item) => item.children.length === 0
-                ) && (
+                filterMenuOptions.every((item) => item.children.length === 0) && (
                   <QueryNotFound
                     query={queryDebounce}
                     onAskAiAssistant={handleAskAiAssistant}
@@ -340,9 +296,7 @@ const CommandPalette = () => {
 
               {askAssistantClicked &&
                 queryDebounce &&
-                filterMenuOptions.every(
-                  (item) => item.children.length === 0
-                ) && (
+                filterMenuOptions.every((item) => item.children.length === 0) && (
                   <div className='max-h-80 overflow-y-auto px-8 py-7 text-neutral-700 dark:text-neutral-300'>
                     {aiLoading ? (
                       <AiLoading />
@@ -361,7 +315,7 @@ const CommandPalette = () => {
         </Dialog.Panel>
       </Dialog>
     </Transition>
-  );
-};
+  )
+}
 
-export default CommandPalette;
+export default CommandPalette

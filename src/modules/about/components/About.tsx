@@ -1,20 +1,20 @@
-import Breakline from '@/common/components/elements/Breakline';
-import { CareerProps } from '@/common/types/careers';
-import { EducationProps } from '@/common/types/education';
+import Breakline from '@/common/components/elements/Breakline'
+import { CareerProps } from '@/common/types/careers'
+import { EducationProps } from '@/common/types/education'
 
-import CareerList from './CareerList';
-import EducationList from './EducationList';
-import Resume from './Resume';
-import Skills from './Skills';
-import Story from './Story';
+import CareerList from './CareerList'
+import EducationList from './EducationList'
+import Resume from './Resume'
+import Skills from './Skills'
+import Story from './Story'
 
 interface AboutProps {
-  content: string;
+  content: string
   frontMatter: {
-    resume: string;
-    education: EducationProps[];
-    career: CareerProps[];
-  };
+    resume: string
+    education: EducationProps[]
+    career: CareerProps[]
+  }
 }
 
 const About = ({ about }: { about: AboutProps }) => {
@@ -41,7 +41,7 @@ const About = ({ about }: { about: AboutProps }) => {
         </>
       )}
     </>
-  );
-};
+  )
+}
 
-export default About;
+export default About

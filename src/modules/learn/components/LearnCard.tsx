@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import { AiFillFire as NewIcon } from 'react-icons/ai';
-import { BiLabel as LevelIcon } from 'react-icons/bi';
-import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
-import { MdLibraryBooks as LessonIcon } from 'react-icons/md';
+import Link from 'next/link'
+import { AiFillFire as NewIcon } from 'react-icons/ai'
+import { BiLabel as LevelIcon } from 'react-icons/bi'
+import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi'
+import { MdLibraryBooks as LessonIcon } from 'react-icons/md'
 
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import { ContentProps } from '@/common/types/learn';
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import { ContentProps } from '@/common/types/learn'
 
 const LearnCard = ({
   title,
@@ -46,16 +46,12 @@ const LearnCard = ({
                 {title}
               </div>
             </div>
-            <p className='text-neutral-700 dark:text-neutral-400 text-[.9375rem] leading-relaxed'>
-              {description}
-            </p>
+            <p className='text-neutral-700 dark:text-neutral-400 text-[.9375rem] leading-relaxed'>{description}</p>
           </div>
           <div className='flex gap-4 text-neutral-600 dark:text-neutral-400'>
             <div className='flex gap-1 items-center'>
               <LessonIcon size={16} />
-              <span className='text-sm ml-0.5'>
-                {`${lessonCount} ${lessonCount > 1 ? 'Lessons' : 'Lesson'}`}
-              </span>
+              <span className='text-sm ml-0.5'>{`${lessonCount} ${lessonCount > 1 ? 'Lessons' : 'Lesson'}`}</span>
             </div>
             <div className='flex gap-1 items-center'>
               <LevelIcon size={16} />
@@ -65,7 +61,7 @@ const LearnCard = ({
         </div>
       </Card>
     </Link>
-  );
-};
+  )
+}
 
-export default LearnCard;
+export default LearnCard

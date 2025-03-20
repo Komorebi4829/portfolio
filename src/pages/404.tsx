@@ -1,14 +1,11 @@
-import styled from '@emotion/styled';
-import { NextPage } from 'next';
+import styled from '@emotion/styled'
+import { NextPage } from 'next'
 
-import Container from '@/common/components/elements/Container';
+import Container from '@/common/components/elements/Container'
 
 const Custom404: NextPage = () => {
   return (
-    <Container
-      className='flex flex-col h-full justify-center items-center space-y-5 py-40 md:py-20'
-      data-aos='fade-up'
-    >
+    <Container className='flex flex-col h-full justify-center items-center space-y-5 py-40 md:py-20' data-aos='fade-up'>
       <StyledHeading title='404' className='font-bold text-7xl font-sora'>
         404
       </StyledHeading>
@@ -16,10 +13,10 @@ const Custom404: NextPage = () => {
         Whoops, there doesn&apos;t seem to be anything here!
       </h2>
     </Container>
-  );
-};
+  )
+}
 
-export default Custom404;
+export default Custom404
 
 const StyledHeading = styled.h1`
   animation: glitch 1s linear infinite;
@@ -84,4 +81,4 @@ const StyledHeading = styled.h1`
       transform: translate(-22px, 5px) skew(21deg);
     }
   }
-`;
+`

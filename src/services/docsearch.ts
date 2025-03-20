@@ -1,26 +1,26 @@
-import axios from 'axios';
+import axios from 'axios'
 
-import { docSearch } from '../contents/siteMetadata';
+import { docSearch } from '../contents/siteMetadata'
 
 interface Hit {
   hierarchy: {
-    lvl0: string;
-    lvl1: string;
-    lvl2: string;
-    lvl3: string;
-    lvl4: string;
-    lvl5: string;
-    lvl6: string;
-  };
-  content: string;
-  type: string;
-  url: string;
+    lvl0: string
+    lvl1: string
+    lvl2: string
+    lvl3: string
+    lvl4: string
+    lvl5: string
+    lvl6: string
+  }
+  content: string
+  type: string
+  url: string
 }
 
 export const getDocsearchHits = async (query: string): Promise<Hit[]> => {
-  const { appId, apiKey, indexName } = docSearch;
+  const { appId, apiKey, indexName } = docSearch
 
-  const DOCSEARCH_ENDPOINT = `https://${appId}-dsn.algolia.net/1/indexes/*/queries`;
+  const DOCSEARCH_ENDPOINT = `https://${appId}-dsn.algolia.net/1/indexes/*/queries`
 
   const response = await axios.post(
     DOCSEARCH_ENDPOINT,
@@ -44,8 +44,8 @@ export const getDocsearchHits = async (query: string): Promise<Hit[]> => {
         'x-algolia-api-key': apiKey,
         'x-algolia-application-id': appId,
       },
-    }
-  );
+    },
+  )
 
-  return response.data?.results?.[0].hits;
-};
+  return response.data?.results?.[0].hits
+}

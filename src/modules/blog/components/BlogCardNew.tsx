@@ -1,28 +1,28 @@
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useState } from 'react';
-import { BsArrowRight as MoreIcon } from 'react-icons/bs';
-import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
-import { TbCalendarBolt as DateIcon } from 'react-icons/tb';
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useState } from 'react'
+import { BsArrowRight as MoreIcon } from 'react-icons/bs'
+import { HiOutlineClock as ClockIcon } from 'react-icons/hi'
+import { TbCalendarBolt as DateIcon } from 'react-icons/tb'
 
-import Breakline from '@/common/components/elements/Breakline';
-import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
-import Tooltip from '@/common/components/elements/Tooltip';
-import { formatDate } from '@/common/helpers';
-import { BlogItemProps } from '@/common/types/blog';
-import { author, siteMetadata } from '@/contents/siteMetadata';
+import Breakline from '@/common/components/elements/Breakline'
+import Card from '@/common/components/elements/Card'
+import Image from '@/common/components/elements/Image'
+import Tooltip from '@/common/components/elements/Tooltip'
+import { formatDate } from '@/common/helpers'
+import { BlogItemProps } from '@/common/types/blog'
+import { author, siteMetadata } from '@/contents/siteMetadata'
 
 const BlogCardNew = (blogData: BlogItemProps) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false)
 
-  const src = blogData.frontMatter.featured_image_url;
+  const src = blogData.frontMatter.featured_image_url
 
   const slideDownVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },
-  };
+  }
 
   return (
     <Link href={`/blog/${blogData.slug}`}>
@@ -51,10 +51,7 @@ const BlogCardNew = (blogData: BlogItemProps) => {
         <div className='absolute flex flex-col justify-between p-5 space-y-4 h-full'>
           <div className='flex flex-wrap gap-2'>
             {blogData.frontMatter.tags?.map((tag) => (
-              <div
-                key={tag}
-                className='px-2.5 py-1 rounded-full font-mono text-xs text-neutral-400 bg-neutral-900/50'
-              >
+              <div key={tag} className='px-2.5 py-1 rounded-full font-mono text-xs text-neutral-400 bg-neutral-900/50'>
                 <span className='font-semibold mr-1'>#</span>
                 {tag.charAt(0).toUpperCase() + tag.slice(1)}
               </div>
@@ -68,14 +65,10 @@ const BlogCardNew = (blogData: BlogItemProps) => {
               </h3>
               <div className='flex gap-1 items-center text-neutral-400'>
                 <DateIcon size={14} />
-                <span className='text-xs ml-0.5'>
-                  {formatDate(blogData.frontMatter.date)}
-                </span>
+                <span className='text-xs ml-0.5'>{formatDate(blogData.frontMatter.date)}</span>
               </div>
               {blogData.frontMatter.summary && (
-                <p className='leading-relaxed text-sm text-neutral-400'>
-                  {blogData.frontMatter.summary.slice(0, 100)}
-                </p>
+                <p className='leading-relaxed text-sm text-neutral-400'>{blogData.frontMatter.summary.slice(0, 100)}</p>
               )}
             </div>
             <Breakline className='!border-neutral-700' />
@@ -94,16 +87,12 @@ const BlogCardNew = (blogData: BlogItemProps) => {
                 variants={slideDownVariants}
                 initial='visible'
                 animate={isHovered ? 'hidden' : 'visible'}
-                className={clsx(
-                  'flex justify-between gap-4 ',
-                  isHovered && 'hidden'
-                )}
+                className={clsx('flex justify-between gap-4 ', isHovered && 'hidden')}
               >
                 <div className='flex gap-1 items-center'>
                   <ClockIcon size={14} />
                   <span className='text-xs font-medium ml-0.5'>
-                    {blogData.props.readingTimeMinutes.toLocaleString()} MINS
-                    READ
+                    {blogData.props.readingTimeMinutes.toLocaleString()} MINS READ
                   </span>
                 </div>
               </motion.div>
@@ -111,10 +100,7 @@ const BlogCardNew = (blogData: BlogItemProps) => {
                 variants={slideDownVariants}
                 initial='hidden'
                 animate={isHovered ? 'visible' : 'hidden'}
-                className={clsx(
-                  'flex gap-1 items-center',
-                  !isHovered && 'hidden'
-                )}
+                className={clsx('flex gap-1 items-center', !isHovered && 'hidden')}
               >
                 <span className='text-xs font-medium mr-0.5'>READ MORE</span>
                 <MoreIcon size={16} />
@@ -124,7 +110,7 @@ const BlogCardNew = (blogData: BlogItemProps) => {
         </div>
       </Card>
     </Link>
-  );
-};
+  )
+}
 
-export default BlogCardNew;
+export default BlogCardNew
