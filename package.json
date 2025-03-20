@@ -7,7 +7,7 @@
     "dev2": "next dev --turbo -p 8283",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "start": "next start -p 8283",
+    "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && pnpm format",
     "typecheck": "tsc --noEmit --incremental false",
