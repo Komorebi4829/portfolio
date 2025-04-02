@@ -6,7 +6,7 @@ export const siteMetadata = {
   siteTitle: "Kent\'s Portfolio",
   siteScreenshot: '',
   siteDescription:
-    "Kent's personal website - Full-stack Web Developer, master of JavaScript/TypeScript, Node.js, Python, Vue, React. Enjoys coding, skilled in full-stack development, has developed multiple full-stack and crawler projects. Explore Kent's work and technology blog.TODO:把旧站的星空和一大块背景色搬过来。",
+    "Kent's personal website - Full-stack Web Developer, master of JavaScript/TypeScript, Node.js, Python, Vue, React. Enjoys coding, skilled in full-stack development, has developed multiple full-stack and crawler projects. Explore Kent's work and technology blog.",
   author: 'Kent River',
   shortDescription:
     "Hello! I'm Kent, an experienced full-stack developer proficient in TS (NestJS, Next.js) and Python (Django, FastAPI). With 9 years of development experience, I'm passionate about team collaboration and delivering high-quality, scalable web applications. Let's create excellence together!",
@@ -29,6 +29,7 @@ export const siteMetadata = {
     umamiScriptSrc: 'https://umami.kentriversnook.com/script.js',
     umamiSiteId: '8ab51f5e-d40f-404b-8078-9d088f47d9a6',
     googleAnalyticsId: 'G-SJ81DTXR6V', // e.g. UA-000000-2 or G-XXXXXXX
+    claritySiteId: 'mtmtli1avc',
   },
 
   postPageSize: 9,
